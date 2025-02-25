@@ -1,19 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProductCardProps {
+interface CatalogCardProps {
     title: string
     imageUrl: string
     altText: string
     link: string
 }
 
-export default function ProductCard({
+export default function CatalogCard({
     title,
     imageUrl,
     altText,
     link,
-}: ProductCardProps) {
+}: CatalogCardProps) {
     return (
         <div className='bg-white overflow-hidden flex flex-col md:flex-row'>
             <div className='w-full md:w-1/2'>

@@ -1,11 +1,11 @@
 import { products } from '@/constants/products'
-import ProductCard from './product-card'
+import CatalogCard from './catalog-card'
 
-export default function ProductGrid() {
+export default function CatalogGrid() {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             {products.map((product, index) => (
-                <ProductCard key={index} {...product} />
+                <CatalogCard key={index} {...product} />
             ))}
         </div>
     )
