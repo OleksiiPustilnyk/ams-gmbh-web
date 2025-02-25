@@ -8,9 +8,15 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['Noto Sans', 'sans-serif'],
+            },
             colors: {
                 background: 'var(--background)',
                 foreground: 'var(--foreground)',
+                primary: '#344054',
+                secondary: '#1D2939',
+                defaultYellow: '#FFC21F',
             },
         },
     },

@@ -1,4 +1,6 @@
+import Header from '@/components/header/header'
 import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
     title: 'Hello World',
@@ -12,7 +14,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body>{children}</body>
+            <body>
+                <div className='flex flex-col min-h-screen'>
+                    <Header />
+                    <main>{children}</main>
+                </div>
+            </body>
         </html>
     )
 }
