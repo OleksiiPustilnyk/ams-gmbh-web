@@ -17,6 +17,7 @@ export default {
                 primary: '#344054',
                 secondary: '#1D2939',
                 defaultYellow: '#FFC21F',
+                lightGray: '#F2F4F7',
             },
         },
     },
