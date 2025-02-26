@@ -1,4 +1,4 @@
-export const products = [
+export const catalog = [
     {
         title: 'Polycarbonat',
         imageUrl: '/images/product-section/img-product-section-1.png',
