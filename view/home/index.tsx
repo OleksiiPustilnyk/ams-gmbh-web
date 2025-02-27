@@ -1,6 +1,9 @@
 import HeroSection from '@/components/sections/home/hero-section'
 import CatalogSection from '@/components/sections/home/catalog-section'
-import ProductSection from '@/components/sections/home/product.section'
+import ProductSection from '@/components/sections/home/product-section'
+import FirstCategorySection from '@/components/sections/home/first-category-section'
+import SecondCategorySection from '@/components/sections/home/second-category-section'
+import LEDSection from '@/components/sections/home/led-product-section'
 
 const products = [
     {
@@ -40,6 +43,13 @@ export default function HomeView() {
             <HeroSection />
             <CatalogSection />
             <ProductSection title='Aluminium Produkte' products={products} />
+            <FirstCategorySection />
+            <ProductSection
+                title='Zubehör und Dichtungen'
+                products={products}
+            />
+            <SecondCategorySection />
+            <LEDSection />
         </main>
     )
 }

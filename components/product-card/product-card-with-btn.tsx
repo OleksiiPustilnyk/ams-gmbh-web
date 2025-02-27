@@ -1,0 +1,85 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import CustomButton from '../ui/buttons/custom-button'
+
+interface Product {
+    id: number
+    imageUrl: string
+    title: string
+    subtitle: string
+    setInfo: string
+    price: string
+    link: string
+}
+
+interface ProductSectionProps {
+    sectionTitle: string
+    viewAllLink: string
+    products: Product[]
+}
+
+export default function ProductCardWithButton({
+    sectionTitle,
+    viewAllLink,
+    products,
+}: ProductSectionProps) {
+    return (
+        <section className='container mx-auto py-12 px-4 md:px-0'>
+            <div className='flex justify-between items-center mb-6'>
+                <h2 className='text-[30px] font-semibold leading-[32px] text-primary'>
+                    {sectionTitle}
+                </h2>
+                <Link
+                    href={viewAllLink}
+                    className='text-primary text-[16px] hover:underline flex items-center'
+                >
+                    Alle ansehen
+                    <Image
+                        src='/images/icons/icon-diagonal-arrow.svg'
+                        alt='Arrow'
+                        width={10}
+                        height={10}
+                        className='ml-2'
+                    />
+                </Link>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                {products.map((product) => (
+                    <div
+                        key={product.id}
+                        className='flex items-center gap-3 p-4'
+                    >
+                        <div className='w-[35%] flex-shrink-0'>
+                            <Image
+                                src={product.imageUrl}
+                                alt={product.title}
+                                width={220}
+                                height={180}
+                                className='object-contain'
+                            />
+                        </div>
+
+                        <div className='w-[65%]'>
+                            <h3 className='text-[16px] font-semibold leading-[20.8px] text-primary'>
+                                {product.title}
+                            </h3>
+
+                            <div className='flex justify-between items-center mt-10'>
+                                <div className='flex flex-col'>
+                                    <span className='text-gray-500 text-[14px]'>
+                                        {product.setInfo}
+                                    </span>
+                                    <span className='text-[18px] font-semibold text-gray-900'>
+                                        {product.price}
+                                    </span>
+                                </div>
+                                <CustomButton>Add to cart</CustomButton>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    )
+}
