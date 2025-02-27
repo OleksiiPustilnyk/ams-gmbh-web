@@ -4,6 +4,9 @@ import ProductSection from '@/components/sections/home/product-section'
 import FirstCategorySection from '@/components/sections/home/first-category-section'
 import SecondCategorySection from '@/components/sections/home/second-category-section'
 import LEDSection from '@/components/sections/home/led-product-section'
+import FeatureSection from '@/components/sections/home/feature-section'
+import CategorySectionWithBg from '@/components/sections/home/category-card-section'
+import BenefitsSection from '@/components/sections/home/benefits-item-section'
 
 const products = [
     {
@@ -50,6 +53,11 @@ export default function HomeView() {
             />
             <SecondCategorySection />
             <LEDSection />
+            <FeatureSection />
+            <ProductSection title='Zaun Aluminium' products={products} />
+            <CategorySectionWithBg />
+            <ProductSection title='Aluminium Products' products={products} />
+            <BenefitsSection />
         </main>
     )
 }
