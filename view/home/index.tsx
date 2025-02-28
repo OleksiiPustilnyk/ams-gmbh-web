@@ -7,6 +7,7 @@ import LEDSection from '@/components/sections/home/led-product-section'
 import FeatureSection from '@/components/sections/home/feature-section'
 import CategorySectionWithBg from '@/components/sections/home/category-card-section'
 import BenefitsSection from '@/components/sections/home/benefits-item-section'
+import FAQSection from '@/components/sections/home/faq-item-section'
 
 const products = [
     {
@@ -58,6 +59,7 @@ export default function HomeView() {
             <CategorySectionWithBg />
             <ProductSection title='Aluminium Products' products={products} />
             <BenefitsSection />
+            <FAQSection />
         </main>
     )
 }

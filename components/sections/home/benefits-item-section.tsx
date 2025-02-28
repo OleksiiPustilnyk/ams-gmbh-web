@@ -7,7 +7,7 @@ const benefits = [
         description: 'Versand für alle Bestellungen',
     },
     {
-        icon: '/images/icons/icon-.svg',
+        icon: '/images/icons/icon-support.svg',
         title: 'Online-Hilfe',
         description: 'Online-Support während der Arbeitszeit',
     },
