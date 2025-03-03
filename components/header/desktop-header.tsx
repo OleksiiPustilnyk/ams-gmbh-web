@@ -8,8 +8,8 @@ import Cart from '../ui/cart-icon/cart-icon'
 
 export default function DesktopHeader() {
     return (
-        <header className='hidden md:block w-full border-b bg-white shadow-md'>
-            <div className='container mx-auto flex items-center justify-between py-4 px-8'>
+        <header className='hidden lg:flex w-full bg-white shadow-md'>
+            <div className='container mx-auto flex items-center justify-between py-4 px-6'>
                 <div className='flex items-center gap-4'>
                     <Logo />
                     <CategoryDropdown />

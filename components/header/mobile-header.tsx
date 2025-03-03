@@ -10,9 +10,14 @@ export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <header className='md:hidden w-full border-b bg-white shadow-md'>
+        <header className='w-full border-b bg-white shadow-md md:flex lg:hidden'>
             <div className='container mx-auto flex items-center justify-between py-4 px-6 relative'>
-                <button className='p-2' onClick={() => setMenuOpen(!menuOpen)}>
+                {/* Бургер-меню */}
+                <button
+                    className='p-2 flex-shrink-0'
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label='Toggle menu'
+                >
                     <Image
                         src='/images/icons/icon-burger.svg'
                         alt='Menu'
@@ -21,14 +26,23 @@ export default function MobileHeader() {
                     />
                 </button>
 
+                {/* Логотип строго по центру */}
                 <div className='absolute left-1/2 transform -translate-x-1/2'>
                     <Logo />
                 </div>
 
+                {/* Корзина справа */}
                 <Cart />
             </div>
 
-            {menuOpen && <MobileMenu />}
+            {/* Меню (Анимация появления) */}
+            <div
+                className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg transform transition-transform duration-300 ${
+                    menuOpen ? 'translate-x-0' : '-translate-x-full'
+                }`}
+            >
+                <MobileMenu onClose={() => setMenuOpen(false)} />
+            </div>
         </header>
     )
 }
