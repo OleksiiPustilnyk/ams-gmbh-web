@@ -21,7 +21,7 @@ const faqData = [
 
 export default function FAQSection() {
     return (
-        <section className='container mx-auto py-12'>
+        <section className='container mx-auto py-12 px-4 sm:px-0'>
             <h2 className='text-[30px] font-semibold leading-[38px] text-center text-primary mb-8'>
                 Friendly Asked Questions
             </h2>
