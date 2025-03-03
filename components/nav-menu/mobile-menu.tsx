@@ -9,24 +9,24 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
     return (
-        <div className='w-[320px] h-full bg-white shadow-lg p-6 relative z-50'>
+        <div className='fixed top-16 left-0 w-[90%] md:w-[50%] h-screen bg-white shadow-lg p-6 overflow-y-auto'>
             {/* Кнопка закрытия */}
+
+            {/* Логотип */}
+            <div className='mb-6 flex justify-start'>
+                <Logo />
+            </div>
             <button
                 onClick={onClose}
-                className='absolute top-4 right-4 text-gray-600'
+                className='absolute top-10 right-4 text-gray-600'
             >
                 <Image
                     src='/images/icons/icon-close.svg'
                     alt='Close'
-                    width={20}
-                    height={20}
+                    width={10}
+                    height={10}
                 />
             </button>
-
-            {/* Логотип */}
-            <div className='mb-6 flex justify-center'>
-                <Logo />
-            </div>
 
             {/* Поиск */}
             <div className='flex items-center border border-gray-300 rounded-lg px-3 py-2 mb-4'>

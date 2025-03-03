@@ -10,7 +10,7 @@ export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <header className='w-full border-b bg-white shadow-md md:flex lg:hidden'>
+        <header className='w-full border-b bg-white shadow-md md:flex lg:hidden fixed top-0 left-0 right-0 z-50'>
             <div className='container mx-auto flex items-center justify-between py-4 px-6 relative'>
                 {/* Бургер-меню */}
                 <button
@@ -35,10 +35,10 @@ export default function MobileHeader() {
                 <Cart />
             </div>
 
-            {/* Меню (Анимация появления) */}
+            {/* Меню (появляется под хедером) */}
             <div
-                className={`fixed top-0 left-0 w-full h-full bg-white shadow-lg transform transition-transform duration-300 ${
-                    menuOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`absolute left-0 w-full bg-white shadow-lg transition-transform duration-300 ${
+                    menuOpen ? 'top-16 opacity-100' : '-top-full opacity-0'
                 }`}
             >
                 <MobileMenu onClose={() => setMenuOpen(false)} />
