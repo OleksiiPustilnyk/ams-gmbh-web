@@ -11,10 +11,8 @@ export default function HeroSection() {
                 objectPosition: 'center',
             }}
         >
-            {/* Фон (не мешает меню) */}
             <div className='absolute inset-0 bg-[#FFAA0C] bg-opacity-50 z-0'></div>
 
-            {/* Сетка */}
             {Array.from({ length: 12 }).map((_, index) => (
                 <div
                     key={index}

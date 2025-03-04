@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import CustomLink from '@/components/ui/link/custom-link'
 
 interface CategoryCardProps {
     category: string
@@ -26,24 +26,15 @@ export default function CategoryCard({
                 </span>
                 <h3 className='text-[30px] font-semibold leading-[45px] text-primary mt-1'>
                     {title}
+                    Hellooo
                 </h3>
                 <p className='text-secondaryGray text-[14px] font-normal leading-[21px]'>
                     {subtitle}
                 </p>
 
-                <Link
-                    href={link}
-                    className='mt-10 text-primary text-[16px] font-normal leading-[24px] hover:underline flex items-center'
-                >
+                <CustomLink href={link} className='mt-10'>
                     {buttonText}
-                    <Image
-                        src='/images/icons/icon-diagonal-arrow.svg'
-                        alt='Arrow'
-                        width={12}
-                        height={12}
-                        className='ml-2'
-                    />
-                </Link>
+                </CustomLink>
             </div>
 
             <div className='absolute right-0 bottom-0 w-[70%] h-[100%] flex items-end'>

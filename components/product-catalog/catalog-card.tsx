@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import CustomLink from '@/components/ui/link/custom-link'
 
 interface CatalogCardProps {
     title: string
@@ -30,19 +30,8 @@ export default function CatalogCard({
                 <h3 className='text-[18px] font-semibold leading-[27px] tracking-normal text-primary'>
                     {title}
                 </h3>
-                <Link
-                    href={link}
-                    className='mt-2 text-[16px] font-normal leading-[24px] tracking-normal text-primary hover:underline flex items-center'
-                >
-                    Mehr
-                    <Image
-                        src='/images/icons/icon-diagonal-arrow.svg'
-                        alt='Arrow'
-                        width={10}
-                        height={10}
-                        className='ml-3'
-                    />
-                </Link>
+
+                <CustomLink href={link}>Mehr</CustomLink>
             </div>
         </div>
     )

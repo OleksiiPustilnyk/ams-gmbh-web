@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import CustomButton from '../ui/buttons/custom-button'
+import CustomButton from '@/components/ui/buttons/custom-button'
+import CustomLink from '@/components/ui/link/custom-link'
 
 interface Product {
     id: number
@@ -29,19 +29,7 @@ export default function ProductCardWithButton({
                 <h2 className='text-[30px] font-semibold leading-[32px] text-primary'>
                     {sectionTitle}
                 </h2>
-                <Link
-                    href={viewAllLink}
-                    className='text-primary text-[16px] hover:underline flex items-center'
-                >
-                    Alle ansehen
-                    <Image
-                        src='/images/icons/icon-diagonal-arrow.svg'
-                        alt='Arrow'
-                        width={10}
-                        height={10}
-                        className='ml-2'
-                    />
-                </Link>
+                <CustomLink href={viewAllLink}>Alle ansehen</CustomLink>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>

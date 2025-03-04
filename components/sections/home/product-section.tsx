@@ -1,6 +1,5 @@
 import ProductGrid from '@/components/product-card/product-grid'
-import Link from 'next/link'
-import Image from 'next/image'
+import CustomLink from '@/components/ui/link/custom-link'
 
 interface ProductSectionProps {
     title: string
@@ -24,19 +23,8 @@ export default function ProductSection({
                 <h2 className='text-[30px] font-semibold leading-[45px] text-primary'>
                     {title}
                 </h2>
-                <Link
-                    href='/shop'
-                    className='text-[16px] text-primary hover:underline flex items-center'
-                >
-                    Alle ansehen
-                    <Image
-                        src='/images/icons/icon-diagonal-arrow.svg'
-                        alt='Arrow'
-                        width={10}
-                        height={10}
-                        className='ml-3'
-                    />
-                </Link>
+
+                <CustomLink href='/shop'>Alle ansehen</CustomLink>
             </div>
 
             <ProductGrid products={products} />

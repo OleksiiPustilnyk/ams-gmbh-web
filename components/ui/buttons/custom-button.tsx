@@ -8,6 +8,7 @@ interface CustomButtonProps {
     textColor?: string
     leftIcon?: ReactNode
     rightIcon?: ReactNode
+    disabled?: boolean
 }
 
 export default function CustomButton({
@@ -18,13 +19,20 @@ export default function CustomButton({
     textColor = 'text-white',
     leftIcon,
     rightIcon,
+    disabled = false,
 }: CustomButtonProps) {
-    const baseStyles = 'flex items-center gap-2 px-6 py-2 rounded-md transition'
-
     return (
         <button
             onClick={onClick}
-            className={`${baseStyles} ${bgColor} ${textColor} ${className}`}
+            className={`group flex items-center gap-2 px-6 py-2 rounded-md transition duration-200 font-medium 
+                ${
+                    disabled
+                        ? 'bg-[#E4E7EC] text-[#667085] cursor-not-allowed'
+                        : `${bgColor} ${textColor} hover:bg-[#EE9907] active:bg-[#BD7904]`
+                }
+                ${className}
+            `}
+            disabled={disabled}
         >
             {leftIcon && <span>{leftIcon}</span>}
             <span>{children}</span>
