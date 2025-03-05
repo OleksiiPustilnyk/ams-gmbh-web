@@ -18,7 +18,7 @@ export default function ProductSection({
     products,
 }: ProductSectionProps) {
     return (
-        <section className='container mx-auto py-12 px-4 md:px-0'>
+        <section className='container mx-auto py-12 px-4 md:px-4 lg:px-0'>
             <div className='flex justify-between items-center mb-6'>
                 <h2 className='text-[30px] font-semibold leading-[45px] text-primary'>
                     {title}

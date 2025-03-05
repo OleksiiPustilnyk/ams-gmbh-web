@@ -11,8 +11,8 @@ export default function FeatureSection() {
                     Ihr perfekter Outdoor-Bereich!
                 </h2>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
-                    <div className='px-4 md:px-0 md:ml-[110px] md:mr-8'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8'>
+                    <div className='px-4 lg:px-0 lg:ml-[110px] lg:mr-8'>
                         <p className='text-gray-700 text-[16px] leading-[24px] mb-8'>
                             Machen Sie Ihre Terrasse wetterfest und genießen Sie
                             maximalen Komfort mit unseren modernen
@@ -26,7 +26,7 @@ export default function FeatureSection() {
                                 <div className='flex items-start gap-3 mb-3'>
                                     <Image
                                         src='/images/icons/icon-check.svg'
-                                        alt='Arrow'
+                                        alt='Check'
                                         width={24}
                                         height={24}
                                     />
@@ -43,7 +43,7 @@ export default function FeatureSection() {
                                 <div className='flex items-start gap-3 mb-3'>
                                     <Image
                                         src='/images/icons/icon-check.svg'
-                                        alt='Arrow'
+                                        alt='Check'
                                         width={24}
                                         height={24}
                                     />
@@ -59,12 +59,12 @@ export default function FeatureSection() {
                             </li>
                         </ul>
 
-                        <CustomButton className='mb-8 md:mb-0'>
+                        <CustomButton className='mb-8 lg:mb-0'>
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>
 
-                    <div className='relative px-4 md:px-0'>
+                    <div className='relative px-4 lg:px-0 order-last lg:order-none'>
                         <Image
                             src='/images/img-feature-section-1.png'
                             alt='Terrassenüberdachung'
@@ -75,8 +75,8 @@ export default function FeatureSection() {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12'>
-                    <div className='relative px-4 md:px-0'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-12'>
+                    <div className='relative px-4 lg:px-0 order-last lg:order-none'>
                         <Image
                             src='/images/img-feature-section-2.png'
                             alt='Moderne Terrassen'
@@ -86,13 +86,13 @@ export default function FeatureSection() {
                         />
                     </div>
 
-                    <div className='px-4 md:px-0 md:mr-[110px] md:ml-8'>
+                    <div className='px-4 lg:px-0 lg:mr-[110px] lg:ml-8'>
                         <ul className='space-y-5 mb-6'>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
                                     <Image
                                         src='/images/icons/icon-check.svg'
-                                        alt='Arrow'
+                                        alt='Check'
                                         width={24}
                                         height={24}
                                     />
@@ -108,7 +108,7 @@ export default function FeatureSection() {
                                 <div className='flex items-start gap-3 mb-3'>
                                     <Image
                                         src='/images/icons/icon-check.svg'
-                                        alt='Arrow'
+                                        alt='Check'
                                         width={24}
                                         height={24}
                                     />
@@ -125,7 +125,7 @@ export default function FeatureSection() {
                                 <div className='flex items-start gap-3 mb-3'>
                                     <Image
                                         src='/images/icons/icon-check.svg'
-                                        alt='Arrow'
+                                        alt='Check'
                                         width={24}
                                         height={24}
                                     />
@@ -144,7 +144,7 @@ export default function FeatureSection() {
                             stilvoll, wettergeschützt und komfortabel!
                         </p>
 
-                        <CustomButton className='mb-8 md:mb-0'>
+                        <CustomButton className='mb-8 lg:mb-0'>
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>

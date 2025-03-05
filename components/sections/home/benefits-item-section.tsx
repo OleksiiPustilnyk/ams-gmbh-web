@@ -25,8 +25,8 @@ const benefits = [
 
 export default function BenefitsSection() {
     return (
-        <section className='w-full bg-[#F2F4F7] py-12 sm:px-0 px-4'>
-            <div className='container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6'>
+        <section className='w-full bg-[#F2F4F7] py-12 px-4'>
+            <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center'>
                 {benefits.map((benefit, index) => (
                     <BenefitItem key={index} {...benefit} />
                 ))}

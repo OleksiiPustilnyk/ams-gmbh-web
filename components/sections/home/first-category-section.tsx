@@ -30,7 +30,7 @@ const categories = [
 
 export default function FirstCategorySection() {
     return (
-        <section className='container mx-auto py-12 px-4 md:px-0'>
+        <section className='container mx-auto py-12 px-4 md:px-4 lg:px-0'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 '>
                 {categories.map((category, index) => (
                     <CategoryCard key={index} {...category} />

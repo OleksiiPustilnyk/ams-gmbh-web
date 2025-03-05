@@ -26,7 +26,6 @@ export default function CategoryCard({
                 </span>
                 <h3 className='text-[30px] font-semibold leading-[45px] text-primary mt-1'>
                     {title}
-                    Hellooo
                 </h3>
                 <p className='text-secondaryGray text-[14px] font-normal leading-[21px]'>
                     {subtitle}

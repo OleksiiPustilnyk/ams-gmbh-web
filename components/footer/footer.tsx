@@ -49,7 +49,7 @@ export default function Footer() {
     return (
         <footer className='bg-gray-100 py-10 mt-12 px-4'>
             <div className='container mx-auto'>
-                <div className='grid grid-cols-1 md:grid-cols-[1fr_2fr_1.5fr_1fr] gap-6 border-b border-gray-300 pb-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1.5fr_1fr] gap-6 border-b border-gray-300 pb-8'>
                     {footerLinks.map((section, index) => (
                         <div key={index}>
                             <h4 className='text-secondaryGray font-semibold text-[14px] mb-4'>
@@ -71,13 +71,13 @@ export default function Footer() {
                     ))}
                 </div>
 
-                <div className='flex flex-col md:flex-row md:justify-between items-center mt-6 text-gray-600 text-[14px]'>
+                <div className='flex flex-col lg:flex-row lg:justify-between items-center mt-6 text-gray-600 text-[14px]'>
                     <Logo />
-                    <p className='text-center md:text-left mt-4 md:mt-0'>
+                    <p className='text-center lg:text-left mt-4 lg:mt-0'>
                         * All prices excl. VAT plus shipping costs and cash on
                         delivery fees, if not otherwise stated
                     </p>
-                    <p className='mt-4 md:mt-0'>© 2025 All rights reserved.</p>
+                    <p className='mt-4 lg:mt-0'>© 2025 All rights reserved.</p>
                 </div>
             </div>
         </footer>

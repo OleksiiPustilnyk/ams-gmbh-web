@@ -20,7 +20,7 @@ const categories = [
 
 export default function CategorySectionWithBg() {
     return (
-        <section className='container mx-auto py-12 px-4 sm:px-0 grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <section className='container mx-auto py-12 px-4 sm:px-4 grid grid-cols-1 md:grid-cols-3 gap-6'>
             {categories.map((category, index) => (
                 <CategoryCardWithBg key={index} {...category} />
             ))}
