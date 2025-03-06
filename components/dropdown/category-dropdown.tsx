@@ -67,7 +67,6 @@ export default function DropdownMenu() {
 
     return (
         <div className='relative w-full border-t border-b border-[#E4E7EC] py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
-            {/* Кнопка меню */}
             <CustomButton
                 onClick={toggleDropdown}
                 leftIcon={
@@ -91,13 +90,9 @@ export default function DropdownMenu() {
             >
                 Kategorien
             </CustomButton>
-
-            {/* Выпадающее меню */}
             {isOpen && (
                 <>
-                    {/* Десктопная версия (плавающее меню) */}
-                    <div className='absolute left-0 mt-2 w-[640px] bg-white border rounded-lg shadow-md z-50 hidden lg:flex'>
-                        {/* Колонка категорий */}
+                    <div className='absolute left-0 mt-2 w-[640px] h-[470px] bg-white border rounded-lg shadow-md z-50 hidden lg:flex overflow-y-auto'>
                         <div className='w-1/2 p-4'>
                             <ul>
                                 {categories.map((category) => (
@@ -126,13 +121,16 @@ export default function DropdownMenu() {
                                 ))}
                             </ul>
                         </div>
-
-                        {/* Колонка изображения и подкатегорий */}
                         <div className='w-1/2 p-4 flex flex-col items-center bg-[#F9FAFB]'>
                             {hoveredCategory.imageUrl && (
                                 <div
                                     className={`relative w-full flex justify-center transition-all duration-300 ${
-                                        openCategory ? 'h-[320px]' : 'h-[400px]'
+                                        openCategory &&
+                                        categories.find(
+                                            (cat) => cat.name === openCategory,
+                                        )?.subcategories
+                                            ? 'h-[320px]'
+                                            : 'h-[400px]'
                                     }`}
                                 >
                                     <Image
@@ -151,10 +149,10 @@ export default function DropdownMenu() {
                                     (cat) => cat.name === openCategory,
                                 )?.subcategories && (
                                     <ul
-                                        className={`w-full mt-4 text-gray-700 text-left transition-all duration-500 transform ${
+                                        className={`w-full mt-4 text-gray-700 text-left transition-opacity duration-500 max-h-40 overflow-y-auto ${
                                             openCategory
-                                                ? 'opacity-100 translate-y-0'
-                                                : 'opacity-0 -translate-y-2'
+                                                ? 'opacity-100'
+                                                : 'opacity-0'
                                         }`}
                                     >
                                         {categories
