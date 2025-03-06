@@ -121,7 +121,7 @@ export default function DropdownMenu() {
                                 ))}
                             </ul>
                         </div>
-                        <div className='w-1/2 p-4 flex flex-col items-center bg-[#F9FAFB]'>
+                        <div className='w-1/2 p-4 flex flex-col items-center bg-secondaryWhite'>
                             {hoveredCategory.imageUrl && (
                                 <div
                                     className={`relative w-full flex justify-center transition-all duration-300 ${
