@@ -20,6 +20,7 @@ export default {
                 lightGray: '#F2F4F7',
                 secondaryGray: '#667085',
                 darkGray: '#222222',
+                deepGray: '#475467',
             },
         },
     },
