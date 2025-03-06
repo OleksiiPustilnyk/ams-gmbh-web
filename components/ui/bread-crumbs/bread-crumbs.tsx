@@ -9,6 +9,7 @@ export default function Breadcrumbs() {
 
     const customNames: Record<string, string> = {
         catalog: 'Produktkatalog für Privatkunden',
+        about: 'Über uns',
         home: 'Home',
     }
 
