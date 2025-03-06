@@ -21,11 +21,11 @@ const faqData = [
 
 export default function FAQSection() {
     return (
-        <section className='container mx-auto py-12 px-4 sm:px-0'>
-            <h2 className='text-[30px] font-semibold leading-[38px] text-center text-primary mb-8'>
+        <section className='container mx-auto py-12 px-4 sm:px-0 lg:px-0'>
+            <h2 className='text-[30px] font-semibold leading-[45px] text-center text-primary mb-6'>
                 Friendly Asked Questions
             </h2>
-            <div className='max-w-2xl mx-auto'>
+            <div className='max-w-screen-sm lg:max-w-screen-lg mx-auto'>
                 {faqData.map((item, index) => (
                     <FAQItem key={index} {...item} />
                 ))}
