@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import CustomButton from '../ui/buttons/custom-button'
 import Logo from '../logo/logo'
+import CategoryDropdown from '../dropdown/category-dropdown'
 
 interface MobileMenuProps {
     onClose: () => void
@@ -10,9 +10,6 @@ interface MobileMenuProps {
 export default function MobileMenu({ onClose }: MobileMenuProps) {
     return (
         <div className='fixed top-16 left-0 w-[90%] md:w-[50%] h-screen bg-white shadow-lg p-6 overflow-y-auto'>
-            {/* Кнопка закрытия */}
-
-            {/* Логотип */}
             <div className='mb-6 flex justify-start'>
                 <Logo />
             </div>
@@ -27,8 +24,6 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                     height={10}
                 />
             </button>
-
-            {/* Поиск */}
             <div className='flex items-center border border-gray-300 rounded-lg px-3 py-2 mb-4'>
                 <input
                     type='text'
@@ -39,32 +34,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                     Suche
                 </button>
             </div>
-
-            {/* Категории */}
-            <CustomButton
-                leftIcon={
-                    <Image
-                        src='/images/icons/icon-category.svg'
-                        alt='Category'
-                        width={15}
-                        height={15}
-                    />
-                }
-                rightIcon={
-                    <Image
-                        src='/images/icons/icon-chevron.svg'
-                        alt='Arrow'
-                        width={10}
-                        height={5}
-                        className='ml-7'
-                    />
-                }
-                className='w-full justify-between bg-gray-900 text-white py-2 px-4 mb-4'
-            >
-                Kategorien
-            </CustomButton>
-
-            {/* Навигация */}
+            <CategoryDropdown />
             <nav className='space-y-4 text-gray-700'>
                 <Link href='/preisanfrage' className='block hover:text-primary'>
                     Preisanfrage Profi

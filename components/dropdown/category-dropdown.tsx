@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 interface Category {
     name: string
-    imageUrl: string
+    imageUrl?: string
     subcategories?: string[]
 }
 
@@ -62,17 +62,11 @@ export default function DropdownMenu() {
 
     const handleCategoryClick = (category: Category) => {
         setHoveredCategory(category)
-        setOpenCategory(
-            category.subcategories
-                ? openCategory === category.name
-                    ? null
-                    : category.name
-                : null,
-        )
+        setOpenCategory(openCategory === category.name ? null : category.name)
     }
 
     return (
-        <div className='relative'>
+        <div className='relative w-full border-t border-b border-[#E4E7EC] py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
             {/* Кнопка меню */}
             <CustomButton
                 onClick={toggleDropdown}
@@ -90,66 +84,68 @@ export default function DropdownMenu() {
                         alt='Arrow'
                         width={10}
                         height={5}
-                        className={`ml-7 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
                     />
                 }
+                className='w-full'
             >
                 Kategorien
             </CustomButton>
 
             {/* Выпадающее меню */}
             {isOpen && (
-                <div className='absolute left-0 mt-2 w-[640px] flex bg-white border rounded-lg shadow-md z-50'>
-                    {/* Колонка категорий */}
-                    <div className='w-1/2 p-4'>
-                        <ul className=''>
-                            {categories.map((category) => (
-                                <li key={category.name}>
-                                    <button
-                                        onClick={() =>
-                                            handleCategoryClick(category)
-                                        }
-                                        className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-lightGray ${
-                                            openCategory === category.name
-                                                ? 'bg-lightGray'
-                                                : ''
-                                        }`}
-                                    >
-                                        <span className='flex items-center gap-2'>
-                                            <Image
-                                                src='/images/icons/icon-right-arrow.svg'
-                                                alt='Arrow'
-                                                width={12}
-                                                height={12}
-                                            />
-                                            {category.name}
-                                        </span>
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                <>
+                    {/* Десктопная версия (плавающее меню) */}
+                    <div className='absolute left-0 mt-2 w-[640px] bg-white border rounded-lg shadow-md z-50 hidden lg:flex'>
+                        {/* Колонка категорий */}
+                        <div className='w-1/2 p-4'>
+                            <ul>
+                                {categories.map((category) => (
+                                    <li key={category.name}>
+                                        <button
+                                            onClick={() =>
+                                                handleCategoryClick(category)
+                                            }
+                                            className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-lightGray ${
+                                                openCategory === category.name
+                                                    ? 'bg-lightGray'
+                                                    : ''
+                                            }`}
+                                        >
+                                            <span className='flex items-center gap-2'>
+                                                <Image
+                                                    src='/images/icons/icon-right-arrow.svg'
+                                                    alt='Arrow'
+                                                    width={12}
+                                                    height={12}
+                                                />
+                                                {category.name}
+                                            </span>
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    {/* Колонка изображения и подкатегорий */}
-                    <div className='w-1/2 p-4 flex flex-col items-center bg-[#F9FAFB]'>
-                        {/* Контейнер с фиксированной высотой */}
-                        <div className='relative flex flex-col items-center w-full min-h-[400px]'>
-                            {/* Картинка */}
-                            <div
-                                className={`relative w-full flex justify-center transition-all duration-300 ${
-                                    openCategory ? 'h-[320px]' : 'h-[400px]'
-                                }`}
-                            >
-                                <Image
-                                    src={hoveredCategory.imageUrl}
-                                    alt={hoveredCategory.name}
-                                    width={240}
-                                    height={400}
-                                    className='object-contain'
-                                />
-                            </div>
+                        {/* Колонка изображения и подкатегорий */}
+                        <div className='w-1/2 p-4 flex flex-col items-center bg-[#F9FAFB]'>
+                            {hoveredCategory.imageUrl && (
+                                <div
+                                    className={`relative w-full flex justify-center transition-all duration-300 ${
+                                        openCategory ? 'h-[320px]' : 'h-[400px]'
+                                    }`}
+                                >
+                                    <Image
+                                        src={hoveredCategory.imageUrl}
+                                        alt={hoveredCategory.name}
+                                        width={240}
+                                        height={400}
+                                        className='object-contain'
+                                    />
+                                </div>
+                            )}
 
-                            {/* Подкатегории (с анимацией) */}
+                            {/* Подкатегории */}
                             {openCategory &&
                                 categories.find(
                                     (cat) => cat.name === openCategory,
@@ -184,7 +180,60 @@ export default function DropdownMenu() {
                                 )}
                         </div>
                     </div>
-                </div>
+
+                    {/* Мобильная версия (двигает контент вниз) */}
+                    <div className='mt-2 w-full bg-white flex flex-col gap-2 lg:hidden max-h-[60vh] overflow-y-auto'>
+                        <ul>
+                            {categories.map((category) => (
+                                <li key={category.name}>
+                                    <button
+                                        onClick={() =>
+                                            handleCategoryClick(category)
+                                        }
+                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-lightGray ${
+                                            openCategory === category.name
+                                                ? 'bg-lightGray'
+                                                : ''
+                                        }`}
+                                    >
+                                        <span className='flex items-center gap-2'>
+                                            <Image
+                                                src='/images/icons/icon-right-arrow.svg'
+                                                alt='Arrow'
+                                                width={12}
+                                                height={12}
+                                            />
+                                            {category.name}
+                                        </span>
+                                    </button>
+
+                                    {/* Подкатегории */}
+                                    {openCategory === category.name &&
+                                        category.subcategories && (
+                                            <ul className='ml-6 mt-2 text-gray-700 text-left border-l border-gray-300 pl-4'>
+                                                {category.subcategories.map(
+                                                    (sub) => (
+                                                        <li
+                                                            key={sub}
+                                                            className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                        >
+                                                            <Image
+                                                                src='/images/icons/icon-right-arrow.svg'
+                                                                alt='Arrow'
+                                                                width={12}
+                                                                height={12}
+                                                            />
+                                                            {sub}
+                                                        </li>
+                                                    ),
+                                                )}
+                                            </ul>
+                                        )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </>
             )}
         </div>
     )

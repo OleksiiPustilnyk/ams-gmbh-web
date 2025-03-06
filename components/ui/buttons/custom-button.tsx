@@ -36,7 +36,7 @@ export default function CustomButton({
         >
             {leftIcon && <span>{leftIcon}</span>}
             <span>{children}</span>
-            {rightIcon && <span>{rightIcon}</span>}
+            {rightIcon && <span className='ml-auto'>{rightIcon}</span>}
         </button>
     )
 }
