@@ -86,7 +86,7 @@ export default function DropdownMenu() {
                         className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
                     />
                 }
-                className='w-full'
+                className='w-full lg:w-[200px]'
             >
                 Kategorien
             </CustomButton>
@@ -142,8 +142,6 @@ export default function DropdownMenu() {
                                     />
                                 </div>
                             )}
-
-                            {/* Подкатегории */}
                             {openCategory &&
                                 categories.find(
                                     (cat) => cat.name === openCategory,
@@ -178,8 +176,6 @@ export default function DropdownMenu() {
                                 )}
                         </div>
                     </div>
-
-                    {/* Мобильная версия (двигает контент вниз) */}
                     <div className='mt-2 w-full bg-white flex flex-col gap-2 lg:hidden max-h-[60vh] overflow-y-auto'>
                         <ul>
                             {categories.map((category) => (
@@ -204,8 +200,6 @@ export default function DropdownMenu() {
                                             {category.name}
                                         </span>
                                     </button>
-
-                                    {/* Подкатегории */}
                                     {openCategory === category.name &&
                                         category.subcategories && (
                                             <ul className='ml-6 mt-2 text-gray-700 text-left border-l border-gray-300 pl-4'>

@@ -39,7 +39,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                 <Link href='/preisanfrage' className='block hover:text-primary'>
                     Preisanfrage Profi
                 </Link>
-                <Link href='/katalog' className='block hover:text-primary'>
+                <Link href='/catalog' className='block hover:text-primary'>
                     Produktkatalog für Privatkunden
                 </Link>
                 <Link href='/about' className='block hover:text-primary'>

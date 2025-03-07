@@ -10,8 +10,8 @@ export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <header className='w-full border-b bg-white shadow-md md:flex lg:hidden fixed top-0 left-0 right-0 z-50'>
-            <div className='container mx-auto flex items-center justify-between py-4 px-6 relative'>
+        <header className='w-full h-16 border-b bg-white shadow-md md:flex lg:hidden top-0 left-0 right-0 z-50'>
+            <div className='container mx-auto flex items-center justify-between py-4 px-2 relative'>
                 <button
                     className='p-2 flex-shrink-0'
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -31,7 +31,9 @@ export default function MobileHeader() {
             </div>
             <div
                 className={`absolute left-0 w-full bg-white shadow-lg transition-transform duration-300 ${
-                    menuOpen ? 'top-16 opacity-100' : '-top-full opacity-0'
+                    menuOpen
+                        ? 'top-16 opacity-100 block'
+                        : '-top-full opacity-0 hidden'
                 }`}
             >
                 <MobileMenu onClose={() => setMenuOpen(false)} />

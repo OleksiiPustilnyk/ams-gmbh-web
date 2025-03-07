@@ -17,8 +17,7 @@ export default function CatalogProductSection() {
                     Sicht
                 </CustomButton>
             </div>
-
-            <div className='mt-6 md:mt-0 md:ml-10 w-[375px] md:w-[450px] lg:w-[375px]'>
+            <div className='mt-6 md:mt-0 md:ml-10 w-[300px] md:w-[450px] lg:w-[375px] max-w-full'>
                 <Image
                     src='/images/image-catalog.png'
                     alt='Produktkatalog'

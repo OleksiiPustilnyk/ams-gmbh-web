@@ -9,16 +9,16 @@ import Cart from '../ui/cart-icon/cart-icon'
 export default function DesktopHeader() {
     return (
         <header className='hidden lg:flex w-full bg-white shadow-md'>
-            <div className='container mx-auto flex items-center justify-between py-4 px-6'>
+            <div className='container mx-auto flex items-center justify-between py-4'>
                 <div className='flex items-center gap-4'>
                     <Logo />
-                    <CategoryDropdown />
+                    <div className='ml-auto'>
+                        <CategoryDropdown />
+                    </div>
                 </div>
-
                 <nav className='flex flex-1 justify-center'>
                     <NavMenu />
                 </nav>
-
                 <div className='flex items-center gap-4'>
                     <Search />
                     <Cart />
