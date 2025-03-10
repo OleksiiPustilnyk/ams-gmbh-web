@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../logo/logo'
 import CategoryDropdown from '../dropdown/category-dropdown'
+import { navLinks } from '@/constants/nav-links'
 
 interface MobileMenuProps {
     onClose: () => void
@@ -36,21 +37,15 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             </div>
             <CategoryDropdown />
             <nav className='space-y-4 text-gray-700'>
-                <Link href='/preisanfrage' className='block hover:text-primary'>
-                    Preisanfrage Profi
-                </Link>
-                <Link href='/catalog' className='block hover:text-primary'>
-                    Produktkatalog für Privatkunden
-                </Link>
-                <Link href='/about' className='block hover:text-primary'>
-                    Über uns
-                </Link>
-                <Link href='/blog' className='block hover:text-primary'>
-                    Blog
-                </Link>
-                <Link href='/contact' className='block hover:text-primary'>
-                    Kontakt
-                </Link>
+                {navLinks.map((link) => (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        className='block hover:text-primary'
+                    >
+                        {link.name}
+                    </Link>
+                ))}
             </nav>
         </div>
     )

@@ -8,9 +8,10 @@ export default function Breadcrumbs() {
     const pathSegments = pathname.split('/').filter(Boolean)
 
     const customNames: Record<string, string> = {
+        home: 'Home',
+        profile: 'Price inquiry for commercial customers',
         catalog: 'Produktkatalog für Privatkunden',
         about: 'Über uns',
-        home: 'Home',
     }
 
     return (

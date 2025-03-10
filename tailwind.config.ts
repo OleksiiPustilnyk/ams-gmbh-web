@@ -23,6 +23,7 @@ export default {
                 darkGray: '#222222',
                 deepGray: '#475467',
                 secondaryWhite: '#F9FAFB',
+                borderColor: '#D0D5DD',
             },
         },
     },
