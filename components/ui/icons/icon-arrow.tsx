@@ -2,19 +2,19 @@ interface IconProps {
     className?: string
 }
 
-export function CheckIcon({ className }: IconProps) {
+export function ArrowIcon({ className }: IconProps) {
     return (
         <svg
-            width='12'
-            height='9'
-            viewBox='0 0 12 9'
+            width='16'
+            height='16'
+            viewBox='0 0 16 16'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             className={className}
         >
             <path
-                d='M10.6666 1L4.24992 7.41667L1.33325 4.5'
-                stroke='currentColor'
+                d='M1 8H15M15 8L8 1M15 8L8 15'
+                stroke='#344054'
                 strokeWidth='2'
                 strokeLinecap='round'
                 strokeLinejoin='round'
