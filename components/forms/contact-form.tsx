@@ -1,30 +1,28 @@
 'use client'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { ProfileFormData } from '@/interfaces/profile-form.interface'
+import { ContactFormData } from '@/interfaces/contact-form.interface'
 import CustomInput from '../ui/custom-input/custom-input'
 import CustomSelect from '../ui/custom-select/custom-select'
 import CustomButton from '../ui/buttons/custom-button'
-import { handlePhoneInput, phoneValidation } from '@/helpers/validation'
 import CustomTextarea from '../ui/custom-textarea/custom-textarea'
 // import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 
-export default function ProfileForm() {
+export default function ContactForm() {
     const {
         register,
         handleSubmit,
         setValue,
         watch,
         formState: { errors },
-    } = useForm<ProfileFormData>({
+    } = useForm<ContactFormData>({
         defaultValues: {
-            salutation: '',
             roofCovering: '',
             privacyPolicyAccepted: false,
         },
     })
 
-    const onSubmit: SubmitHandler<ProfileFormData> = (data) => {
+    const onSubmit: SubmitHandler<ContactFormData> = (data) => {
         console.log(data)
     }
 
@@ -33,114 +31,36 @@ export default function ProfileForm() {
             onSubmit={handleSubmit(onSubmit)}
             className='bg-white p-6 rounded-lg shadow-lg w-full'
         >
-            <h2 className='text-base text-primary font-semibold mb-2'>
-                Ihre Kontaktdaten
-            </h2>
-            <p className='text-sm text-secondaryGray mb-4'>
-                Die mit einem * markierten Felder sind Pflichtfelder.
-            </p>
-
-            <CustomInput
-                label='Firma'
-                {...register('company')}
-                className='mb-4'
-            />
-
-            <div className='mb-4'>
-                <CustomSelect
-                    label='Anrede *'
-                    options={[
-                        { value: 'Herr', label: 'Herr' },
-                        { value: 'Frau', label: 'Frau' },
-                    ]}
-                    value={watch('salutation')}
-                    onChange={(value) => setValue('salutation', value)}
-                    error={errors.salutation}
-                />
-            </div>
-
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <CustomInput
-                    label='Vorname'
+                    label='Name'
                     required
-                    {...register('firstName', {
+                    {...register('name', {
                         required: 'Vorname ist erforderlich',
                     })}
-                    error={errors.firstName}
+                    error={errors.name}
                 />
-                <CustomInput
-                    label='Nachname'
-                    required
-                    {...register('lastName', {
-                        required: 'Nachname ist erforderlich',
-                    })}
-                    error={errors.lastName}
-                />
-            </div>
-
-            <CustomInput
-                label='Adresse'
-                required
-                {...register('address', {
-                    required: 'Adresse ist erforderlich',
-                })}
-                className='col-span-2 mb-4'
-                error={errors.address}
-            />
-
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <CustomInput
-                    label='Postleitzahl'
-                    required
-                    {...register('postalCode', {
-                        required: 'Postleitzahl ist erforderlich',
-                    })}
-                    error={errors.postalCode}
-                />
-                <CustomInput
-                    label='Stadt'
-                    required
-                    {...register('city', {
-                        required: 'Stadt ist erforderlich',
-                    })}
-                    error={errors.city}
-                />
-            </div>
-
-            <CustomInput
-                label='Land'
-                required
-                {...register('country', {
-                    required: 'Land ist erforderlich',
-                })}
-                className='mb-4'
-                error={errors.country}
-            />
-
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <CustomInput
                     label='E-Mail'
-                    type='email'
                     required
                     {...register('email', {
-                        required: 'E-Mail ist erforderlich',
-                        pattern: {
-                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                            message: 'Ungültige E-Mail-Adresse',
-                        },
+                        required: 'Nachname ist erforderlich',
                     })}
                     error={errors.email}
                 />
+            </div>
 
-                <CustomInput
-                    label='Tel'
-                    type='phone'
-                    placeholder='+1 (555) 000-0000'
-                    {...register('phone', phoneValidation)}
-                    error={errors.phone}
-                    onInput={handlePhoneInput}
-                />
+            <CustomInput
+                label='Thema'
+                required
+                {...register('themeMessage', {
+                    required: 'Adresse ist erforderlich',
+                })}
+                className='col-span-2 mb-4'
+                error={errors.themeMessage}
+            />
 
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <CustomInput label='Breite' {...register('width')} />
                 <CustomInput label='Tiefe' {...register('depth')} />
                 <CustomInput
@@ -187,6 +107,10 @@ export default function ProfileForm() {
                     error={errors.privacyPolicyAccepted?.message}
                 />
             </div> */}
+
+            <p className='text-sm text-secondaryGray mb-4'>
+                Die mit einem * markierten Felder sind Pflichtfelder.
+            </p>
 
             <div className='col-span-1 md:col-span-2 flex items-center mb-4'>
                 <input

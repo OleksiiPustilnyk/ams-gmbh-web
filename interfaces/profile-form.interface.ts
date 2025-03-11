@@ -1,4 +1,4 @@
-export interface FormData {
+export interface ProfileFormData {
     company?: string
     salutation: string
     firstName: string

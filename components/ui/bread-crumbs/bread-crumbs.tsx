@@ -12,6 +12,7 @@ export default function Breadcrumbs() {
         profile: 'Price inquiry for commercial customers',
         catalog: 'Produktkatalog für Privatkunden',
         about: 'Über uns',
+        contact: 'Kontakt',
     }
 
     return (
