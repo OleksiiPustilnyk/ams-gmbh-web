@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../logo/logo'
 import CategoryDropdown from '../dropdown/category-dropdown'
 import { navLinks } from '@/constants/nav-links'
+import { CloseIcon } from '../ui/icons/icon-close'
 
 interface MobileMenuProps {
     onClose: () => void
@@ -18,12 +18,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                 onClick={onClose}
                 className='absolute top-10 right-4 text-gray-600'
             >
-                <Image
-                    src='/images/icons/icon-close.svg'
-                    alt='Close'
-                    width={10}
-                    height={10}
-                />
+                <CloseIcon />
             </button>
             <div className='flex items-center border border-gray-300 rounded-lg px-3 py-2 mb-4'>
                 <input

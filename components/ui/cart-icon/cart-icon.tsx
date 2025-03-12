@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { CartIcon } from '../icons/icon-cart'
 
 export default function Cart() {
     const cartCount = 1
@@ -6,15 +6,10 @@ export default function Cart() {
     return (
         <div className='relative'>
             <button className='p-2 hover:bg-gray-100 rounded-md transition'>
-                <Image
-                    src='/images/icons/icon-cart.svg'
-                    alt='Cart'
-                    width={20}
-                    height={20}
-                />
+                <CartIcon />
             </button>
             {cartCount > 0 && (
-                <span className='absolute -top-0 right-1 flex items-center justify-center bg-secondary text-white text-[10px] font-medium rounded-full w-4 h-4 border-2 border-white leading-[1rem]'>
+                <span className='absolute -top-0 right-1 flex items-center justify-center bg-secondary text-white text-[10px] leading-[1rem] font-medium rounded-full w-4 h-4 border-2 border-white'>
                     {cartCount}
                 </span>
             )}

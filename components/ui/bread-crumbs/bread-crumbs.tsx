@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { ChevronIcon } from '../icons/icon-chevron'
 
 export default function Breadcrumbs() {
     const pathname = usePathname()
@@ -17,10 +18,10 @@ export default function Breadcrumbs() {
     }
 
     return (
-        <nav className='text-gray-500 text-[14px]'>
+        <nav className='text-gray-500 text-sm'>
             <ul className='flex items-center gap-2'>
                 <li>
-                    <Link href='/' className='hover:underline text-gray-600'>
+                    <Link href='/' className='text-secondaryGray '>
                         Home
                     </Link>
                 </li>
@@ -32,14 +33,11 @@ export default function Breadcrumbs() {
 
                     return (
                         <li key={segment} className='flex items-center'>
-                            <span className='mx-2 text-gray-400'>{'>'}</span>
+                            <ChevronIcon className='mx-2 -rotate-90' />
                             {isLast ? (
-                                <span className='text-gray-600'>{name}</span>
+                                <span className='text-primary'>{name}</span>
                             ) : (
-                                <Link
-                                    href={href}
-                                    className='hover:underline text-gray-600'
-                                >
+                                <Link href={href} className=' text-primary'>
                                     {name}
                                 </Link>
                             )}

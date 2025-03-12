@@ -1,11 +1,12 @@
 import CustomButton from '@/components/ui/buttons/custom-button'
+import { CheckIcon } from '@/components/ui/icons/icon-check'
 import Image from 'next/image'
 
 export default function FeatureSection() {
     return (
         <section className='w-full bg-[#F2F4F7] pt-12'>
             <div className='w-full'>
-                <h2 className='text-[30px] font-semibold leading-[38px] text-center text-primary mb-8'>
+                <h2 className='text-3xl font-semibold text-center text-primary mb-8'>
                     Moderne Aluminium-Terrassen mit Polycarbonat-Dach
                     <br />
                     Ihr perfekter Outdoor-Bereich!
@@ -13,7 +14,7 @@ export default function FeatureSection() {
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8'>
                     <div className='px-4 lg:px-0 lg:ml-[110px] lg:mr-8'>
-                        <p className='text-gray-700 text-[16px] leading-[24px] mb-8'>
+                        <p className='text-gray-700 text-base mb-8'>
                             Machen Sie Ihre Terrasse wetterfest und genießen Sie
                             maximalen Komfort mit unseren modernen
                             Aluminium-Terrassenüberdachungen. Wählen Sie
@@ -24,34 +25,28 @@ export default function FeatureSection() {
                         <ul className='space-y-5 mb-6'>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <Image
-                                        src='/images/icons/icon-check.svg'
-                                        alt='Check'
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                        <CheckIcon />
+                                    </div>
                                     <strong className='text-primary'>
                                         Langlebig & Wartungsfrei
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-[14px] leading-[20px] ml-[36px]'>
+                                <p className='text-gray-600 text-sm ml-9'>
                                     Rostfreies Aluminium garantiert Stabilität
                                     und eine lange Lebensdauer
                                 </p>
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <Image
-                                        src='/images/icons/icon-check.svg'
-                                        alt='Check'
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                        <CheckIcon />
+                                    </div>
                                     <strong className='text-primary'>
                                         Wetter- & UV-Schutz
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-[14px] leading-[20px] ml-[36px]'>
+                                <p className='text-gray-600 text-sm ml-9'>
                                     Polycarbonat schützt vor Regen und Hitze,
                                     Glas sorgt für eine edle Optik mit maximalem
                                     Lichteinfall
@@ -86,60 +81,51 @@ export default function FeatureSection() {
                         />
                     </div>
 
-                    <div className='px-4 lg:px-0 lg:mr-[110px] lg:ml-8'>
+                    <div className='px-4 lg:px-0 lg:mr-28 lg:ml-8'>
                         <ul className='space-y-5 mb-6'>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <Image
-                                        src='/images/icons/icon-check.svg'
-                                        alt='Check'
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                        <CheckIcon />
+                                    </div>
                                     <strong className='text-primary'>
                                         Modernes & Zeitloses Design
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-[14px] leading-[20px] ml-[36px]'>
+                                <p className='text-gray-600 text-sm ml-9'>
                                     Passt sich harmonisch an jede Architektur an
                                 </p>
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <Image
-                                        src='/images/icons/icon-check.svg'
-                                        alt='Check'
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                        <CheckIcon />
+                                    </div>
                                     <strong className='text-primary'>
                                         Individuelle Anpassung
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-[14px] leading-[20px] ml-[36px]'>
+                                <p className='text-gray-600 text-sm ml-9'>
                                     Verschiedene Größen, Farben und Materialien
                                     nach Ihren Wünschen
                                 </p>
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <Image
-                                        src='/images/icons/icon-check.svg'
-                                        alt='Check'
-                                        width={24}
-                                        height={24}
-                                    />
+                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                        <CheckIcon />
+                                    </div>
                                     <strong className='text-primary'>
                                         Einfache & Schnelle Montage
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-[14px] leading-[20px] ml-[36px]'>
+                                <p className='text-gray-600 text-sm ml-9'>
                                     Für sofortige Nutzung und mehr Wohnqualität
                                 </p>
                             </li>
                         </ul>
 
-                        <p className='text-gray-700 text-[16px] leading-[24px] mb-6'>
+                        <p className='text-gray-700 text-base mb-6'>
                             Erweitern Sie Ihren Wohnraum nach draußen –
                             stilvoll, wettergeschützt und komfortabel!
                         </p>

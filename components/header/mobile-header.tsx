@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Logo from '../logo/logo'
 import MobileMenu from '../nav-menu/mobile-menu'
 import Cart from '../ui/cart-icon/cart-icon'
-import Image from 'next/image'
+import { BurgerIcon } from '../ui/icons/icon-burger'
 
 export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -17,12 +17,7 @@ export default function MobileHeader() {
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label='Toggle menu'
                 >
-                    <Image
-                        src='/images/icons/icon-burger.svg'
-                        alt='Menu'
-                        width={20}
-                        height={20}
-                    />
+                    <BurgerIcon className='w-5 h-5' />
                 </button>
                 <div className='absolute left-1/2 transform -translate-x-1/2'>
                     <Logo />

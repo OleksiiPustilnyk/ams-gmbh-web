@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
 import Image from 'next/image'
+import { CategoryIcon } from '../ui/icons/icon-category'
+import { ChevronIcon } from '../ui/icons/icon-chevron'
+import { ArrowIcon } from '../ui/icons/icon-arrow'
 
 interface Category {
     name: string
@@ -69,20 +72,9 @@ export default function DropdownMenu() {
         <div className='relative w-full border-t border-b border-[#E4E7EC] py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
             <CustomButton
                 onClick={toggleDropdown}
-                leftIcon={
-                    <Image
-                        src='/images/icons/icon-category.svg'
-                        alt='Category'
-                        width={15}
-                        height={15}
-                    />
-                }
+                leftIcon={<CategoryIcon />}
                 rightIcon={
-                    <Image
-                        src='/images/icons/icon-chevron.svg'
-                        alt='Arrow'
-                        width={10}
-                        height={5}
+                    <ChevronIcon
                         className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
                     />
                 }
@@ -108,12 +100,7 @@ export default function DropdownMenu() {
                                             }`}
                                         >
                                             <span className='flex items-center gap-2'>
-                                                <Image
-                                                    src='/images/icons/icon-right-arrow.svg'
-                                                    alt='Arrow'
-                                                    width={12}
-                                                    height={12}
-                                                />
+                                                <ArrowIcon className='w-3 h-3' />
                                                 {category.name}
                                             </span>
                                         </button>
@@ -163,12 +150,7 @@ export default function DropdownMenu() {
                                                     key={sub}
                                                     className='flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer'
                                                 >
-                                                    <Image
-                                                        src='/images/icons/icon-right-arrow.svg'
-                                                        alt='Arrow'
-                                                        width={12}
-                                                        height={12}
-                                                    />
+                                                    <ArrowIcon className='w-3 h-3' />
                                                     {sub}
                                                 </li>
                                             ))}
@@ -191,12 +173,7 @@ export default function DropdownMenu() {
                                         }`}
                                     >
                                         <span className='flex items-center gap-2'>
-                                            <Image
-                                                src='/images/icons/icon-right-arrow.svg'
-                                                alt='Arrow'
-                                                width={12}
-                                                height={12}
-                                            />
+                                            <ArrowIcon className='w-3 h-3' />
                                             {category.name}
                                         </span>
                                     </button>
@@ -209,12 +186,7 @@ export default function DropdownMenu() {
                                                             key={sub}
                                                             className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
                                                         >
-                                                            <Image
-                                                                src='/images/icons/icon-right-arrow.svg'
-                                                                alt='Arrow'
-                                                                width={12}
-                                                                height={12}
-                                                            />
+                                                            <ArrowIcon className='w-3 h-3' />
                                                             {sub}
                                                         </li>
                                                     ),
