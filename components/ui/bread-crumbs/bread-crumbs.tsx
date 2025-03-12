@@ -3,8 +3,13 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronIcon } from '../icons/icon-chevron'
+// import { BlogArticle } from '@/types/blog'
 
-export default function Breadcrumbs() {
+interface BreadcrumbsProps {
+    blogTitle?: string
+}
+
+export default function Breadcrumbs({ blogTitle }: BreadcrumbsProps) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
 
@@ -21,15 +26,18 @@ export default function Breadcrumbs() {
         <nav className='text-gray-500 text-sm'>
             <ul className='flex items-center gap-2'>
                 <li>
-                    <Link href='/' className='text-customGray-500 '>
+                    <Link href='/' className='text-customGray-500'>
                         Home
                     </Link>
                 </li>
                 {pathSegments.map((segment, index) => {
                     const isLast = index === pathSegments.length - 1
+                    const isBlogPost = pathSegments[0] === 'blog' && isLast
                     const href =
                         '/' + pathSegments.slice(0, index + 1).join('/')
-                    const name = customNames[segment] || segment
+                    const name = isBlogPost
+                        ? blogTitle || 'Blog Post'
+                        : customNames[segment] || segment
 
                     return (
                         <li key={segment} className='flex items-center'>

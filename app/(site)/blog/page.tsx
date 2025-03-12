@@ -1,5 +1,5 @@
-import BllogView from '@/view/blog'
+import BlogView from '@/view/blog'
 
 export default async function BlogPage() {
-    return <BllogView />
+    return <BlogView />
 }

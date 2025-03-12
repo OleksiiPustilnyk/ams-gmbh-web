@@ -5,6 +5,7 @@ import BlogCard from '@/components/blog-card/blog-card'
 import { articles } from '@/constants/blog-articles'
 import Sidebar from '@/components/sidebar/sidebar'
 import Pagination from '@/components/ui/pagination/pagination'
+import { validateContent } from '@/utils/validate-content'
 
 const POSTS_PER_PAGE = 6
 
@@ -29,7 +30,13 @@ export default function BlogList() {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                     {paginatedArticles.length > 0 ? (
                         paginatedArticles.map((article) => (
-                            <BlogCard key={article.id} article={article} />
+                            <BlogCard
+                                key={article.id}
+                                article={{
+                                    ...article,
+                                    content: validateContent(article.content),
+                                }}
+                            />
                         ))
                     ) : (
                         <p className='text-gray-500 text-sm'>
