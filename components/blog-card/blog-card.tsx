@@ -14,7 +14,9 @@ export default function BlogCard({
 }: BlogCardProps) {
     return (
         <div className='overflow-hidden'>
-            <h3 className='text-lg font-semibold text-primary mb-2'>{title}</h3>
+            <h3 className='text-lg font-semibold text-customGray-700 mb-2'>
+                {title}
+            </h3>
             <div className='text-gray-500 text-sm flex gap-3 mb-2 items-center'>
                 <div className='flex items-center gap-2'>
                     <ClockIcon />
@@ -33,7 +35,7 @@ export default function BlogCard({
                 height={250}
                 className='w-full h-auto'
             />
-            <p className='text-primary text-sm mt-2'>{description}</p>
+            <p className='text-customGray-700 text-sm mt-2'>{description}</p>
             {link && (
                 <CustomLink href={link} className='mt-3 inline-block'>
                     Auf Anfrage

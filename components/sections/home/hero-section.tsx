@@ -11,22 +11,22 @@ export default function HeroSection() {
                 objectPosition: 'center',
             }}
         >
-            <div className='absolute inset-0 bg-[#FFAA0C] bg-opacity-50 z-0'></div>
+            <div className='absolute inset-0 bg-gold bg-opacity-50 z-0'></div>
 
             {Array.from({ length: 12 }).map((_, index) => (
                 <div
                     key={index}
-                    className={`border border-[#F2F4F7] border-opacity-30 ${
+                    className={`border border-customGray-100 border-opacity-30 ${
                         index === 3
                             ? 'bg-white shadow-lg p-8 flex flex-col justify-center col-span-2 row-span-1 md:col-span-2 md:row-span-1 md:justify-start lg:col-span-2 lg:row-span-1 z-10'
                             : ''
                     }`}
                 >
                     {index === 3 && (
-                        <div className='lg:pl-[110px] md:pl-10 sm:pl-4'>
+                        <div className='lg:pl-28 md:pl-10 sm:pl-4'>
                             <h1
-                                className='text-[24px] leading-[36px] font-semibold tracking-normal text-primary mb-6 
-                            sm:text-[48px] sm:leading-[62.4px] sm:mb-8'
+                                className='text-2xl font-semibold tracking-normal text-customGray-700 mb-6 
+                            sm:text-5xl sm:mb-8'
                             >
                                 Konstruieren Sie Terrassendach
                             </h1>

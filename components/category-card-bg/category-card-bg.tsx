@@ -13,12 +13,12 @@ export default function CategoryCardWithBg({
     link,
 }: CategoryCardProps) {
     return (
-        <div className='bg-lightGray '>
+        <div className='bg-customGray-100 '>
             <div className='flex justify-between items-start mb-16 pt-6 px-6'>
-                <h3 className='text-[20px] font-semibold text-primary'>
+                <h3 className='text-xl font-semibold text-customGray-700'>
                     {title}
                 </h3>
-                <CustomLink href={link} textSize='text-[14px]'>
+                <CustomLink href={link} textSize='text-sm'>
                     More
                 </CustomLink>
             </div>

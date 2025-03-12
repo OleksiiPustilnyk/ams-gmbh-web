@@ -26,7 +26,7 @@ export default function ProductCardWithButton({
     return (
         <section className='container mx-auto py-12 px-4 md:px-4 lg:px-0'>
             <div className='flex justify-between items-center mb-6'>
-                <h2 className='text-[30px] font-semibold leading-[32px] text-primary'>
+                <h2 className='text-3xl font-semibold text-customGray-700'>
                     {sectionTitle}
                 </h2>
                 <CustomLink href={viewAllLink}>Alle ansehen</CustomLink>
@@ -49,16 +49,16 @@ export default function ProductCardWithButton({
                         </div>
 
                         <div className='w-[65%]'>
-                            <h3 className='text-[16px] font-semibold leading-[20.8px] text-primary'>
+                            <h3 className='text-base font-semibold text-customGray-700'>
                                 {product.title}
                             </h3>
 
                             <div className='flex justify-between items-center mt-10'>
                                 <div className='flex flex-col'>
-                                    <span className='text-gray-500 text-[14px]'>
+                                    <span className='text-gray-500 text-sm'>
                                         {product.setInfo}
                                     </span>
-                                    <span className='text-[18px] font-semibold text-gray-900'>
+                                    <span className='text-lg font-semibold text-gray-900'>
                                         {product.price}
                                     </span>
                                 </div>

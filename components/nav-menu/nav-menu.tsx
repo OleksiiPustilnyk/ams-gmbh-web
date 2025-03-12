@@ -6,7 +6,7 @@ import NavLink from './nav-link'
 export default function NavMenu() {
     return (
         <nav>
-            <ul className='flex gap-8 text-primary'>
+            <ul className='flex gap-8 text-customGray-700'>
                 {navLinks.map((link) => (
                     <NavLink
                         key={link.name}

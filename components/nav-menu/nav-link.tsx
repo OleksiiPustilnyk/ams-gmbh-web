@@ -20,8 +20,8 @@ export default function NavLink({ name, href }: NavLinkProps) {
                     after:transition-all after:duration-300
                     ${
                         isActive
-                            ? 'after:w-full after:bg-defaultYellow font-bold'
-                            : 'after:w-0 hover:after:w-full hover:after:bg-primary'
+                            ? 'after:w-full after:bg-customYellow-500 font-bold'
+                            : 'after:w-0 hover:after:w-full hover:after:bg-customGray-700'
                     }`}
             >
                 {name}

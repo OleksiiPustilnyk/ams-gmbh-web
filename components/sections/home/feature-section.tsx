@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 export default function FeatureSection() {
     return (
-        <section className='w-full bg-[#F2F4F7] pt-12'>
+        <section className='w-full bg-customGray-100 pt-12'>
             <div className='w-full'>
-                <h2 className='text-3xl font-semibold text-center text-primary mb-8'>
+                <h2 className='text-3xl font-semibold text-center text-customGray-700 mb-8'>
                     Moderne Aluminium-Terrassen mit Polycarbonat-Dach
                     <br />
                     Ihr perfekter Outdoor-Bereich!
@@ -25,10 +25,10 @@ export default function FeatureSection() {
                         <ul className='space-y-5 mb-6'>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                    <div className='w-6 h-6 bg-customYellow-500 rounded-full flex items-center justify-center'>
                                         <CheckIcon />
                                     </div>
-                                    <strong className='text-primary'>
+                                    <strong className='text-customGray-700'>
                                         Langlebig & Wartungsfrei
                                     </strong>
                                 </div>
@@ -39,10 +39,10 @@ export default function FeatureSection() {
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                    <div className='w-6 h-6 bg-customYellow-500 rounded-full flex items-center justify-center'>
                                         <CheckIcon />
                                     </div>
-                                    <strong className='text-primary'>
+                                    <strong className='text-customGray-700'>
                                         Wetter- & UV-Schutz
                                     </strong>
                                 </div>
@@ -85,10 +85,10 @@ export default function FeatureSection() {
                         <ul className='space-y-5 mb-6'>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                    <div className='w-6 h-6 bg-customYellow-500 rounded-full flex items-center justify-center'>
                                         <CheckIcon />
                                     </div>
-                                    <strong className='text-primary'>
+                                    <strong className='text-customGray-700'>
                                         Modernes & Zeitloses Design
                                     </strong>
                                 </div>
@@ -98,10 +98,10 @@ export default function FeatureSection() {
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                    <div className='w-6 h-6 bg-customYellow-500 rounded-full flex items-center justify-center'>
                                         <CheckIcon />
                                     </div>
-                                    <strong className='text-primary'>
+                                    <strong className='text-customGray-700'>
                                         Individuelle Anpassung
                                     </strong>
                                 </div>
@@ -112,10 +112,10 @@ export default function FeatureSection() {
                             </li>
                             <li>
                                 <div className='flex items-start gap-3 mb-3'>
-                                    <div className='w-6 h-6 bg-defaultYellow rounded-full flex items-center justify-center'>
+                                    <div className='w-6 h-6 bg-customYellow-500 rounded-full flex items-center justify-center'>
                                         <CheckIcon />
                                     </div>
-                                    <strong className='text-primary'>
+                                    <strong className='text-customGray-700'>
                                         Einfache & Schnelle Montage
                                     </strong>
                                 </div>

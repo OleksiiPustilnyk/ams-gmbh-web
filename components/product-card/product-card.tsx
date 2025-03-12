@@ -28,30 +28,32 @@ export default function ProductCard({
                     className='object-cover w-full h-auto rounded-md'
                 />
             </div>
-            <h3 className='mt-4 text-[16px] font-semibold leading-[20px] text-primary text-start'>
+            <h3 className='mt-4 text-base font-semibold text-customGray-700 text-start'>
                 {title}
             </h3>
             <div className='flex flex-col flex-grow justify-end w-full'>
                 <div className='flex flex-col sm:flex-row sm:justify-between items-start sm:items-center w-full'>
                     <div className='flex flex-col items-start'>
                         {oldPrice ? (
-                            <span className='text-primary line-through text-[12px] font-normal leading-[12px]'>
+                            <span className='text-customGray-700 line-through text-xs leading-3 font-normal'>
                                 {oldPrice}
                             </span>
                         ) : (
-                            <span className='invisible text-[12px] leading-[12px]'>
+                            <span className='invisible text-xs leading-3'>
                                 ----
                             </span>
                         )}
                         <div className='flex items-center'>
                             <span
-                                className={`text-[20px] font-semibold leading-[30px] ${
-                                    oldPrice ? 'text-[#D92D20]' : 'text-primary'
+                                className={`text-xl font-semibold${
+                                    oldPrice
+                                        ? 'text-customRed-600'
+                                        : 'text-customGray-700'
                                 }`}
                             >
                                 {price}
                             </span>
-                            <span className='text-primary text-[12px] font-normal leading-[18px] ml-2 self-center'>
+                            <span className='text-customGray-700 text-xsfont-normal ml-2 self-center'>
                                 per meter
                             </span>
                         </div>

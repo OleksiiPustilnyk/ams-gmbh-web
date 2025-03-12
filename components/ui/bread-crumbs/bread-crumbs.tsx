@@ -21,7 +21,7 @@ export default function Breadcrumbs() {
         <nav className='text-gray-500 text-sm'>
             <ul className='flex items-center gap-2'>
                 <li>
-                    <Link href='/' className='text-secondaryGray '>
+                    <Link href='/' className='text-customGray-500 '>
                         Home
                     </Link>
                 </li>
@@ -35,9 +35,14 @@ export default function Breadcrumbs() {
                         <li key={segment} className='flex items-center'>
                             <ChevronIcon className='mx-2 -rotate-90' />
                             {isLast ? (
-                                <span className='text-primary'>{name}</span>
+                                <span className='text-customGray-700'>
+                                    {name}
+                                </span>
                             ) : (
-                                <Link href={href} className=' text-primary'>
+                                <Link
+                                    href={href}
+                                    className=' text-customGray-700'
+                                >
                                     {name}
                                 </Link>
                             )}

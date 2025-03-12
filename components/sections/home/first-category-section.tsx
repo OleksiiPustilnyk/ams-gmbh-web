@@ -36,9 +36,9 @@ export default function FirstCategorySection() {
                     <CategoryCard key={index} {...category} />
                 ))}
 
-                <div className='bg-lightGray border p-6 flex items-center justify-between'>
+                <div className='bg-customGray-100 border p-6 flex items-center justify-between'>
                     <div className='w-2/3 pr-6'>
-                        <p className='text-gray-500 text-[14px] leading-[21px]'>
+                        <p className='text-gray-500 text-sm'>
                             Zertifizierungen und Qualität: Nachweise unseres
                             Engagements für Exzellenz im deutschen
                             Aluminiumhandel

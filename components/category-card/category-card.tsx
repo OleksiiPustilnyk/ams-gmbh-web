@@ -21,13 +21,13 @@ export default function CategoryCard({
     return (
         <div className='relative bg-white border p-8 py-20 flex overflow-hidden min-h-[230px]'>
             <div className='flex-1 z-10 flex flex-col justify-center'>
-                <span className='text-primary text-[16px] font-normal leading-[24px]'>
+                <span className='text-customGray-700 text-base font-normal'>
                     {category}
                 </span>
-                <h3 className='text-[30px] font-semibold leading-[45px] text-primary mt-1'>
+                <h3 className='text-3xl leading-10 font-semibold text-customGray-700 mt-1'>
                     {title}
                 </h3>
-                <p className='text-secondaryGray text-[14px] font-normal leading-[21px]'>
+                <p className='text-customGray-500 text-sm font-normal'>
                     {subtitle}
                 </p>
 

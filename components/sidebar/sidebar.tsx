@@ -34,7 +34,7 @@ interface SidebarProps {
 export default function Sidebar({ selectedTag, setSelectedTag }: SidebarProps) {
     return (
         <aside className='p-5'>
-            <h3 className='text-base font-semibold text-primary mb-6'>
+            <h3 className='text-base font-semibold text-customGray-700 mb-6'>
                 Schlagwörter
             </h3>
 
@@ -45,7 +45,7 @@ export default function Sidebar({ selectedTag, setSelectedTag }: SidebarProps) {
                         icon={<CloseIcon />}
                         iconPosition='right'
                         onClick={() => setSelectedTag(null)}
-                        borderColor='border-defaultYellow bg-[#FFF8E1]'
+                        borderColor='border-customYellow-500 bg-[#FFF8E1]'
                         textSize='text-sm'
                     />
                 </div>
@@ -66,16 +66,18 @@ export default function Sidebar({ selectedTag, setSelectedTag }: SidebarProps) {
                 ))}
             </div>
 
-            <hr className='border-borderColor my-4' />
+            <hr className='border-customGray-300 my-4' />
 
             {/* Архив */}
-            <h3 className='text-lg font-semibold text-primary mb-3'>Archiv</h3>
+            <h3 className='text-lg font-semibold text-customGray-700 mb-3'>
+                Archiv
+            </h3>
             <ul className='space-y-2 mb-5'>
                 {archive.map((item) => (
                     <li key={item}>
                         <Link
                             href='#'
-                            className='text-gray-700 hover:text-primary transition'
+                            className='text-gray-700 hover:text-customGray-700 transition'
                         >
                             {item}
                         </Link>
@@ -83,10 +85,10 @@ export default function Sidebar({ selectedTag, setSelectedTag }: SidebarProps) {
                 ))}
             </ul>
 
-            <hr className='border-borderColor my-4' />
+            <hr className='border-customGray-300 my-4' />
 
             {/* Популярные статьи */}
-            <h3 className='text-lg font-semibold text-primary mb-3'>
+            <h3 className='text-lg font-semibold text-customGray-700 mb-3'>
                 Beliebte Beiträge
             </h3>
             <ul className='space-y-4'>
@@ -102,7 +104,7 @@ export default function Sidebar({ selectedTag, setSelectedTag }: SidebarProps) {
                         <div>
                             <Link
                                 href='#'
-                                className='text-primary hover:text-defaultYellow transition font-medium'
+                                className='text-customGray-700 hover:text-customYellow-500 transition font-medium'
                             >
                                 {post.title}
                             </Link>

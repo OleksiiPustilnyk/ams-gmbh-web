@@ -69,7 +69,7 @@ export default function DropdownMenu() {
     }
 
     return (
-        <div className='relative w-full border-t border-b border-[#E4E7EC] py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
+        <div className='relative w-full border-t border-b border-customGray-200 py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
             <CustomButton
                 onClick={toggleDropdown}
                 leftIcon={<CategoryIcon />}
@@ -93,9 +93,9 @@ export default function DropdownMenu() {
                                             onClick={() =>
                                                 handleCategoryClick(category)
                                             }
-                                            className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-lightGray ${
+                                            className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-customGray-100 ${
                                                 openCategory === category.name
-                                                    ? 'bg-lightGray'
+                                                    ? 'bg-customGray-100'
                                                     : ''
                                             }`}
                                         >
@@ -108,7 +108,7 @@ export default function DropdownMenu() {
                                 ))}
                             </ul>
                         </div>
-                        <div className='w-1/2 p-4 flex flex-col items-center bg-secondaryWhite'>
+                        <div className='w-1/2 p-4 flex flex-col items-center bg-customGray-50'>
                             {hoveredCategory.imageUrl && (
                                 <div
                                     className={`relative w-full flex justify-center transition-all duration-300 ${
@@ -166,9 +166,9 @@ export default function DropdownMenu() {
                                         onClick={() =>
                                             handleCategoryClick(category)
                                         }
-                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-lightGray ${
+                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100 ${
                                             openCategory === category.name
-                                                ? 'bg-lightGray'
+                                                ? 'bg-customGray-100'
                                                 : ''
                                         }`}
                                     >

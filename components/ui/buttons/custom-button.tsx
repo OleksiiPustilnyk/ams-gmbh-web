@@ -19,7 +19,7 @@ export default function CustomButton({
     children,
     onClick,
     className = '',
-    bgColor = 'bg-secondary',
+    bgColor = 'bg-customGray-800',
     textColor = 'text-white',
     leftIcon,
     rightIcon,
@@ -31,8 +31,8 @@ export default function CustomButton({
     const buttonClasses = `group flex items-center gap-2 px-6 py-2 rounded-md transition duration-200 font-medium 
         ${
             disabled
-                ? 'bg-[#E4E7EC] text-[#667085] cursor-not-allowed'
-                : `${bgColor} ${textColor} hover:bg-[#EE9907] active:bg-[#BD7904]`
+                ? 'bg-customGray-200 text-customGray-500 cursor-not-allowed'
+                : `${bgColor} ${textColor} hover:bg-customYellow-700 active:bg-customYellow-900`
         }
         ${centerText ? 'justify-center' : ''} 
         ${className}`
