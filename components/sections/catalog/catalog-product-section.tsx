@@ -26,7 +26,7 @@ export default function CatalogProductSection() {
                     alt='Produktkatalog'
                     width={375}
                     height={350}
-                    className='w-full h-auto'
+                    className='w-auto h-auto'
                 />
             </div>
         </section>

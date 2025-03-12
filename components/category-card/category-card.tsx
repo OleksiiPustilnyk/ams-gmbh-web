@@ -39,10 +39,10 @@ export default function CategoryCard({
             <div className='absolute right-0 bottom-0 w-[70%] h-[100%] flex items-end'>
                 <Image
                     src={imageUrl}
-                    alt={title}
-                    layout='fill'
-                    objectFit='contain'
-                    objectPosition='bottom right'
+                    alt={title || 'Image'}
+                    width={300}
+                    height={200}
+                    className='object-contain object-[bottom_right] w-full h-full'
                 />
             </div>
         </div>

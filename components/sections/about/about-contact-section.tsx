@@ -8,9 +8,8 @@ export default function AboutContactSection() {
                 <Image
                     src='/images/about-contact-section.png'
                     alt='Angebot'
-                    layout='fill'
-                    objectFit='cover'
-                    className='w-full h-full'
+                    fill
+                    className='object-cover w-full h-full'
                 />
                 <div className='absolute inset-0 bg-gradient-to-r from-customYellow-500 to-transparent'></div>
             </div>

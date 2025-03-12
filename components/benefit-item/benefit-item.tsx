@@ -14,7 +14,13 @@ export default function BenefitItem({
     return (
         <div className='flex items-center gap-4'>
             <div className='w-16 h-16 flex items-center justify-center bg-yellow-400 rounded-full shrink-0'>
-                <Image src={icon} alt={title} width={32} height={32} />
+                <Image
+                    src={icon}
+                    alt={title}
+                    width={32}
+                    height={32}
+                    className='w-auto h-auto'
+                />
             </div>
 
             <div className='flex flex-col'>
