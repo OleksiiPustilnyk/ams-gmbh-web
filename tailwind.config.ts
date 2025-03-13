@@ -18,6 +18,8 @@ export default {
                 darkGray: '#222222',
                 gold: '#FFAA0C',
                 deepBlue: '#175CD3',
+                iceBlue: '#EFF8FF',
+                skyBlue: '#B2DDFF',
 
                 customGray: {
                     25: '#FCFCFD',

@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
+import ProductDescription from './product-card-description'
 
 interface ProductCardProps {
     title: string
@@ -7,7 +11,7 @@ interface ProductCardProps {
     altText: string
     price: string
     oldPrice?: string
-    link: string
+    description?: string
 }
 
 export default function ProductCard({
@@ -16,10 +20,17 @@ export default function ProductCard({
     altText,
     price,
     oldPrice,
+    description,
 }: ProductCardProps) {
+    const [isHovered, setIsHovered] = useState(false)
+
     return (
-        <div className='bg-white p-4 flex flex-col items-start h-full'>
-            <div className='w-full'>
+        <div
+            className='relative flex flex-col items-start bg-white p-4 transition-all'
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className='w-full cursor-pointer'>
                 <Image
                     src={imageUrl}
                     alt={altText}
@@ -28,9 +39,11 @@ export default function ProductCard({
                     className='object-cover w-full h-auto rounded-md'
                 />
             </div>
+
             <h3 className='mt-4 text-base font-semibold text-customGray-700 text-start'>
                 {title}
             </h3>
+
             <div className='flex flex-col flex-grow justify-end w-full'>
                 <div className='flex flex-col sm:flex-row sm:justify-between items-start sm:items-center w-full'>
                     <div className='flex flex-col items-start'>
@@ -45,7 +58,7 @@ export default function ProductCard({
                         )}
                         <div className='flex items-center'>
                             <span
-                                className={`text-xl font-semibold${
+                                className={`text-xl font-semibold ${
                                     oldPrice
                                         ? 'text-customRed-600'
                                         : 'text-customGray-700'
@@ -53,7 +66,7 @@ export default function ProductCard({
                             >
                                 {price}
                             </span>
-                            <span className='text-customGray-700 text-xsfont-normal ml-2 self-center'>
+                            <span className='text-customGray-700 text-xs font-normal ml-2 self-center'>
                                 per meter
                             </span>
                         </div>
@@ -63,6 +76,12 @@ export default function ProductCard({
                     </CustomButton>
                 </div>
             </div>
+
+            <ProductDescription
+                isHovered={isHovered}
+                oldPrice={oldPrice}
+                description={description}
+            />
         </div>
     )
 }
