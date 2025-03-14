@@ -3,7 +3,6 @@
 import { BlogArticle } from '@/interfaces/blog-article.interface'
 import Breadcrumbs from '@/components/ui/bread-crumbs/bread-crumbs'
 import Sidebar from '@/components/sidebar/sidebar'
-import { useState } from 'react'
 import PostSection from '@/components/sections/blog/blog-post/post-section'
 
 interface BlogPostViewProps {
@@ -11,8 +10,6 @@ interface BlogPostViewProps {
 }
 
 export default function BlogPostView({ post }: BlogPostViewProps) {
-    const [selectedTag, setSelectedTag] = useState<string | null>(null)
-
     return (
         <div className='w-full mx-auto pt-6 pb-10'>
             <div className='container mx-auto px-4 md:px-6 lg:px-0'>
@@ -25,10 +22,7 @@ export default function BlogPostView({ post }: BlogPostViewProps) {
                 </div>
 
                 <div className='lg:col-span-3 md:col-span-4'>
-                    <Sidebar
-                        selectedTag={selectedTag}
-                        setSelectedTag={setSelectedTag}
-                    />
+                    <Sidebar showTags={false} showArchive={false} />
                 </div>
             </div>
         </div>
