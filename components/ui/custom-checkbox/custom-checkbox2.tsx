@@ -11,7 +11,7 @@ interface CustomCheckboxProps {
     disabled?: boolean
 }
 
-export default function CustomCheckbox({
+export default function CustomCheckbox2({
     label,
     error,
     register,
@@ -37,13 +37,10 @@ export default function CustomCheckbox({
             >
                 <div
                     className={`w-5 h-5 flex items-center justify-center border rounded-md transition-all
-                        peer-checked:border-customYellow-700 peer-checked:bg-customYellow-50
-                        border-gray-400 bg-white hover:bg-customYellow-50 hover:border-customYellow-400`}
+                    border-gray-400 bg-white hover:bg-customYellow-50 hover:border-customYellow-400
+                    peer-checked:border-customYellow-700 peer-checked:bg-customYellow-700`}
                 >
-                    {/** "-" при выборе */}
-                    <span className='text-customYellow-700 hidden peer-checked:block'>
-                        <CheckIcon className='w-3 h-2' />
-                    </span>
+                    <CheckIcon className='w-3 h-2 text-white hidden peer-checked:inline-block' />
                 </div>
                 {label}
             </label>
