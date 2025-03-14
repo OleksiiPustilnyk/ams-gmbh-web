@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
-import ProductDescription from './product-card-description'
+import ProductCardDescription from './product-card-description'
 
 interface ProductCardProps {
     title: string
@@ -44,7 +44,7 @@ export default function ProductCard({
                 {title}
             </h3>
 
-            <div className='flex flex-col flex-grow justify-end w-full'>
+            <div className='flex flex-col flex-grow lg:justify-end my-4 lg:my-0 h-auto w-full max-h-16 md:max-h-12 sm:min-h-0'>
                 <div className='flex flex-col sm:flex-row sm:justify-between items-start sm:items-center w-full'>
                     <div className='flex flex-col items-start'>
                         {oldPrice ? (
@@ -77,7 +77,7 @@ export default function ProductCard({
                 </div>
             </div>
 
-            <ProductDescription
+            <ProductCardDescription
                 isHovered={isHovered}
                 oldPrice={oldPrice}
                 description={description}
