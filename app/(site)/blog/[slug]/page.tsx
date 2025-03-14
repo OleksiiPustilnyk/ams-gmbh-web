@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation'
 import { notFound } from 'next/navigation'
 import { articles } from '@/constants/blog-articles'
-import BlogPostView from '@/view/blog/postView'
+import BlogPostView from '@/view/blog/post-view'
 import { validateContent } from '@/utils/validate-content'
 
 export default function BlogPostPage() {

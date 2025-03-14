@@ -3,13 +3,16 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronIcon } from '../icons/icon-chevron'
-// import { BlogArticle } from '@/types/blog'
 
 interface BreadcrumbsProps {
     blogTitle?: string
+    productTitle?: string
 }
 
-export default function Breadcrumbs({ blogTitle }: BreadcrumbsProps) {
+export default function Breadcrumbs({
+    blogTitle,
+    productTitle,
+}: BreadcrumbsProps) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
 
@@ -20,6 +23,8 @@ export default function Breadcrumbs({ blogTitle }: BreadcrumbsProps) {
         about: 'Über uns',
         blog: 'Blog',
         contact: 'Kontakt',
+        categories: 'Kategorien',
+        products: 'Produkte',
     }
 
     return (
@@ -33,11 +38,18 @@ export default function Breadcrumbs({ blogTitle }: BreadcrumbsProps) {
                 {pathSegments.map((segment, index) => {
                     const isLast = index === pathSegments.length - 1
                     const isBlogPost = pathSegments[0] === 'blog' && isLast
+                    const isProductPage =
+                        pathSegments[0] === 'products' && isLast
                     const href =
                         '/' + pathSegments.slice(0, index + 1).join('/')
-                    const name = isBlogPost
-                        ? blogTitle || 'Blog Post'
-                        : customNames[segment] || segment
+
+                    let name = customNames[segment] || segment
+
+                    if (isBlogPost) {
+                        name = blogTitle || 'Blog Post'
+                    } else if (isProductPage) {
+                        name = productTitle || 'Produkt'
+                    }
 
                     return (
                         <li key={segment} className='flex items-center'>
