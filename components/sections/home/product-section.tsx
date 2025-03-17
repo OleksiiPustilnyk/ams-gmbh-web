@@ -1,17 +1,6 @@
 import ProductGrid from '@/components/product-card/product-grid'
 import CustomLink from '@/components/ui/link/custom-link'
-
-interface ProductSectionProps {
-    title: string
-    products: {
-        title: string
-        imageUrl: string
-        altText: string
-        price: string
-        oldPrice?: string
-        link: string
-    }[]
-}
+import { ProductSectionProps } from '@/interfaces/product.interface'
 
 export default function ProductSection({
     title,

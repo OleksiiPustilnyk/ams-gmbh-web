@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronIcon } from '../icons/icon-chevron'
+import { breadcrumbNames } from '@/constants/breadcrumb-names'
 
 interface BreadcrumbsProps {
     blogTitle?: string
@@ -15,17 +16,6 @@ export default function Breadcrumbs({
 }: BreadcrumbsProps) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
-
-    const customNames: Record<string, string> = {
-        home: 'Home',
-        profile: 'Price inquiry for commercial customers',
-        catalog: 'Produktkatalog für Privatkunden',
-        about: 'Über uns',
-        blog: 'Blog',
-        contact: 'Kontakt',
-        categories: 'Kategorien',
-        products: 'Produkte',
-    }
 
     return (
         <nav className='text-gray-500 text-sm'>
@@ -43,7 +33,7 @@ export default function Breadcrumbs({
                     const href =
                         '/' + pathSegments.slice(0, index + 1).join('/')
 
-                    let name = customNames[segment] || segment
+                    let name = breadcrumbNames[segment] || segment
 
                     if (isBlogPost) {
                         name = blogTitle || 'Blog Post'

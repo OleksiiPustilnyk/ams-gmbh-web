@@ -4,15 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
 import ProductCardDescription from './product-card-description'
-
-interface ProductCardProps {
-    title: string
-    imageUrl: string
-    altText: string
-    price: string
-    oldPrice?: string
-    description?: string
-}
+import { Product } from '@/interfaces/product.interface'
 
 export default function ProductCard({
     title,
@@ -21,7 +13,7 @@ export default function ProductCard({
     price,
     oldPrice,
     description,
-}: ProductCardProps) {
+}: Product) {
     const [isHovered, setIsHovered] = useState(false)
 
     return (

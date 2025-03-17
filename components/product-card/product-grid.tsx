@@ -1,14 +1,8 @@
+import { Product } from '@/interfaces/product.interface'
 import ProductCard from './product-card'
 
 interface ProductGridProps {
-    products: {
-        title: string
-        imageUrl: string
-        altText: string
-        price: string
-        oldPrice?: string
-        link: string
-    }[]
+    products: Product[]
 }
 
 export default function ProductGrid({ products }: ProductGridProps) {

@@ -1,11 +1,6 @@
 import Image from 'next/image'
 import CustomLink from '@/components/ui/link/custom-link'
-
-interface CategoryCardProps {
-    title: string
-    imageUrl: string
-    link: string
-}
+import { CategoryCardProps } from '@/interfaces/category.interface'
 
 export default function CategoryCardWithBg({
     title,

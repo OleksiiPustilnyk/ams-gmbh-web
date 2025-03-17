@@ -1,38 +1,12 @@
 import CategoryCard from '@/components/category-card/category-card'
+import { firstCategoryList } from '@/constants/categories-data'
 import Image from 'next/image'
-
-const categories = [
-    {
-        category: 'Aluminum',
-        title: 'Profiles',
-        subtitle: 'Terrassenuberdachungen',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/terrassen',
-        buttonText: 'Mehr',
-    },
-    {
-        category: 'Aluminum',
-        title: 'Carport',
-        subtitle: 'Carports',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/carport-modern',
-        buttonText: 'Mehr',
-    },
-    {
-        category: 'Aluminum',
-        title: 'Zubehor',
-        subtitle: 'Zubehor',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/zubehor',
-        buttonText: 'Mehr',
-    },
-]
 
 export default function FirstCategorySection() {
     return (
         <section className='container mx-auto py-12 px-4 md:px-4 lg:px-0'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 '>
-                {categories.map((category, index) => (
+                {firstCategoryList.map((category, index) => (
                     <CategoryCard key={index} {...category} />
                 ))}
 
