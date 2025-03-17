@@ -6,16 +6,28 @@ import { articles } from '@/constants/blog-articles'
 import Sidebar from '@/components/sidebar/sidebar'
 import Pagination from '@/components/ui/pagination/pagination'
 import { validateContent } from '@/utils/validate-content'
+import { formatDateToArchive } from '@/helpers/format-date-to-archive'
 
 const POSTS_PER_PAGE = 6
 
 export default function BlogList() {
-    const [selectedTag, setSelectedTag] = useState<string | null>(null)
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(
+        null,
+    )
+    const [selectedDate, setSelectedDate] = useState<string | null>(null)
     const [currentPage, setCurrentPage] = useState(1)
 
-    const filteredArticles = selectedTag
-        ? articles.filter((article) => article.category === selectedTag)
-        : articles
+    const filteredArticles = articles.filter((article) => {
+        const matchesCategory = selectedCategory
+            ? article.category === selectedCategory
+            : true
+
+        const matchesDate = selectedDate
+            ? formatDateToArchive(article.date) === selectedDate
+            : true
+
+        return matchesCategory && matchesDate
+    })
 
     const totalPages = Math.ceil(filteredArticles.length / POSTS_PER_PAGE)
 
@@ -54,8 +66,11 @@ export default function BlogList() {
             </div>
             <div className='lg:col-span-3 md:col-span-4'>
                 <Sidebar
-                    selectedTag={selectedTag}
-                    setSelectedTag={setSelectedTag}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                    selectedDate={selectedDate}
+                    setSelectedDate={setSelectedDate}
+                    articles={articles}
                 />
             </div>
         </div>

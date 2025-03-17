@@ -1,74 +1,88 @@
 'use client'
 
+import { useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import CustomSecondaryButton from '../ui/buttons/custom-secondary-button'
 import { MarkerIcon } from '../ui/icons/icon-marker'
 import { CloseIcon } from '../ui/icons/icon-close'
+import {
+    extractArchiveDates,
+    extractCategories,
+} from '@/helpers/sidebar-helpers'
 
 interface SidebarProps {
-    selectedTag?: string | null
-    setSelectedTag?: (tag: string | null) => void
-    showTags?: boolean
+    selectedCategory?: string | null
+    setSelectedCategory?: (category: string | null) => void
+    selectedDate?: string | null
+    setSelectedDate?: (date: string | null) => void
+    showCategories?: boolean
     showArchive?: boolean
+    articles?: { date: string; category: string }[]
 }
 
-const tags = ['Carports', 'Aluminiumprofile kaufen']
-const archive = ['Juni 2022', 'März 2022']
-const popularPosts = [
-    {
-        title: 'Alu Carport',
-        image: '/images/img-blog-worker.png',
-        category: 'Carports',
-    },
-    {
-        title: 'Alu Carport',
-        image: '/images/img-blog-worker.png',
-        category: 'Carports',
-    },
-    {
-        title: 'Alu Carport',
-        image: '/images/img-blog-worker.png',
-        category: 'Aluminiumprofile kaufen',
-    },
-]
-
 export default function Sidebar({
-    selectedTag,
-    setSelectedTag,
-    showTags = true,
+    selectedCategory,
+    setSelectedCategory,
+    selectedDate,
+    setSelectedDate,
+    showCategories = true,
     showArchive = true,
+    articles = [],
 }: SidebarProps) {
+    const categories = useMemo(() => extractCategories(articles), [articles])
+    const archive = useMemo(() => extractArchiveDates(articles), [articles])
+
+    const popularPosts = [
+        {
+            title: 'Alu Carport',
+            image: '/images/img-blog-worker.png',
+            category: 'Carports',
+        },
+        {
+            title: 'Aluminium Profile',
+            image: '/images/img-blog-worker.png',
+            category: 'Aluminiumprofile kaufen',
+        },
+        {
+            title: 'Dichtungen für Terrassenüberdachung',
+            image: '/images/img-blog-worker.png',
+            category: 'Carports',
+        },
+    ]
+
     return (
         <aside className='p-5'>
-            {showTags && (
+            {showCategories && categories.length > 0 && (
                 <>
                     <h3 className='text-base font-semibold text-customGray-700 mb-6'>
                         Schlagwörter
                     </h3>
 
-                    {selectedTag && setSelectedTag && (
+                    {selectedCategory && setSelectedCategory && (
                         <div className='mb-3'>
                             <CustomSecondaryButton
-                                text={selectedTag}
+                                text={selectedCategory}
                                 icon={<CloseIcon />}
                                 iconPosition='right'
-                                onClick={() => setSelectedTag(null)}
+                                onClick={() => setSelectedCategory(null)}
                                 borderColor='border-customYellow-500 bg-[#FFF8E1]'
                                 textSize='text-sm'
                             />
                         </div>
                     )}
 
-                    {setSelectedTag && (
+                    {setSelectedCategory && (
                         <div className='flex flex-col gap-2 mb-5'>
-                            {tags.map((tag) => (
+                            {categories.map((category) => (
                                 <CustomSecondaryButton
-                                    key={tag}
-                                    text={tag}
+                                    key={category}
+                                    text={category}
                                     onClick={() =>
-                                        setSelectedTag(
-                                            tag === selectedTag ? null : tag,
+                                        setSelectedCategory(
+                                            category === selectedCategory
+                                                ? null
+                                                : category,
                                         )
                                     }
                                     className='w-fit'
@@ -83,23 +97,46 @@ export default function Sidebar({
                 </>
             )}
 
-            {showArchive && (
+            {showArchive && archive.length > 0 && (
                 <>
                     <h3 className='text-lg font-semibold text-customGray-700 mb-3'>
                         Archiv
                     </h3>
-                    <ul className='space-y-2 mb-5'>
-                        {archive.map((item) => (
-                            <li key={item}>
-                                <Link
-                                    href='#'
-                                    className='text-gray-700 hover:text-customGray-700 transition'
-                                >
-                                    {item}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+
+                    {selectedDate && setSelectedDate && (
+                        <div className='mb-3'>
+                            <CustomSecondaryButton
+                                text={selectedDate}
+                                icon={<CloseIcon />}
+                                iconPosition='right'
+                                onClick={() => setSelectedDate(null)}
+                                borderColor='border-customYellow-500 bg-[#FFF8E1]'
+                                textSize='text-sm'
+                            />
+                        </div>
+                    )}
+
+                    {setSelectedDate && (
+                        <ul className='space-y-2 mb-5'>
+                            {archive.map((date) => (
+                                <li key={date}>
+                                    <CustomSecondaryButton
+                                        text={date}
+                                        onClick={() =>
+                                            setSelectedDate(
+                                                date === selectedDate
+                                                    ? null
+                                                    : date,
+                                            )
+                                        }
+                                        className='w-fit'
+                                        borderColor=''
+                                        textSize='text-sm'
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                    )}
 
                     <hr className='border-customGray-300 my-4' />
                 </>

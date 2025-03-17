@@ -89,8 +89,8 @@ export const articles = [
     {
         id: 2,
         title: 'Alu Carport',
-        date: '09.06.2024',
-        category: 'Carports',
+        date: '09.07.2024',
+        category: 'Dichtungen',
         image: '/images/blog/img-blog-2.png',
         description:
             'Alu Carport Ein Carport steht für einen dauerhaften Schutz Ihrer Autos und ist eine sinnvolle Ergänzung zu einem Parkplatz außerhalb. Wenn Sie nach einer Alternative zum Carport....',
@@ -99,7 +99,7 @@ export const articles = [
     {
         id: 3,
         title: 'Alu Carport',
-        date: '09.06.2024',
+        date: '09.01.2024',
         category: 'Carports',
         image: '/images/blog/img-blog-3.png',
         description:
@@ -109,8 +109,8 @@ export const articles = [
     {
         id: 4,
         title: 'Alu Carport',
-        date: '09.06.2024',
-        category: 'Carports',
+        date: '09.03.2024',
+        category: 'Zaunprofile',
         image: '/images/blog/img-blog-4.png',
         description:
             'Alu Carport Ein Carport steht für einen dauerhaften Schutz Ihrer Autos und ist eine sinnvolle Ergänzung zu einem Parkplatz außerhalb. Wenn Sie nach einer Alternative zum Carport....',
@@ -119,7 +119,7 @@ export const articles = [
     {
         id: 5,
         title: 'Alu Carport',
-        date: '09.06.2024',
+        date: '09.01.2024',
         category: 'Aluminiumprofile kaufen',
         image: '/images/blog/img-blog-1.png',
         description:
@@ -129,8 +129,8 @@ export const articles = [
     {
         id: 6,
         title: 'Alu Carport',
-        date: '09.06.2024',
-        category: 'Aluminiumprofile kaufen',
+        date: '09.10.2024',
+        category: 'Zaunprofile',
         image: '/images/blog/img-blog-2.png',
         description:
             'Alu Carport Ein Carport steht für einen dauerhaften Schutz Ihrer Autos und ist eine sinnvolle Ergänzung zu einem Parkplatz außerhalb. Wenn Sie nach einer Alternative zum Carport....',
@@ -139,7 +139,7 @@ export const articles = [
     {
         id: 7,
         title: 'Alu Carport',
-        date: '09.06.2024',
+        date: '09.12.2022',
         category: 'Aluminiumprofile kaufen',
         image: '/images/blog/img-blog-3.png',
         description:
@@ -149,8 +149,8 @@ export const articles = [
     {
         id: 8,
         title: 'Alu Carport',
-        date: '09.06.2024',
-        category: 'Aluminiumprofile kaufen',
+        date: '09.12.2024',
+        category: 'Zubehör',
         image: '/images/blog/img-blog-4.png',
         description:
             'Alu Carport Ein Carport steht für einen dauerhaften Schutz Ihrer Autos und ist eine sinnvolle Ergänzung zu einem Parkplatz außerhalb. Wenn Sie nach einer Alternative zum Carport....',

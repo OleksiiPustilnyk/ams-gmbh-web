@@ -52,7 +52,7 @@ export default function CategoriesSection() {
                         key={index}
                         className='flex items-center space-x-4 group'
                     >
-                        <div className='lg:w-auto lg:h-auto w-28 h-28 flex-shrink-0'>
+                        <div className='lg:w-52 lg:h-52 w-28 h-28 flex-shrink-0'>
                             <Image
                                 src={category.image}
                                 alt={category.title}

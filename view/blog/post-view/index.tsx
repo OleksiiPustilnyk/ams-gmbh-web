@@ -22,7 +22,7 @@ export default function BlogPostView({ post }: BlogPostViewProps) {
                 </div>
 
                 <div className='lg:col-span-3 md:col-span-4'>
-                    <Sidebar showTags={false} showArchive={false} />
+                    <Sidebar />
                 </div>
             </div>
         </div>
