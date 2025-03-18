@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import CustomLink from '@/components/ui/link/custom-link'
-import { CategoryCardProps } from '@/interfaces/category.interface'
+import { CategoryArticle } from '@/interfaces/category.interface'
 
 export default function CategoryCard({
     category,
@@ -9,7 +9,7 @@ export default function CategoryCard({
     imageUrl,
     link,
     buttonText = 'Mehr',
-}: CategoryCardProps) {
+}: CategoryArticle) {
     return (
         <div className='relative bg-white border p-8 py-20 flex overflow-hidden min-h-[230px]'>
             <div className='flex-1 z-10 flex flex-col justify-center'>

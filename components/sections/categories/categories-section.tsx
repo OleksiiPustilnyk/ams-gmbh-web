@@ -1,44 +1,6 @@
 import CustomLink from '@/components/ui/link/custom-link'
+import { pageCategories } from '@/constants/categories-data'
 import Image from 'next/image'
-
-interface Category {
-    title: string
-    image: string
-    link: string
-}
-
-const categories: Category[] = [
-    {
-        title: 'Alu Zaun',
-        image: '/images/categories/img-zaun.png',
-        link: '/category/alu-zaun',
-    },
-    {
-        title: 'Aluminium Profile',
-        image: '/images/categories/img-profile.png',
-        link: '/category/aluminium-profile',
-    },
-    {
-        title: 'Dichtungen',
-        image: '/images/categories/img-dich.png',
-        link: '/category/dichtungen',
-    },
-    {
-        title: 'LED spots für Terrassenüberdachung',
-        image: '/images/categories/img-led.png',
-        link: '/category/led-spots',
-    },
-    {
-        title: 'Terrassenüberdachung Bausatz',
-        image: '/images/categories/img-bausatz.png',
-        link: '/category/terrassen-bausatz',
-    },
-    {
-        title: 'Zubehör',
-        image: '/images/categories/img-zube.png',
-        link: '/category/zubehor',
-    },
-]
 
 export default function CategoriesSection() {
     return (
@@ -47,14 +9,14 @@ export default function CategoriesSection() {
                 Kategorien
             </h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
-                {categories.map((category, index) => (
+                {pageCategories.map((category, index) => (
                     <div
                         key={index}
                         className='flex items-center space-x-4 group'
                     >
                         <div className='lg:w-52 lg:h-52 w-28 h-28 flex-shrink-0'>
                             <Image
-                                src={category.image}
+                                src={category.imageUrl}
                                 alt={category.title}
                                 width={200}
                                 height={200}
@@ -65,12 +27,14 @@ export default function CategoriesSection() {
                             <h3 className='lg:text-xl font-semibold text-customGray-700'>
                                 {category.title}
                             </h3>
-                            <CustomLink
-                                className='mt-3 inline-block'
-                                href={category.link}
-                            >
-                                Mehr
-                            </CustomLink>
+                            {category.slug && (
+                                <CustomLink
+                                    href={`/categories/${category.slug}`}
+                                    className='mt-3 inline-block'
+                                >
+                                    Mehr
+                                </CustomLink>
+                            )}
                         </div>
                     </div>
                 ))}

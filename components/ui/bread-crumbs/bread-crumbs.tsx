@@ -7,12 +7,12 @@ import { breadcrumbNames } from '@/constants/breadcrumb-names'
 
 interface BreadcrumbsProps {
     blogTitle?: string
-    productTitle?: string
+    categoryTitle?: string
 }
 
 export default function Breadcrumbs({
     blogTitle,
-    productTitle,
+    categoryTitle,
 }: BreadcrumbsProps) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
@@ -29,16 +29,16 @@ export default function Breadcrumbs({
                     const isLast = index === pathSegments.length - 1
                     const isBlogPost = pathSegments[0] === 'blog' && isLast
                     const isProductPage =
-                        pathSegments[0] === 'products' && isLast
+                        pathSegments[0] === 'categories' && isLast
                     const href =
                         '/' + pathSegments.slice(0, index + 1).join('/')
 
                     let name = breadcrumbNames[segment] || segment
 
                     if (isBlogPost) {
-                        name = blogTitle || 'Blog Post'
+                        name = blogTitle || 'Blog'
                     } else if (isProductPage) {
-                        name = productTitle || 'Produkt'
+                        name = categoryTitle || 'Produkt'
                     }
 
                     return (

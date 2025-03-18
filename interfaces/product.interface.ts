@@ -6,6 +6,9 @@ export interface Product {
     oldPrice?: string
     link: string
     description?: string
+    category: string
+    inStock?: boolean
+    roofType?: string
 }
 
 export interface ProductSectionProps {

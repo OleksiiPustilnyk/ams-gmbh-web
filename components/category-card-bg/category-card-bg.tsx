@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import CustomLink from '@/components/ui/link/custom-link'
-import { CategoryCardProps } from '@/interfaces/category.interface'
+import { CategoryArticle } from '@/interfaces/category.interface'
 
 export default function CategoryCardWithBg({
     title,
     imageUrl,
     link,
-}: CategoryCardProps) {
+}: CategoryArticle) {
     return (
         <div className='bg-customGray-100 '>
             <div className='flex justify-between items-start mb-16 pt-6 px-6'>

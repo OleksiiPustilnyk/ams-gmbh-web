@@ -9,10 +9,13 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@radix-ui/react-checkbox": "^1.1.4",
+        "@radix-ui/react-radio-group": "^1.2.3",
         "next": "15.1.7",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "react-hook-form": "^7.54.2"
+        "react-hook-form": "^7.54.2",
+        "react-range": "^1.10.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",

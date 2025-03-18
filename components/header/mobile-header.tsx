@@ -10,7 +10,7 @@ export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <header className='w-full h-16 border-b bg-white shadow-md md:flex lg:hidden top-0 left-0 right-0 z-50'>
+        <header className='w-full h-16 border-b bg-white border-customGray-200 md:flex lg:hidden top-0 left-0 right-0 z-50'>
             <div className='container mx-auto flex items-center justify-between py-4 px-2 relative'>
                 <button
                     className='p-2 flex-shrink-0'

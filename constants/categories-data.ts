@@ -1,3 +1,5 @@
+import { CategoryArticle } from '@/interfaces/category.interface'
+
 export const firstCategoryList = [
     {
         category: 'Aluminum',
@@ -59,5 +61,44 @@ export const thirdCategoryList = [
         title: 'Dichtungen',
         imageUrl: '/images/product-section/img-seals.png',
         link: '/dichtungen',
+    },
+]
+
+export const pageCategories: CategoryArticle[] = [
+    {
+        title: 'Alu Zaun',
+        imageUrl: '/images/categories/img-zaun.png',
+        link: '/alu-zaun',
+        slug: 'alu-zaun',
+    },
+    {
+        title: 'Aluminium Profile',
+        imageUrl: '/images/categories/img-profile.png',
+        link: '/aluminium-profile',
+        slug: 'aluminium-profile',
+    },
+    {
+        title: 'Dichtungen',
+        imageUrl: '/images/categories/img-dich.png',
+        link: '/dichtungen',
+        slug: 'dichtungen',
+    },
+    {
+        title: 'LED spots für Terrassenüberdachung',
+        imageUrl: '/images/categories/img-led.png',
+        link: '/led-spots',
+        slug: 'led-spots',
+    },
+    {
+        title: 'Terrassenüberdachung Bausatz',
+        imageUrl: '/images/categories/img-bausatz.png',
+        link: '/terrassen-bausatz',
+        slug: 'terrassen-bausatz',
+    },
+    {
+        title: 'Zubehör',
+        imageUrl: '/images/categories/img-zube.png',
+        link: '/zubehor',
+        slug: 'zubehor',
     },
 ]
