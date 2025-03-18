@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
 import ProductCardDescription from './product-card-description'
@@ -13,8 +14,12 @@ export default function ProductCard({
     price,
     oldPrice,
     description,
+    slug,
+    category,
 }: Product) {
     const [isHovered, setIsHovered] = useState(false)
+
+    const productLink = `/categories/${category}/${slug}`
 
     return (
         <div
@@ -22,18 +27,20 @@ export default function ProductCard({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className='w-full cursor-pointer'>
+            <Link href={productLink} className='w-full cursor-pointer block'>
                 <Image
                     src={imageUrl}
                     alt={altText}
                     width={300}
                     height={250}
-                    className='object-cover w-full h-auto rounded-md'
+                    className='object-cover w-full h-auto rounded-md transition-transform hover:scale-105'
                 />
-            </div>
+            </Link>
 
             <h3 className='mt-4 text-base font-semibold text-customGray-700 text-start'>
-                {title}
+                <Link href={productLink} className='hover:underline'>
+                    {title}
+                </Link>
             </h3>
 
             <div className='flex flex-col flex-grow lg:justify-end my-4 lg:my-0 h-auto w-full max-h-16 md:max-h-12 lg:max-h-none sm:min-h-0'>

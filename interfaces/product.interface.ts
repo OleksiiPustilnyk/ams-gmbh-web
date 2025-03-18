@@ -9,6 +9,7 @@ export interface Product {
     category: string
     inStock?: boolean
     roofType?: string
+    slug?: string
 }
 
 export interface ProductSectionProps {
