@@ -27,7 +27,7 @@ export default function Breadcrumbs({
                 <li>
                     <Link
                         href='/'
-                        className='text-customGray-500 hover:underline'
+                        className='text-customGray-700 hover:underline'
                     >
                         Home
                     </Link>

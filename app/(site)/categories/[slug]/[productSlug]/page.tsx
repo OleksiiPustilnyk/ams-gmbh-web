@@ -1,6 +1,7 @@
 'use client'
 
 import { products } from '@/constants/products'
+import { ProductContentBlock } from '@/interfaces/product.interface'
 import ProductView from '@/view/categories/category/product'
 import { notFound } from 'next/navigation'
 import { useParams } from 'next/navigation'
@@ -20,7 +21,13 @@ export default function ProductPage() {
 
     return (
         <div>
-            <ProductView product={product} />
+            <ProductView
+                product={{
+                    ...product,
+                    descriptionTabs:
+                        product.descriptionTabs as ProductContentBlock[],
+                }}
+            />
         </div>
     )
 }
