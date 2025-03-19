@@ -65,14 +65,14 @@ export default function Pagination({
                             onClick={() => onPageChange(Number(page))}
                             borderColor={
                                 currentPage === page
-                                    ? 'border-defaultYellow'
+                                    ? 'border-customYellow-500'
                                     : ''
                             }
                             textSize='text-sm'
                             className={`${
                                 currentPage === page
-                                    ? 'bg-defaultYellow text-primary'
-                                    : 'hover:bg-[#FFF3D3]'
+                                    ? 'bg-customYellow-500 text-customGray-700'
+                                    : 'hover:bg-customYellow-100'
                             }`}
                         />
                     ),

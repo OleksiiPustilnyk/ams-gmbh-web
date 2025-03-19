@@ -1,44 +1,18 @@
 import CategoryCard from '@/components/category-card/category-card'
+import { firstCategoryList } from '@/constants/categories-data'
 import Image from 'next/image'
-
-const categories = [
-    {
-        category: 'Aluminum',
-        title: 'Profiles',
-        subtitle: 'Terrassenuberdachungen',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/terrassen',
-        buttonText: 'Mehr',
-    },
-    {
-        category: 'Aluminum',
-        title: 'Carport',
-        subtitle: 'Carports',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/carport-modern',
-        buttonText: 'Mehr',
-    },
-    {
-        category: 'Aluminum',
-        title: 'Zubehor',
-        subtitle: 'Zubehor',
-        imageUrl: '/images/product-section/img-alum.png',
-        link: '/zubehor',
-        buttonText: 'Mehr',
-    },
-]
 
 export default function FirstCategorySection() {
     return (
         <section className='container mx-auto py-12 px-4 md:px-4 lg:px-0'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 '>
-                {categories.map((category, index) => (
+                {firstCategoryList.map((category, index) => (
                     <CategoryCard key={index} {...category} />
                 ))}
 
-                <div className='bg-lightGray border p-6 flex items-center justify-between'>
+                <div className='bg-customGray-100 border p-6 flex items-center justify-between'>
                     <div className='w-2/3 pr-6'>
-                        <p className='text-gray-500 text-[14px] leading-[21px]'>
+                        <p className='text-gray-500 text-sm'>
                             Zertifizierungen und Qualität: Nachweise unseres
                             Engagements für Exzellenz im deutschen
                             Aluminiumhandel

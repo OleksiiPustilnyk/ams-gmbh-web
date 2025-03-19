@@ -15,14 +15,14 @@ export default function CustomSecondaryButton({
     text,
     icon,
     iconPosition = 'right',
-    borderColor = 'border-borderColor',
+    borderColor = 'border-customGray-300',
     textSize = 'text-xs',
     onClick,
     disabled = false,
     className = '',
 }: CustomSecondaryButtonProps) {
     const borderClass = borderColor ? `border ${borderColor}` : ''
-    const disabledBorder = borderColor ? 'border-[#E4E7EC]' : 'border-none'
+    const disabledBorder = borderColor ? 'border-customGray-200' : 'border-none'
 
     return (
         <button
@@ -32,7 +32,7 @@ export default function CustomSecondaryButton({
                 ${
                     disabled
                         ? ` text-gray-400 cursor-not-allowed ${disabledBorder}`
-                        : `text-deepGray hover:border-[#FFCE4B] hover:bg-[#FFF3D3] active:bg-[#FFB41F] active:text-primary ${borderClass}`
+                        : `text-customGray-600 hover:border-customYellow-400 hover:bg-customYellow-100 active:bg-customYellow-600 active:text-customGray-700 ${borderClass}`
                 }
                 ${textSize} ${className}
             `}

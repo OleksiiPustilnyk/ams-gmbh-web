@@ -11,7 +11,7 @@ export default function NotFoundView() {
                 height={200}
                 className='h-full w-auto object-contain'
             />
-            <h1 className='text-3xl font-semibold text-primary mt-14'>
+            <h1 className='text-3xl font-semibold text-customGray-700 mt-14'>
                 The page you were looking for was not found.
             </h1>
             <p className='text-gray-500 text-md mt-2'>

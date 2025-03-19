@@ -5,5 +5,13 @@ export interface BlogArticle {
     category: string
     image: string
     description: string
-    link: string
+    slug: string
+    content?: BlogContentBlock[]
+}
+
+export interface BlogContentBlock {
+    type: 'heading' | 'text' | 'image' | 'list'
+    content?: string
+    src?: string
+    items?: string[]
 }

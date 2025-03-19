@@ -26,8 +26,8 @@ export default function CatalogCard({
                 />
             </div>
 
-            <div className='w-full md:w-1/2 flex flex-col justify-center px-6 py-4 bg-lightGray'>
-                <h3 className='text-[18px] font-semibold leading-[27px] tracking-normal text-primary'>
+            <div className='w-full md:w-1/2 flex flex-col justify-center px-6 py-4 bg-customGray-100'>
+                <h3 className='text-lg font-semibold tracking-normal text-customGray-700'>
                     {title}
                 </h3>
 

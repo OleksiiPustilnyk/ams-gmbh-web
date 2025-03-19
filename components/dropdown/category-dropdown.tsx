@@ -6,50 +6,69 @@ import Image from 'next/image'
 import { CategoryIcon } from '../ui/icons/icon-category'
 import { ChevronIcon } from '../ui/icons/icon-chevron'
 import { ArrowIcon } from '../ui/icons/icon-arrow'
+import Link from 'next/link'
 
 interface Category {
     name: string
     imageUrl?: string
-    subcategories?: string[]
+    subcategories?: { name: string; link: string }[]
+    link?: string
 }
 
 const categories: Category[] = [
     {
         name: 'All Categories',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/categories',
     },
     {
         name: 'Aluminium Profile',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/aluminium-profile',
     },
     {
         name: 'Alu Carport',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/alu-carport',
     },
     {
         name: 'Alu Zaun',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/alu-zaun',
     },
     {
         name: 'Dichtungen',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/dichtungen',
     },
     {
         name: 'Überdachungen',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        subcategories: ['Laminated glass', 'Polycarbonat'],
+        subcategories: [
+            {
+                name: 'Laminated glass',
+                link: '/category/uberdachungen/laminated-glass',
+            },
+            {
+                name: 'Polycarbonat',
+                link: '/category/uberdachungen/polycarbonat',
+            },
+        ],
     },
     {
         name: 'Zubehör',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/zubehor',
     },
     {
         name: 'Zaunprofile',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/zaunprofile',
     },
     {
         name: 'Assemble the terrace',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
+        link: '/category/assemble-the-terrace',
     },
 ]
 
@@ -69,7 +88,7 @@ export default function DropdownMenu() {
     }
 
     return (
-        <div className='relative w-full border-t border-b border-[#E4E7EC] py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
+        <div className='relative w-full border-t border-b border-customGray-200 py-6 mb-6 lg:py-0 lg:mb-0 lg:border-none'>
             <CustomButton
                 onClick={toggleDropdown}
                 leftIcon={<CategoryIcon />}
@@ -89,26 +108,36 @@ export default function DropdownMenu() {
                             <ul>
                                 {categories.map((category) => (
                                     <li key={category.name}>
-                                        <button
-                                            onClick={() =>
-                                                handleCategoryClick(category)
-                                            }
-                                            className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-lightGray ${
-                                                openCategory === category.name
-                                                    ? 'bg-lightGray'
-                                                    : ''
-                                            }`}
-                                        >
-                                            <span className='flex items-center gap-2'>
-                                                <ArrowIcon className='w-3 h-3' />
-                                                {category.name}
-                                            </span>
-                                        </button>
+                                        {category.subcategories ? (
+                                            <button
+                                                onClick={() =>
+                                                    handleCategoryClick(
+                                                        category,
+                                                    )
+                                                }
+                                                className='w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-customGray-100'
+                                            >
+                                                <span className='flex items-center gap-2'>
+                                                    <ArrowIcon className='w-3 h-3' />
+                                                    {category.name}
+                                                </span>
+                                            </button>
+                                        ) : (
+                                            <Link
+                                                href={category.link!}
+                                                className='w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-customGray-100'
+                                            >
+                                                <span className='flex items-center gap-2'>
+                                                    <ArrowIcon className='w-3 h-3' />
+                                                    {category.name}
+                                                </span>
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className='w-1/2 p-4 flex flex-col items-center bg-secondaryWhite'>
+                        <div className='w-1/2 p-4 flex flex-col items-center bg-customGray-50'>
                             {hoveredCategory.imageUrl && (
                                 <div
                                     className={`relative w-full flex justify-center transition-all duration-300 ${
@@ -146,12 +175,14 @@ export default function DropdownMenu() {
                                                     cat.name === openCategory,
                                             )
                                             ?.subcategories?.map((sub) => (
-                                                <li
-                                                    key={sub}
-                                                    className='flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer'
-                                                >
-                                                    <ArrowIcon className='w-3 h-3' />
-                                                    {sub}
+                                                <li key={sub.name}>
+                                                    <Link
+                                                        href={sub.link}
+                                                        className='flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                    >
+                                                        <ArrowIcon className='w-3 h-3' />
+                                                        {sub.name}
+                                                    </Link>
                                                 </li>
                                             ))}
                                     </ul>
@@ -166,9 +197,9 @@ export default function DropdownMenu() {
                                         onClick={() =>
                                             handleCategoryClick(category)
                                         }
-                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-lightGray ${
+                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100 ${
                                             openCategory === category.name
-                                                ? 'bg-lightGray'
+                                                ? 'bg-customGray-100'
                                                 : ''
                                         }`}
                                     >
@@ -182,12 +213,14 @@ export default function DropdownMenu() {
                                             <ul className='ml-6 mt-2 text-gray-700 text-left border-l border-gray-300 pl-4'>
                                                 {category.subcategories.map(
                                                     (sub) => (
-                                                        <li
-                                                            key={sub}
-                                                            className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
-                                                        >
-                                                            <ArrowIcon className='w-3 h-3' />
-                                                            {sub}
+                                                        <li key={sub.name}>
+                                                            <Link
+                                                                href={sub.link}
+                                                                className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                            >
+                                                                <ArrowIcon className='w-3 h-3' />
+                                                                {sub.name}
+                                                            </Link>
                                                         </li>
                                                     ),
                                                 )}

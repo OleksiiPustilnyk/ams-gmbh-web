@@ -8,7 +8,7 @@ import Cart from '../ui/cart-icon/cart-icon'
 
 export default function DesktopHeader() {
     return (
-        <header className='hidden lg:flex w-full bg-white shadow-md'>
+        <header className='hidden lg:flex w-full bg-white border-b border-customGray-200'>
             <div className='container mx-auto flex items-center justify-between py-4'>
                 <div className='flex items-center gap-4'>
                     <Logo />

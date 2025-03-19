@@ -9,7 +9,7 @@ export default function Cart() {
                 <CartIcon />
             </button>
             {cartCount > 0 && (
-                <span className='absolute -top-0 right-1 flex items-center justify-center bg-secondary text-white text-[10px] leading-[1rem] font-medium rounded-full w-4 h-4 border-2 border-white'>
+                <span className='absolute -top-0 right-1 flex items-center justify-center bg-customGray-800 text-white text-[10px] leading-4 font-medium rounded-full w-4 h-4 border-2 border-white'>
                     {cartCount}
                 </span>
             )}

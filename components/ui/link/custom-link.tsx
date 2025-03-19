@@ -12,13 +12,13 @@ export default function CustomLink({
     href,
     children,
     className = '',
-    textSize = 'text-[16px]',
+    textSize = 'text-base',
 }: CustomLinkProps) {
     return (
         <Link
             href={href}
-            className={`group flex w-max items-center ${textSize} font-normal leading-[24px] text-gray-900 transition-colors 
-                hover:text-[#EE9907] active:text-[#BD7904] ${className}`}
+            className={`group flex w-max items-center ${textSize} font-normal leading-6 text-gray-900 transition-colors 
+                hover:text-customYellow-700 active:text-customYellow-900 ${className}`}
         >
             {children}
             <span className='relative ml-2 w-[16px] h-[16px] inline-block transition-transform duration-300 group-hover:translate-x-1'>

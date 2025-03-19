@@ -108,7 +108,7 @@ export default function ContactForm() {
                 />
             </div> */}
 
-            <p className='text-sm text-secondaryGray mb-4'>
+            <p className='text-sm text-customGray-500 mb-4'>
                 Die mit einem * markierten Felder sind Pflichtfelder.
             </p>
 
@@ -131,7 +131,7 @@ export default function ContactForm() {
             <CustomButton
                 type='submit'
                 centerText
-                className='col-span-1 md:col-span-2 bg-primary text-white py-3 rounded-lg w-full text-center font-medium hover:bg-primary/90 transition'
+                className='col-span-1 md:col-span-2 bg-customGray-700 text-white py-3 rounded-lg w-full text-center font-medium hover:bg-customGray-700/90 transition'
             >
                 Senden
             </CustomButton>

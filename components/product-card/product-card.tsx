@@ -1,14 +1,11 @@
-import Image from 'next/image'
-import CustomButton from '../ui/buttons/custom-button'
+'use client'
 
-interface ProductCardProps {
-    title: string
-    imageUrl: string
-    altText: string
-    price: string
-    oldPrice?: string
-    link: string
-}
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import CustomButton from '../ui/buttons/custom-button'
+import ProductCardDescription from './product-card-description'
+import { Product } from '@/interfaces/product.interface'
 
 export default function ProductCard({
     title,
@@ -16,42 +13,59 @@ export default function ProductCard({
     altText,
     price,
     oldPrice,
-}: ProductCardProps) {
+    description,
+    slug,
+    category,
+}: Product) {
+    const [isHovered, setIsHovered] = useState(false)
+
+    const productLink = `/categories/${category}/${slug}`
+
     return (
-        <div className='bg-white p-4 flex flex-col items-start h-full'>
-            <div className='w-full'>
+        <div
+            className='relative flex flex-col items-start bg-white p-4 transition-all'
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Link href={productLink} className='w-full cursor-pointer block'>
                 <Image
                     src={imageUrl}
                     alt={altText}
                     width={300}
                     height={250}
-                    className='object-cover w-full h-auto rounded-md'
+                    className='object-cover w-full h-auto rounded-md transition-transform hover:scale-105'
                 />
-            </div>
-            <h3 className='mt-4 text-[16px] font-semibold leading-[20px] text-primary text-start'>
-                {title}
+            </Link>
+
+            <h3 className='mt-4 text-base font-semibold text-customGray-700 text-start'>
+                <Link href={productLink} className='hover:underline'>
+                    {title}
+                </Link>
             </h3>
-            <div className='flex flex-col flex-grow justify-end w-full'>
+
+            <div className='flex flex-col flex-grow lg:justify-end my-4 lg:my-0 h-auto w-full max-h-16 md:max-h-12 lg:max-h-none sm:min-h-0'>
                 <div className='flex flex-col sm:flex-row sm:justify-between items-start sm:items-center w-full'>
                     <div className='flex flex-col items-start'>
                         {oldPrice ? (
-                            <span className='text-primary line-through text-[12px] font-normal leading-[12px]'>
+                            <span className='text-customGray-700 line-through text-xs leading-3 font-normal'>
                                 {oldPrice}
                             </span>
                         ) : (
-                            <span className='invisible text-[12px] leading-[12px]'>
+                            <span className='invisible text-xs leading-3'>
                                 ----
                             </span>
                         )}
                         <div className='flex items-center'>
                             <span
-                                className={`text-[20px] font-semibold leading-[30px] ${
-                                    oldPrice ? 'text-[#D92D20]' : 'text-primary'
+                                className={`text-xl font-semibold ${
+                                    oldPrice
+                                        ? 'text-customRed-600'
+                                        : 'text-customGray-700'
                                 }`}
                             >
                                 {price}
                             </span>
-                            <span className='text-primary text-[12px] font-normal leading-[18px] ml-2 self-center'>
+                            <span className='text-customGray-700 text-xs font-normal ml-2 self-center'>
                                 per meter
                             </span>
                         </div>
@@ -61,6 +75,12 @@ export default function ProductCard({
                     </CustomButton>
                 </div>
             </div>
+
+            <ProductCardDescription
+                isHovered={isHovered}
+                oldPrice={oldPrice}
+                description={description}
+            />
         </div>
     )
 }

@@ -36,7 +36,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                     <Link
                         key={link.href}
                         href={link.href}
-                        className='block hover:text-primary'
+                        className='block hover:text-customGray-700'
                     >
                         {link.name}
                     </Link>

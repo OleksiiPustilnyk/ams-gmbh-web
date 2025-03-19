@@ -4,13 +4,13 @@ export default function AboutSection() {
     return (
         <section className='w-full container mx-auto py-12 px-4 md:px-6 lg:px-0 flex flex-col lg:flex-row items-center gap-8'>
             <div className='w-full lg:w-1/2'>
-                <p className='text-deepGray text-[20px] leading-[30px] mb-3'>
+                <p className='text-customGray-600 text-xl mb-3'>
                     Aluminium Großhandel - Wir sind Ihr Lieferant!
                 </p>
-                <h2 className='text-[20px] md:text-[30px] leading-[30px] md:leading-[45px] font-semibold text-primary mb-3'>
+                <h2 className='text-xl md:text-3xl md:leading-10 font-semibold text-customGray-700 mb-3'>
                     AMS Alliance Management Solutions GmbH
                 </h2>
-                <p className='text-secondary text-[16px] leading-[24px]'>
+                <p className='text-customGray-800 text-base'>
                     Wir sind Ihr kompetenter Ansprechpartner für Aluminium
                     Großhandel. Wir beraten Sie gerne zu Ihren individuellen
                     Wünschen und Vorgaben, um Sie besser zu verstehen. Unsere

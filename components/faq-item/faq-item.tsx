@@ -16,10 +16,10 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
                 className='w-full flex justify-between items-center py-4 text-left'
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span className='text-[16px] leading-[24px] font-semibold text-darkGray'>
+                <span className='text-base font-semibold text-darkGray'>
                     {question}
                 </span>
-                <span className='text-[24px] text-text-darkGray transition-transform duration-700'>
+                <span className='text-2xl text-text-darkGray transition-transform duration-700'>
                     {isOpen ? '−' : '+'}
                 </span>
             </button>
@@ -29,7 +29,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
                     isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
                 }`}
             >
-                <p className='text-[16px] leading-[24px] font-normal text-darkGray pb-4'>
+                <p className='text-base font-normal text-darkGray pb-4'>
                     {answer}
                 </p>
             </div>

@@ -52,7 +52,7 @@ export default function Footer() {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1.5fr_1fr] gap-6 border-b border-gray-300 pb-8'>
                     {footerLinks.map((section, index) => (
                         <div key={index}>
-                            <h4 className='text-secondaryGray font-semibold text-[14px] mb-4'>
+                            <h4 className='text-customGray-500 font-semibold text-sm mb-4'>
                                 {section.title}
                             </h4>
                             <ul className='space-y-2'>
@@ -60,7 +60,7 @@ export default function Footer() {
                                     <li key={i}>
                                         <Link
                                             href='/'
-                                            className='text-secondaryGray text-[16px] hover:underline'
+                                            className='text-customGray-500 text-md hover:underline'
                                         >
                                             {link}
                                         </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
                     ))}
                 </div>
 
-                <div className='flex flex-col lg:flex-row lg:justify-between items-center mt-6 text-gray-600 text-[14px]'>
+                <div className='flex flex-col lg:flex-row lg:justify-between items-center mt-6 text-gray-600 text-sm'>
                     <Logo />
                     <p className='text-center lg:text-left mt-4 lg:mt-0'>
                         * All prices excl. VAT plus shipping costs and cash on

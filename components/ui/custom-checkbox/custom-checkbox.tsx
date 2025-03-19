@@ -1,51 +1,31 @@
-import { useId } from 'react'
-import { UseFormRegisterReturn } from 'react-hook-form'
+'use client'
+
+import * as Checkbox from '@radix-ui/react-checkbox'
 import { CheckIcon } from '../icons/icon-check'
 
 interface CustomCheckboxProps {
     label: string
-    error?: string
-    register: UseFormRegisterReturn
-    disabled?: boolean
+    checked: boolean
+    onChange: () => void
 }
 
 export default function CustomCheckbox({
     label,
-    error,
-    register,
-    disabled = false,
+    checked,
+    onChange,
 }: CustomCheckboxProps) {
-    const id = useId()
-
     return (
-        <div className='flex items-center'>
-            <input
-                type='checkbox'
-                id={id}
-                {...register}
-                disabled={disabled}
-                className='hidden peer'
-            />
-
-            <label
-                htmlFor={id}
-                className={`flex items-center cursor-pointer select-none ${
-                    disabled ? 'cursor-not-allowed opacity-50' : ''
-                }`}
+        <label className='flex items-center cursor-pointer space-x-2 text-gray-700'>
+            <Checkbox.Root
+                checked={checked}
+                onCheckedChange={onChange}
+                className='w-4 h-4 flex items-center justify-center border border-gray-400 rounded-md transition-all data-[state=checked]:border-customYellow-700 data-[state=checked]:bg-customYellow-50 hover:bg-customYellow-50 hover:border-customYellow-400'
             >
-                <div
-                    className={`w-5 h-5 flex items-center justify-center border border-borderColor rounded-md transition-all
-                    bg-white peer-checked:bg-defaultYellow peer-checked:border-defaultYellow
-                    peer-hover:border-defaultYellow peer-hover:bg-[#FFF8E1]
-                    peer-focus:ring-2 peer-focus:ring-defaultYellow`}
-                >
-                    <CheckIcon className='w-3.5 h-3.5 text-white hidden peer-checked:block' />
-                </div>
-
-                <span className='text-[14px] text-gray-700 ml-2'>{label}</span>
-            </label>
-
-            {error && <p className='text-red-500 text-[12px] ml-2'>{error}</p>}
-        </div>
+                <Checkbox.Indicator>
+                    <CheckIcon className='text-customYellow-700 w-3 h-2' />
+                </Checkbox.Indicator>
+            </Checkbox.Root>
+            <span className='text-customGray-700'>{label}</span>
+        </label>
     )
 }

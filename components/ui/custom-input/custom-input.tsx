@@ -20,9 +20,9 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
 
         return (
             <div className='flex flex-col mb-3'>
-                <label className='text-[14px] text-primary font-medium mb-1'>
+                <label className='text-sm text-customGray-700 font-medium mb-1'>
                     {label}{' '}
-                    {required && <span className='text-primary'>*</span>}
+                    {required && <span className='text-customGray-700'>*</span>}
                 </label>
                 <input
                     ref={ref}
@@ -32,22 +32,20 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none transition
                         ${
                             disabled
-                                ? 'bg-secondaryWhite border-borderColor text-gray-500 cursor-not-allowed'
+                                ? 'bg-customGray-50 border-customGray-300 text-gray-500 cursor-not-allowed'
                                 : error
                                   ? 'border-red-500 focus:ring-red-500'
-                                  : 'border-borderColor text-primary hover:border-defaultYellow focus:ring-2 focus:ring-borderColor focus:border-transparent'
+                                  : 'border-customGray-300 text-customGray-700 hover:border-customYellow-500 focus:ring-2 focus:ring-customGray-300 focus:border-transparent'
                         }
                     `}
                 />
                 {error?.type === 'required' && (
-                    <p className='text-red-500 text-[12px] mt-1'>
+                    <p className='text-red-500 text-xs mt-1'>
                         Dieses Feld muss ausgefüllt werden
                     </p>
                 )}
                 {error?.message && error.type !== 'required' && (
-                    <p className='text-red-500 text-[12px] mt-1'>
-                        {error.message}
-                    </p>
+                    <p className='text-red-500 text-xs mt-1'>{error.message}</p>
                 )}
             </div>
         )

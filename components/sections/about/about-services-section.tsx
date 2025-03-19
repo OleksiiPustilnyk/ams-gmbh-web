@@ -37,13 +37,13 @@ const services = [
 
 export default function AboutServicesSection() {
     return (
-        <section className='w-full py-12 px-4 border border-[#E4E7EC] rounded-lg'>
+        <section className='w-full py-12 px-4 border border-customGray-200 rounded-lg'>
             <div className='container mx-auto'>
                 <div className='text-center mb-8'>
-                    <h2 className='text-[20px] md:text-[30px] leading-[24px] lg:leading-[45px] font-semibold text-primary mb-4'>
+                    <h2 className='text-xl md:text-3xl lg:leading-10 font-semibold text-customGray-700 mb-4'>
                         Unsere Leistungen
                     </h2>
-                    <p className='text-deepGray text-[16px] leading-[24px]'>
+                    <p className='text-customGray-600 text-base'>
                         Auf unserer Webseite finden Sie alle Informationen zu
                         unseren Produkten und Leistungen
                     </p>
@@ -54,8 +54,10 @@ export default function AboutServicesSection() {
                             key={index}
                             className={`relative flex items-center justify-center 
                                 h-[200px] md:h-[230px] lg:h-[400px] ${
-                                    service.isLast ? 'bg-white' : 'bg-lightGray'
-                                } border border-[#E4E7EC]`}
+                                    service.isLast
+                                        ? 'bg-white'
+                                        : 'bg-customGray-100'
+                                } border border-customGray-200`}
                         >
                             {service.image ? (
                                 <Image
@@ -67,7 +69,7 @@ export default function AboutServicesSection() {
                                 />
                             ) : (
                                 <div className='w-full px-6 md:px-12'>
-                                    <h3 className='text-[16px] font-semibold text-primary mb-2'>
+                                    <h3 className='text-base font-semibold text-customGray-700 mb-2'>
                                         {service.title}
                                     </h3>
                                     <CustomLink href={service.link}>

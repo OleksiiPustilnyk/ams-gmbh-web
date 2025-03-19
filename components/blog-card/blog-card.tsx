@@ -10,12 +10,14 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({
-    article: { title, date, category, image, description, link },
+    article: { title, date, category, image, description, slug },
 }: BlogCardProps) {
     return (
         <div className='overflow-hidden'>
-            <h3 className='text-lg font-semibold text-primary mb-2'>{title}</h3>
-            <div className='text-gray-500 text-sm flex gap-3 mb-2 items-center'>
+            <h3 className='text-lg font-semibold text-customGray-700 mb-2'>
+                {title}
+            </h3>
+            <div className='text-customGray-500 text-sm flex gap-3 mb-2 items-center'>
                 <div className='flex items-center gap-2'>
                     <ClockIcon />
                     <p>{date}</p>
@@ -33,9 +35,12 @@ export default function BlogCard({
                 height={250}
                 className='w-full h-auto'
             />
-            <p className='text-primary text-sm mt-2'>{description}</p>
-            {link && (
-                <CustomLink href={link} className='mt-3 inline-block'>
+            <p className='text-customGray-700 text-sm mt-2'>{description}</p>
+            {slug && (
+                <CustomLink
+                    href={`/blog/${slug}`}
+                    className='mt-3 inline-block'
+                >
                     Auf Anfrage
                 </CustomLink>
             )}

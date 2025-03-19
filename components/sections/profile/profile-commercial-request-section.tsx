@@ -2,10 +2,10 @@ export default function CommercialRequestSection() {
     return (
         <section className='w-full flex items-center bg-white'>
             <div className='container mx-auto'>
-                <h2 className='text-[24px] lg:text-[48px] font-semibold text-primary mb-4'>
+                <h2 className='text-2xl lg:text-5xl font-semibold text-customGray-700 mb-4'>
                     Preisanfrage für gewerbliche Kunden
                 </h2>
-                <p className='text-deepGray text-[20px] leading-[24px]'>
+                <p className='text-customGray-600 text-xl'>
                     Herzlich willkommen auf unserer Preisangebotsseite für
                     Montageunternehmen! Wir bieten hochwertige Produkte wie
                     Aluminiumprofile für Terrassen, Carports und Zäune für

@@ -8,11 +8,10 @@ export default function AboutContactSection() {
                 <Image
                     src='/images/about-contact-section.png'
                     alt='Angebot'
-                    layout='fill'
-                    objectFit='cover'
-                    className='w-full h-full'
+                    fill
+                    className='object-cover w-full h-full'
                 />
-                <div className='absolute inset-0 bg-gradient-to-r from-defaultYellow to-transparent'></div>
+                <div className='absolute inset-0 bg-gradient-to-r from-customYellow-500 to-transparent'></div>
             </div>
             <div className='absolute bottom-0 right-0 w-auto h-[200px] md:h-[280px] lg:h-[320px] lg:right-[65px]'>
                 <Image
@@ -24,14 +23,15 @@ export default function AboutContactSection() {
                 />
             </div>
             <div className='relative z-10 h-full flex items-center px-6 md:px-12 lg:px-16 lg:mx-5'>
-                <div className='max-w-lg text-deepGray'>
-                    <p className='text-[16px] lg:text-[20px] font-normal'>
-                        Angebot
-                    </p>
-                    <h2 className='text-primary text-[20px] leading-[30px] lg:text-[30px] lg:leading-[45px] font-semibold mt-1 mb-4'>
+                <div className='max-w-lg text-customGray-600'>
+                    <p className='text-base font-normal'>Angebot</p>
+                    <h2 className='text-customGray-700 text-xl lg:text-3xl lg:leading-10 font-semibold mt-1 mb-4'>
                         Fordern Sie ein Angebot an
                     </h2>
-                    <CustomButton bgColor='bg-secondary' textColor='text-white'>
+                    <CustomButton
+                        bgColor='bg-customGray-800'
+                        textColor='text-white'
+                    >
                         Kontakt
                     </CustomButton>
                 </div>

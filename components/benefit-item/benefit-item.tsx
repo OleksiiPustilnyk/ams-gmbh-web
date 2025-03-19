@@ -14,16 +14,20 @@ export default function BenefitItem({
     return (
         <div className='flex items-center gap-4'>
             <div className='w-16 h-16 flex items-center justify-center bg-yellow-400 rounded-full shrink-0'>
-                <Image src={icon} alt={title} width={32} height={32} />
+                <Image
+                    src={icon}
+                    alt={title}
+                    width={32}
+                    height={32}
+                    className='w-auto h-auto'
+                />
             </div>
 
             <div className='flex flex-col'>
-                <h3 className='text-primary font-semibold text-[18px] mb-1'>
+                <h3 className='text-customGray-700 font-semibold text-lg mb-1'>
                     {title}
                 </h3>
-                <p className='text-gray-600 text-[14px] leading-[20px]'>
-                    {description}
-                </p>
+                <p className='text-gray-600 text-sm'>{description}</p>
             </div>
         </div>
     )
