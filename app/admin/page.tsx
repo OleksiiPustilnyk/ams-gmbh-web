@@ -1,9 +1,16 @@
-import HomeView from '@/view/home'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
-// export default async function Page() {
-//     return <HomeView />
-// }
+export default function AdminPage() {
+    // to do
+    // const token = cookies().get('admin_token')?.value
 
-export default async function Page() {
-    return <p>Page admin testtttttttttttt</p>
+    // to delete
+    const token = true
+
+    if (!token) {
+        redirect('/admin/login')
+    } else {
+        redirect('/admin/products')
+    }
 }

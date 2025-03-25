@@ -1,11 +1,9 @@
-// import AdminHeader from '@/components/adminHeader'
-// import AdminFooter from '@/components/adminFooter'
-import AdminHeader from '@/components/admin-panel/header/adminHeader'
+import AdminHeader from '@/components/admin-panel/header/admin-header'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Admin Panel',
-    description: 'Admin Panel for the aluminum patio, terrace application',
+    description: 'Admin Panel for the aluminum patio and terrace application',
 }
 
 export default function AdminLayout({
@@ -13,22 +11,10 @@ export default function AdminLayout({
 }: {
     children: React.ReactNode
 }) {
-    // return (
-    //     <html lang='en'>
-    //         <body>
-    //             <div className='flex flex-col min-h-screen'>
-    //                 {/* <AdminHeader /> */}
-    //                 <main>{children}</main>
-    //                 {/* <AdminFooter />  */}
-    //             </div>
-    //         </body>
-    //     </html>
-    // )
     return (
         <div className='flex flex-col min-h-screen'>
             <AdminHeader />
             <main>{children}</main>
-            {/* <AdminFooter />  */}
         </div>
     )
 }

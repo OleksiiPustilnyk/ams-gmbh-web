@@ -29,7 +29,7 @@ export default function ContactForm() {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className='bg-white p-6 rounded-lg shadow-lg w-full'
+            // className='bg-white p-6 rounded-lg shadow-lg w-full'
         >
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <CustomInput

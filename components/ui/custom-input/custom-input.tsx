@@ -2,14 +2,26 @@ import { InputHTMLAttributes, forwardRef } from 'react'
 import { FieldError } from 'react-hook-form'
 
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: string
+    label?: string
     required?: boolean
     error?: FieldError
     onlyNumbers?: boolean
+    overrideRequiredMessage?: boolean
 }
 
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-    ({ label, required, disabled, error, onlyNumbers, ...props }, ref) => {
+    (
+        {
+            label,
+            required,
+            disabled,
+            error,
+            onlyNumbers,
+            overrideRequiredMessage = false,
+            ...props
+        },
+        ref,
+    ) => {
         const handleKeyPress = (
             event: React.KeyboardEvent<HTMLInputElement>,
         ) => {
@@ -39,10 +51,18 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
                         }
                     `}
                 />
-                {error?.type === 'required' && (
+                {/* {error?.type === 'required' && (
                     <p className='text-red-500 text-xs mt-1'>
                         Dieses Feld muss ausgefüllt werden
                     </p>
+                )} */}
+                {error?.type === 'required' && !overrideRequiredMessage && (
+                    <p className='text-red-500 text-xs mt-1'>
+                        Dieses Feld muss ausgefüllt werden
+                    </p>
+                )}
+                {error?.type === 'required' && overrideRequiredMessage && (
+                    <p className='text-red-500 text-xs mt-1'>{error.message}</p>
                 )}
                 {error?.message && error.type !== 'required' && (
                     <p className='text-red-500 text-xs mt-1'>{error.message}</p>
