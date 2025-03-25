@@ -7,4 +7,5 @@ export const breadcrumbNames: Record<string, string> = {
     contact: 'Kontakt',
     categories: 'Kategorien',
     products: 'Produkte',
+    configurator: 'Configurator',
 }
