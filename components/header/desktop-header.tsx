@@ -5,6 +5,7 @@ import CategoryDropdown from '../dropdown/category-dropdown'
 import NavMenu from '../nav-menu/nav-menu'
 import Search from '../ui/search-icon/search-icon'
 import Cart from '../ui/cart-icon/cart-icon'
+import CartSidebar from '../cart-sidebar/cart-sidebar'
 
 export default function DesktopHeader() {
     return (
@@ -22,6 +23,8 @@ export default function DesktopHeader() {
                 <div className='flex items-center gap-4'>
                     <Search />
                     <Cart />
+
+                    <CartSidebar />
                 </div>
             </div>
         </header>

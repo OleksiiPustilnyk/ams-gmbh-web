@@ -6,6 +6,7 @@ import { useState } from 'react'
 import CustomButton from '../ui/buttons/custom-button'
 import ProductCardDescription from './product-card-description'
 import { Product } from '@/interfaces/product.interface'
+import { useCartStore } from '@/stores/use-cart-store'
 
 export default function ProductCard({
     title,
@@ -20,6 +21,7 @@ export default function ProductCard({
     const [isHovered, setIsHovered] = useState(false)
 
     const productLink = `/categories/${category}/${slug}`
+    const addItem = useCartStore((s) => s.addItem)
 
     return (
         <div
@@ -70,7 +72,22 @@ export default function ProductCard({
                             </span>
                         </div>
                     </div>
-                    <CustomButton className='sm:mt-0 sm:ml-4 w-full sm:w-auto'>
+                    <CustomButton
+                        onClick={() =>
+                            addItem({
+                                title,
+                                imageUrl,
+                                altText,
+                                price,
+                                oldPrice,
+                                description,
+                                slug,
+                                category,
+                                link: productLink,
+                            })
+                        }
+                        className='sm:mt-0 sm:ml-4 w-full sm:w-auto'
+                    >
                         Add to cart
                     </CustomButton>
                 </div>

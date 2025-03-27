@@ -20,6 +20,7 @@ export default {
                 deepBlue: '#175CD3',
                 iceBlue: '#EFF8FF',
                 skyBlue: '#B2DDFF',
+                darkBackground: '#101828B2',
 
                 customGray: {
                     25: '#FCFCFD',
