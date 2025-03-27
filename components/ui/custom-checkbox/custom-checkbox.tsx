@@ -25,7 +25,9 @@ export default function CustomCheckbox({
                     <CheckIcon className='text-customYellow-700 w-3 h-2' />
                 </Checkbox.Indicator>
             </Checkbox.Root>
-            <span className='text-customGray-700'>{label}</span>
+            <span className='text-customGray-700 text-xs lg:text-sm'>
+                {label}
+            </span>
         </label>
     )
 }

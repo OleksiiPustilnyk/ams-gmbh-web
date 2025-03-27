@@ -4,11 +4,19 @@ import { useCartStore } from '@/stores/use-cart-store'
 import { CloseIcon } from '../ui/icons/icon-close'
 import CustomButton from '../ui/buttons/custom-button'
 import CartDetails from '../cart/cart-details'
+import { useRouter } from 'next/navigation'
 
 export default function CartSidebar() {
     const isOpen = useCartStore((s) => s.isOpen)
     const items = useCartStore((s) => s.items)
     const closeCart = useCartStore((s) => s.closeCart)
+
+    const router = useRouter()
+
+    const handleCheckout = () => {
+        closeCart()
+        router.push('/cart')
+    }
 
     if (!isOpen) return null
 
@@ -19,7 +27,7 @@ export default function CartSidebar() {
                 onClick={closeCart}
             />
 
-            <div className='relative h-full w-full max-w-md bg-white shadow-lg z-50 overflow-y-auto'>
+            <div className='relative h-full w-[90%] md:w-[70%] lg:max-w-md bg-white shadow-lg z-50 overflow-y-auto'>
                 <div className='p-4 flex justify-between items-center'>
                     <h2 className='text-lg font-semibold'>Cart</h2>
                     <button onClick={closeCart} className='text-2xl font-light'>
@@ -50,6 +58,7 @@ export default function CartSidebar() {
                         <CustomButton
                             className='px-6 py-3'
                             bgColor='bg-customGray-700'
+                            onClick={handleCheckout}
                         >
                             Zur Kasse
                         </CustomButton>

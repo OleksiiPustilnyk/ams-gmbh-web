@@ -8,4 +8,5 @@ export const breadcrumbNames: Record<string, string> = {
     categories: 'Kategorien',
     products: 'Produkte',
     configurator: 'Configurator',
+    cart: 'Warenkorb',
 }

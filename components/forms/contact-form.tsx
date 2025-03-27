@@ -6,6 +6,7 @@ import CustomInput from '../ui/custom-input/custom-input'
 import CustomSelect from '../ui/custom-select/custom-select'
 import CustomButton from '../ui/buttons/custom-button'
 import CustomTextarea from '../ui/custom-textarea/custom-textarea'
+import { emailValidation } from '@/helpers/validation'
 // import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 
 export default function ContactForm() {
@@ -43,9 +44,7 @@ export default function ContactForm() {
                 <CustomInput
                     label='E-Mail'
                     required
-                    {...register('email', {
-                        required: 'Nachname ist erforderlich',
-                    })}
+                    {...register('email', emailValidation)}
                     error={errors.email}
                 />
             </div>

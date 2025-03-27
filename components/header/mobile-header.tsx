@@ -5,6 +5,7 @@ import Logo from '../logo/logo'
 import MobileMenu from '../nav-menu/mobile-menu'
 import Cart from '../ui/cart-icon/cart-icon'
 import { BurgerIcon } from '../ui/icons/icon-burger'
+import CartSidebar from '../cart-sidebar/cart-sidebar'
 
 export default function MobileHeader() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -23,6 +24,7 @@ export default function MobileHeader() {
                     <Logo />
                 </div>
                 <Cart />
+                <CartSidebar />
             </div>
             <div
                 className={`absolute left-0 w-full bg-white shadow-lg transition-transform duration-300 ${

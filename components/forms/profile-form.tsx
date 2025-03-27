@@ -5,7 +5,11 @@ import { ProfileFormData } from '@/interfaces/profile-form.interface'
 import CustomInput from '../ui/custom-input/custom-input'
 import CustomSelect from '../ui/custom-select/custom-select'
 import CustomButton from '../ui/buttons/custom-button'
-import { handlePhoneInput, phoneValidation } from '@/helpers/validation'
+import {
+    emailValidation,
+    handlePhoneInput,
+    phoneValidation,
+} from '@/helpers/validation'
 import CustomTextarea from '../ui/custom-textarea/custom-textarea'
 // import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 
@@ -121,14 +125,7 @@ export default function ProfileForm() {
                 <CustomInput
                     label='E-Mail'
                     type='email'
-                    required
-                    {...register('email', {
-                        required: 'E-Mail ist erforderlich',
-                        pattern: {
-                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                            message: 'Ungültige E-Mail-Adresse',
-                        },
-                    })}
+                    {...register('email', emailValidation)}
                     error={errors.email}
                 />
 
