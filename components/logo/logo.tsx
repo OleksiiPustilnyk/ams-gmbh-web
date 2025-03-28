@@ -9,7 +9,7 @@ export default function Logo() {
                 alt='AMS GmbH'
                 width={200}
                 height={40}
-                style={{ width: 'auto', height: 'auto' }}
+                // style={{ width: 'auto', height: 'auto' }}
             />
         </Link>
     )

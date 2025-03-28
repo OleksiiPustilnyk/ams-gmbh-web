@@ -1,6 +1,6 @@
 'use client'
 
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import { ProfileFormData } from '@/interfaces/profile-form.interface'
 import CustomInput from '../ui/custom-input/custom-input'
 import CustomSelect from '../ui/custom-select/custom-select'
@@ -11,7 +11,7 @@ import {
     phoneValidation,
 } from '@/helpers/validation'
 import CustomTextarea from '../ui/custom-textarea/custom-textarea'
-// import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
+import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 
 export default function ProfileForm() {
     const {
@@ -19,6 +19,7 @@ export default function ProfileForm() {
         handleSubmit,
         setValue,
         watch,
+        control,
         formState: { errors },
     } = useForm<ProfileFormData>({
         defaultValues: {
@@ -175,31 +176,25 @@ export default function ProfileForm() {
                 />
             </div>
 
-            {/* <div className='col-span-1 md:col-span-2 flex items-center'>
-                <CustomCheckbox
-                    label='Ich habe die Datenschutzbestimmungen zur Kenntnis genommen.'
-                    register={register('privacyPolicyAccepted', {
-                        required: 'Pflichtfeld',
-                    })}
-                    error={errors.privacyPolicyAccepted?.message}
-                />
-            </div> */}
-
-            <div className='col-span-1 md:col-span-2 flex items-center mb-4'>
-                <input
-                    type='checkbox'
-                    {...register('privacyPolicyAccepted', {
-                        required: true,
-                    })}
-                    className='mr-2'
-                />
-                <label className='text-sm text-gray-700'>
-                    Ich habe die Datenschutzbestimmungen zur Kenntnis genommen.
-                </label>
-                {errors.privacyPolicyAccepted && (
-                    <p className='text-red-500 text-xs ml-2'>Pflichtfeld</p>
+            <Controller
+                name='privacyPolicyAccepted'
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                    <div className='col-span-1 md:col-span-2 flex items-start gap-2 mb-4'>
+                        <CustomCheckbox
+                            label='Ich habe die Datenschutzbestimmungen zur Kenntnis genommen.'
+                            checked={field.value}
+                            onChange={field.onChange}
+                        />
+                        {errors.privacyPolicyAccepted && (
+                            <p className='text-red-500 text-xs mt-1 ml-1'>
+                                Pflichtfeld
+                            </p>
+                        )}
+                    </div>
                 )}
-            </div>
+            />
 
             <CustomButton
                 type='submit'

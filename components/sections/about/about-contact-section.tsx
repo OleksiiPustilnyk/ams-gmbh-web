@@ -1,7 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import CustomButton from '@/components/ui/buttons/custom-button'
+import { useNavigate } from '@/hooks/use-navigate'
 
 export default function AboutContactSection() {
+    const navigate = useNavigate()
+
     return (
         <section className='relative w-full h-[250px] md:h-[320px] lg:h-[380px] overflow-hidden mb-12 lg:mb-14'>
             <div className='absolute inset-0'>
@@ -31,6 +36,7 @@ export default function AboutContactSection() {
                     <CustomButton
                         bgColor='bg-customGray-800'
                         textColor='text-white'
+                        onClick={() => navigate('/contact')}
                     >
                         Kontakt
                     </CustomButton>

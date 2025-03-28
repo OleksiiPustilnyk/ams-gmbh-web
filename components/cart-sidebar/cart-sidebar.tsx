@@ -4,18 +4,18 @@ import { useCartStore } from '@/stores/use-cart-store'
 import { CloseIcon } from '../ui/icons/icon-close'
 import CustomButton from '../ui/buttons/custom-button'
 import CartDetails from '../cart/cart-details'
-import { useRouter } from 'next/navigation'
+import { useNavigate } from '@/hooks/use-navigate'
 
 export default function CartSidebar() {
     const isOpen = useCartStore((s) => s.isOpen)
     const items = useCartStore((s) => s.items)
     const closeCart = useCartStore((s) => s.closeCart)
 
-    const router = useRouter()
+    const navigate = useNavigate()
 
     const handleCheckout = () => {
         closeCart()
-        router.push('/cart')
+        navigate('/cart')
     }
 
     if (!isOpen) return null

@@ -4,7 +4,7 @@ import './globals.css'
 import Footer from '@/components/footer/footer'
 
 export const metadata: Metadata = {
-    title: 'Hello World',
+    title: 'AMS GmbH – Aluminium Profile',
     description: 'Minimal Next.js App',
 }
 
