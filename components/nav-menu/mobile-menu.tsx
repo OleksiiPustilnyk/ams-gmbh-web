@@ -1,42 +1,53 @@
+'use client'
+
 import Link from 'next/link'
 import Logo from '../logo/logo'
 import CategoryDropdown from '../dropdown/category-dropdown'
 import { navLinks } from '@/constants/nav-links'
 import { CloseIcon } from '../ui/icons/icon-close'
+import SearchInput from '../ui/custom-search-input/custom-search-input'
+import { useState } from 'react'
 
 interface MobileMenuProps {
     onClose: () => void
 }
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
+    const [query, setQuery] = useState('')
+
+    const handleSubmit = () => {
+        console.log('Search:', query)
+        onClose()
+    }
     return (
-        <div className='fixed top-16 left-0 w-[90%] md:w-[50%] h-screen bg-white shadow-lg p-6 overflow-y-auto'>
+        <div className='fixed top-16 left-0 w-5/6 md:w-1/2 h-[calc(100vh-64px)] bg-white shadow-lg p-6 overflow-y-auto z-50'>
             <div className='mb-6 flex justify-start'>
                 <Logo />
             </div>
             <button
                 onClick={onClose}
-                className='absolute top-10 right-4 text-customGray-600'
+                className='absolute top-6 right-4 text-customGray-600'
             >
                 <CloseIcon />
             </button>
-            <div className='flex items-center border border-grcustomGrayay-200 rounded-lg px-3 py-2 mb-4'>
-                <input
-                    type='text'
-                    placeholder='What are you looking for?'
-                    className='flex-1 outline-none text-customGray-700 placeholder-customGray-500'
-                />
-                <button className='ml-2 text-customGray-700 text-sm font-semibold'>
-                    Suche
-                </button>
-            </div>
+
+            <SearchInput
+                value={query}
+                onChange={setQuery}
+                onSubmit={handleSubmit}
+                placeholder='Was suchen Sie?'
+                className='mb-6'
+            />
+
             <CategoryDropdown />
-            <nav className='space-y-4 text-customGray-700'>
+
+            <nav className='space-y-4 text-customGray-700 mt-6'>
                 {navLinks.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
-                        className='block hover:text-customGray-700'
+                        onClick={onClose}
+                        className='block hover:text-customGray-700 transition'
                     >
                         {link.name}
                     </Link>

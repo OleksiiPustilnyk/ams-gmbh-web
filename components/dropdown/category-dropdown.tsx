@@ -125,6 +125,7 @@ export default function DropdownMenu() {
                                         ) : (
                                             <Link
                                                 href={category.link!}
+                                                onClick={() => setIsOpen(false)}
                                                 className='w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-customGray-100'
                                             >
                                                 <span className='flex items-center gap-2'>
@@ -178,6 +179,9 @@ export default function DropdownMenu() {
                                                 <li key={sub.name}>
                                                     <Link
                                                         href={sub.link}
+                                                        onClick={() =>
+                                                            setIsOpen(false)
+                                                        }
                                                         className='flex items-center gap-2 px-4 py-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                     >
                                                         <ArrowIcon className='w-3 h-3' />
@@ -212,6 +216,7 @@ export default function DropdownMenu() {
                                     ) : (
                                         <Link
                                             href={category.link!}
+                                            onClick={() => setIsOpen(false)}
                                             className='w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100'
                                         >
                                             <span className='flex items-center gap-2'>
@@ -229,6 +234,11 @@ export default function DropdownMenu() {
                                                         <li key={sub.name}>
                                                             <Link
                                                                 href={sub.link}
+                                                                onClick={() =>
+                                                                    setIsOpen(
+                                                                        false,
+                                                                    )
+                                                                }
                                                                 className='py-2 flex items-center gap-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                             >
                                                                 <ArrowIcon className='w-3 h-3' />

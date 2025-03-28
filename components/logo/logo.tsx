@@ -3,13 +3,13 @@ import Link from 'next/link'
 
 export default function Logo() {
     return (
-        <Link href='/' className='flex items-center gap-2'>
+        <Link href='/' className='relative w-[200px] h-10 flex items-center'>
             <Image
                 src='/images/logo/logo.svg'
                 alt='AMS GmbH'
-                width={200}
-                height={40}
-                // style={{ width: 'auto', height: 'auto' }}
+                fill
+                className='object-contain'
+                priority
             />
         </Link>
     )
