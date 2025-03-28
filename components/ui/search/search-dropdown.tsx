@@ -16,7 +16,7 @@ export default function SearchDropdown({ onClose }: Props) {
     }
 
     return (
-        <div className='bg-white border border-customGray-200 rounded-lg shadow-lg p-4'>
+        <div className='bg-white border border-customGray-200 rounded-lg'>
             <SearchInput
                 value={query}
                 onChange={setQuery}
