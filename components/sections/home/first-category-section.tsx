@@ -21,14 +21,14 @@ export default function FirstCategorySection() {
 
                     <div className='w-1/3 flex justify-end items-center gap-4'>
                         <Image
-                            src='/images/img-iso.png'
+                            src='/images/certificats/img-iso.png'
                             alt='ISO Zertifizierung'
                             width={88}
                             height={88}
                             className='object-contain'
                         />
                         <Image
-                            src='/images/img-ce.png'
+                            src='/images/certificats/img-ce.png'
                             alt='CE Zertifizierung'
                             width={88}
                             height={88}
