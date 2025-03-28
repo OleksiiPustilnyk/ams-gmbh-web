@@ -25,7 +25,7 @@ export default function MontageTypeSelector<T extends FieldValues>({
                     className={`cursor-pointer flex flex-col items-center w-full border rounded-md p-4 transition-all duration-200 ${
                         selectedValue === type.value
                             ? 'border-customYellow-600'
-                            : 'border-gray-200'
+                            : 'border-customGray-200'
                     }`}
                 >
                     <input

@@ -43,7 +43,7 @@ export default function ImageSlider({ images, altText }: ImageSliderProps) {
                     onClick={() => instanceRef.current?.prev()}
                     className='absolute left-[-30px] z-10 p-2'
                 >
-                    <ChevronIcon className='w-5 h-5 rotate-90 text-gray-600' />
+                    <ChevronIcon className='w-5 h-5 rotate-90 text-customGray-600' />
                 </button>
 
                 <div className='w-[280px] md:w-[180px] lg:w-[280px] mx-auto'>
@@ -75,7 +75,7 @@ export default function ImageSlider({ images, altText }: ImageSliderProps) {
                     onClick={() => instanceRef.current?.next()}
                     className='absolute right-[-30px] z-10 p-2'
                 >
-                    <ChevronIcon className='w-5 h-5 -rotate-90 text-gray-600' />
+                    <ChevronIcon className='w-5 h-5 -rotate-90 text-customGray-600' />
                 </button>
             </div>
         </div>

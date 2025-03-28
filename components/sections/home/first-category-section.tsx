@@ -12,7 +12,7 @@ export default function FirstCategorySection() {
 
                 <div className='bg-customGray-100 border p-6 flex items-center justify-between'>
                     <div className='w-2/3 pr-6'>
-                        <p className='text-gray-500 text-sm'>
+                        <p className='text-customGray-500 text-sm'>
                             Zertifizierungen und Qualität: Nachweise unseres
                             Engagements für Exzellenz im deutschen
                             Aluminiumhandel

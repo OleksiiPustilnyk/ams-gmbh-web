@@ -31,7 +31,7 @@ export default function CustomSecondaryButton({
             className={`flex items-center gap-2 px-3 py-1 rounded-md transition font-medium
                 ${
                     disabled
-                        ? ` text-gray-400 cursor-not-allowed ${disabledBorder}`
+                        ? ` text-customGray-400 cursor-not-allowed ${disabledBorder}`
                         : `text-customGray-600 hover:border-customYellow-400 hover:bg-customYellow-100 active:bg-customYellow-600 active:text-customGray-700 ${borderClass}`
                 }
                 ${textSize} ${className}

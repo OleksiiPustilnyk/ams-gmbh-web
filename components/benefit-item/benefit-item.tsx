@@ -27,7 +27,7 @@ export default function BenefitItem({
                 <h3 className='text-customGray-700 font-semibold text-lg mb-1'>
                     {title}
                 </h3>
-                <p className='text-gray-600 text-sm'>{description}</p>
+                <p className='text-customGray-600 text-sm'>{description}</p>
             </div>
         </div>
     )

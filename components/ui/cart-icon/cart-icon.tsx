@@ -13,7 +13,7 @@ export default function Cart() {
         <div className='relative'>
             <button
                 onClick={toggleCart}
-                className='p-2 hover:bg-gray-100 rounded-md transition'
+                className='p-2 hover:bg-customGray-100 rounded-md transition'
             >
                 <CartIcon />
             </button>

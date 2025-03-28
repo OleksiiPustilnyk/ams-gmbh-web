@@ -11,7 +11,7 @@ export default function StandardStaticsSection() {
                     Regelstatik
                 </h3>
                 <CustomTooltip content='Informationen zur Traglast'>
-                    <button className='text-gray-500 hover:text-gray-700'>
+                    <button className='text-customGray-500 hover:text-customGray-700'>
                         <InfoIcon className='w-4 h-4' />
                     </button>
                 </CustomTooltip>

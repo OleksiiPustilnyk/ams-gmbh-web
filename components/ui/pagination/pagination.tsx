@@ -47,7 +47,7 @@ export default function Pagination({
                 iconPosition='left'
                 borderColor=''
                 textSize='text-sm'
-                className={`text-gray-500 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`text-customGray-500 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                 onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
             />
@@ -55,7 +55,10 @@ export default function Pagination({
             <div className='flex space-x-2'>
                 {paginationRange.map((page, index) =>
                     page === '...' ? (
-                        <span key={index} className='px-3 py-1 text-gray-500'>
+                        <span
+                            key={index}
+                            className='px-3 py-1 text-customGray-500'
+                        >
                             ...
                         </span>
                     ) : (
@@ -85,7 +88,7 @@ export default function Pagination({
                 iconPosition='right'
                 borderColor=''
                 textSize='text-sm'
-                className={`text-gray-500 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`text-customGray-500 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
                 onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
             />

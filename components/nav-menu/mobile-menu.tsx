@@ -16,22 +16,22 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             </div>
             <button
                 onClick={onClose}
-                className='absolute top-10 right-4 text-gray-600'
+                className='absolute top-10 right-4 text-customGray-600'
             >
                 <CloseIcon />
             </button>
-            <div className='flex items-center border border-gray-300 rounded-lg px-3 py-2 mb-4'>
+            <div className='flex items-center border border-grcustomGrayay-200 rounded-lg px-3 py-2 mb-4'>
                 <input
                     type='text'
                     placeholder='What are you looking for?'
-                    className='flex-1 outline-none text-gray-700 placeholder-gray-500'
+                    className='flex-1 outline-none text-customGray-700 placeholder-customGray-500'
                 />
-                <button className='ml-2 text-gray-700 text-sm font-semibold'>
+                <button className='ml-2 text-customGray-700 text-sm font-semibold'>
                     Suche
                 </button>
             </div>
             <CategoryDropdown />
-            <nav className='space-y-4 text-gray-700'>
+            <nav className='space-y-4 text-customGray-700'>
                 {navLinks.map((link) => (
                     <Link
                         key={link.href}

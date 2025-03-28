@@ -51,7 +51,7 @@ export default function BlogList() {
                             />
                         ))
                     ) : (
-                        <p className='text-gray-500 text-sm'>
+                        <p className='text-customGray-500 text-sm'>
                             Keine Beiträge gefunden.
                         </p>
                     )}

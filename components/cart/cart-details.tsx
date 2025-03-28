@@ -13,7 +13,9 @@ export default function CartDetails() {
     return (
         <div className='p-4 space-y-6'>
             {items.length === 0 ? (
-                <p className='text-sm text-gray-500'>Warenkorb ist leer</p>
+                <p className='text-sm text-customGray-500'>
+                    Warenkorb ist leer
+                </p>
             ) : (
                 items.map((item) => (
                     <div

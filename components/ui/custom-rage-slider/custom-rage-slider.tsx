@@ -71,7 +71,7 @@ export default function CustomRangeSlider({
                     return (
                         <div
                             {...restProps}
-                            className='w-full h-1 bg-gray-300 rounded-md relative'
+                            className='w-full h-1 bg-customGray-300 rounded-md relative'
                         >
                             <div
                                 className='absolute h-1 bg-customYellow-500 rounded-md'

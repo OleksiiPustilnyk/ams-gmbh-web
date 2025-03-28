@@ -11,7 +11,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className='border-b border-gray-300'>
+        <div className='border-b border-customGray-200'>
             <button
                 className='w-full flex justify-between items-center py-4 text-left'
                 onClick={() => setIsOpen(!isOpen)}

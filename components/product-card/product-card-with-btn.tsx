@@ -55,10 +55,10 @@ export default function ProductCardWithButton({
 
                             <div className='flex justify-between items-center mt-10'>
                                 <div className='flex flex-col'>
-                                    <span className='text-gray-500 text-sm'>
+                                    <span className='text-customGray-500 text-sm'>
                                         {product.setInfo}
                                     </span>
-                                    <span className='text-lg font-semibold text-gray-900'>
+                                    <span className='text-lg font-semibold text-customGray-700'>
                                         {product.price}
                                     </span>
                                 </div>

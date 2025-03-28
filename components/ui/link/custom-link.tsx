@@ -20,7 +20,7 @@ export default function CustomLink({
         <Link
             href={href}
             onClick={onClick}
-            className={`group flex w-max items-center ${textSize} font-normal leading-6 text-gray-900 transition-colors 
+            className={`group flex w-max items-center ${textSize} font-normal leading-6 text-customGray-700 transition-colors 
                 hover:text-customYellow-700 active:text-customYellow-900 ${className}`}
         >
             {children}

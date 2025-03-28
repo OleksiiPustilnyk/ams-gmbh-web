@@ -60,9 +60,9 @@ const footerLinks = [
 
 export default function Footer() {
     return (
-        <footer className='bg-gray-100 py-10 mt-12 px-4'>
+        <footer className='bg-customGray-100 py-10 mt-12 px-4'>
             <div className='container mx-auto'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1.5fr_1fr] gap-6 border-b border-gray-300 pb-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr_1.5fr_1fr] gap-6 border-b border-customGray-200 pb-8'>
                     {footerLinks.map((section, index) => (
                         <div key={index}>
                             <h4 className='text-customGray-500 font-semibold text-sm mb-4'>
@@ -84,7 +84,7 @@ export default function Footer() {
                     ))}
                 </div>
 
-                <div className='flex flex-col lg:flex-row lg:justify-between items-center mt-6 text-gray-600 text-sm'>
+                <div className='flex flex-col lg:flex-row lg:justify-between items-center mt-6 text-customGray-600 text-sm'>
                     <Logo />
                     <p className='text-center lg:text-left mt-4 lg:mt-0'>
                         * Alle Preise zzgl. MwSt. und Versandkosten, sofern

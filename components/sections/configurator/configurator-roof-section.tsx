@@ -69,7 +69,7 @@ export default function RoofSelection<T extends FieldValues>({
                             className={`flex flex-col items-center border rounded-md transition-all duration-200 ${
                                 selectedValue === option.value
                                     ? 'border-customYellow-600'
-                                    : 'border-gray-200'
+                                    : 'border-customGray-200'
                             }`}
                             onClick={() => handleSelect(option.value)}
                         >

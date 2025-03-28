@@ -50,7 +50,7 @@ export default function InstructionsSelector<T extends FieldValues>({
                         Anleitung
                     </h3>
                     <CustomTooltip content='This is an Anleitung description'>
-                        <button className='text-gray-500 hover:text-gray-700'>
+                        <button className='text-customGray-500 hover:text-customGray-700'>
                             <InfoIcon className='w-4 h-4' />
                         </button>
                     </CustomTooltip>

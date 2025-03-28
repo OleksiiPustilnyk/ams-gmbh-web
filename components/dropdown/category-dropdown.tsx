@@ -163,7 +163,7 @@ export default function DropdownMenu() {
                                     (cat) => cat.name === openCategory,
                                 )?.subcategories && (
                                     <ul
-                                        className={`w-full mt-4 text-gray-700 text-left transition-opacity duration-500 max-h-40 overflow-y-auto ${
+                                        className={`w-full mt-4 text-customGray-700 text-left transition-opacity duration-500 max-h-40 overflow-y-auto ${
                                             openCategory
                                                 ? 'opacity-100'
                                                 : 'opacity-0'
@@ -178,7 +178,7 @@ export default function DropdownMenu() {
                                                 <li key={sub.name}>
                                                     <Link
                                                         href={sub.link}
-                                                        className='flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                        className='flex items-center gap-2 px-4 py-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                     >
                                                         <ArrowIcon className='w-3 h-3' />
                                                         {sub.name}
@@ -223,13 +223,13 @@ export default function DropdownMenu() {
 
                                     {openCategory === category.name &&
                                         category.subcategories && (
-                                            <ul className='ml-6 mt-2 text-gray-700 text-left border-l border-gray-300 pl-4'>
+                                            <ul className='ml-6 mt-2 text-customGray-700 text-left border-l border-customGray-300 pl-4'>
                                                 {category.subcategories.map(
                                                     (sub) => (
                                                         <li key={sub.name}>
                                                             <Link
                                                                 href={sub.link}
-                                                                className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                                className='py-2 flex items-center gap-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                             >
                                                                 <ArrowIcon className='w-3 h-3' />
                                                                 {sub.name}

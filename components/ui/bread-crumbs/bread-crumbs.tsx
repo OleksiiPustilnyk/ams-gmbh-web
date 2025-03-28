@@ -22,7 +22,7 @@ export default function Breadcrumbs({
     const pathSegments = pathname.split('/').filter(Boolean)
 
     return (
-        <nav className='text-gray-500 text-sm'>
+        <nav className='text-customGray-500 text-sm'>
             <ul className='flex items-center gap-2'>
                 <li>
                     <Link
