@@ -1,6 +1,14 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import CustomButton from '@/components/ui/buttons/custom-button'
 
 export default function HeroSection() {
+    const router = useRouter()
+
+    const handleNavigate = () => {
+        router.push('/configurator')
+    }
     return (
         <section
             className='relative w-full h-[810px] bg-cover bg-center -mt-px z-0 
@@ -31,7 +39,7 @@ export default function HeroSection() {
                                 Konstruieren Sie Terrassendach
                             </h1>
 
-                            <CustomButton>
+                            <CustomButton onClick={handleNavigate}>
                                 Konstruieren Sie Terrassendach
                             </CustomButton>
                         </div>

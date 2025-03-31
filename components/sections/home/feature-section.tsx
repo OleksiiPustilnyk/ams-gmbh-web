@@ -1,8 +1,16 @@
+'use client'
+
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import CustomButton from '@/components/ui/buttons/custom-button'
 import { CheckIcon } from '@/components/ui/icons/icon-check'
-import Image from 'next/image'
 
 export default function FeatureSection() {
+    const router = useRouter()
+
+    const handleNavigate = () => {
+        router.push('/configurator')
+    }
     return (
         <section className='w-full bg-customGray-100 pt-12'>
             <div className='w-full'>
@@ -54,7 +62,10 @@ export default function FeatureSection() {
                             </li>
                         </ul>
 
-                        <CustomButton className='mb-8 lg:mb-0'>
+                        <CustomButton
+                            className='mb-8 lg:mb-0'
+                            onClick={handleNavigate}
+                        >
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>
@@ -130,7 +141,10 @@ export default function FeatureSection() {
                             stilvoll, wettergeschützt und komfortabel!
                         </p>
 
-                        <CustomButton className='mb-8 lg:mb-0'>
+                        <CustomButton
+                            className='mb-8 lg:mb-0'
+                            onClick={handleNavigate}
+                        >
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>
