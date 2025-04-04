@@ -10,7 +10,7 @@ export default function AdminHeader() {
 
         <header className='w-full bg-white shadow-md'>
             <div className='container mx-auto flex items-center justify-between py-4'>
-                <div className='flex items-center gap-4 '>
+                <div className='flex items-center gap-4'>
                     <Logo />
                 </div>
                 <nav className='flex flex-1 justify-center'>

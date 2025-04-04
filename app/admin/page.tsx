@@ -1,4 +1,3 @@
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export default function AdminPage() {
@@ -9,7 +8,7 @@ export default function AdminPage() {
     const token = true
 
     if (!token) {
-        redirect('/admin/login')
+        redirect('/login')
     } else {
         redirect('/admin/products')
     }

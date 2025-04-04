@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { MAX_IMAGE_SIZE } from '@/constants/admin/constants'
 
 interface ImagesUploaderProps {
     value: File[]
@@ -7,6 +8,7 @@ interface ImagesUploaderProps {
     error: string | undefined
     imageError: string | null
     setImageError: React.Dispatch<React.SetStateAction<string | null>>
+    initialImageUrls?: string[]
 }
 
 export default function ImagesUploader({
@@ -15,16 +17,17 @@ export default function ImagesUploader({
     error,
     imageError,
     setImageError,
+    initialImageUrls,
 }: ImagesUploaderProps) {
     const [imagePreviews, setImagePreviews] = useState<string[]>([])
-    // const [imageError, setImageError] = useState<string | null>(null)
 
-    // useEffect(() => {
-    //     const previews = value.map((file) => URL.createObjectURL(file))
-    //     setImagePreviews(previews)
+    const [initialImage, setInitialImage] = useState<string[]>([])
 
-    //     return () => previews.forEach((url) => URL.revokeObjectURL(url))
-    // }, [value])
+    useEffect(() => {
+        if (initialImageUrls?.length) {
+            setInitialImage(initialImageUrls)
+        }
+    }, [initialImageUrls])
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const files = event.target.files
@@ -37,18 +40,30 @@ export default function ImagesUploader({
         setImageError(null)
 
         const newImages = Array.from(files)
-        const validImages = newImages.filter((file) => file.size <= 5000000)
 
-        if (validImages.length !== newImages.length) {
-            setImageError('Some files are too large! Max size: 5MB')
-            return
-        }
+        const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp']
 
-        onChange([...value, ...validImages])
+        const invalidFiles = newImages.filter((file) => {
+            if (!allowedMimeTypes.includes(file.type)) {
+                setImageError('Only JPEG, PNG, and WEBP formats are allowed')
+                return true
+            }
+            if (file.size > MAX_IMAGE_SIZE) {
+                setImageError(
+                    `Some files are too large! Max size: ${MAX_IMAGE_SIZE / (1024 * 1024)} MB`,
+                )
+                return true
+            }
+            return false
+        })
+
+        if (invalidFiles.length > 0) return
+
+        onChange([...value, ...newImages])
 
         setImagePreviews((prevPreviews) => [
             ...prevPreviews,
-            ...validImages.map((file) => URL.createObjectURL(file)),
+            ...newImages.map((file) => URL.createObjectURL(file)),
         ])
     }
 
@@ -63,11 +78,25 @@ export default function ImagesUploader({
         })
     }
 
+    const handlePreviousImageClick = (imageUrl: string) => {
+        window.open(imageUrl, '_blank')
+    }
+
     return (
         <div className='mb-3'>
             <label className='block text-sm font-medium text-customGray-700 mb-2'>
-                Upload images (max 5mb) *
+                Upload images{' '}
+                <span className='text-gray-400'>
+                    (max {MAX_IMAGE_SIZE / (1024 * 1024)} MB)
+                </span>{' '}
+                *
             </label>
+            {initialImage.length > 0 && (
+                <p className='text-sm text-gray-500 mb-2'>
+                    <span className='text-red-500'>Attention!</span> Uploading
+                    new images will replace all existing images.
+                </p>
+            )}
             <input
                 type='file'
                 multiple
@@ -115,13 +144,30 @@ export default function ImagesUploader({
                                 >
                                     ✕
                                 </button>
-                                {/* <button
-                                    type='button'
-                                    onClick={() => removeImage(index)}
-                                    className='absolute top-1 right-1 bg-red-500 text-white w-6 h-6 flex items-center justify-center rounded-full text-xs'
-                                >
-                                    ✕
-                                </button> */}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+            {!imagePreviews.length && initialImage.length > 0 && (
+                <div className='mt-3'>
+                    <h4 className='text-sm font-medium text-customGray-700'>
+                        Current product images:
+                    </h4>
+                    <div className='flex space-x-2'>
+                        {initialImage.map((preview, index) => (
+                            <div key={index}>
+                                <Image
+                                    src={preview}
+                                    width={40}
+                                    height={40}
+                                    alt={`preview-${index}`}
+                                    className='w-24 h-24 object-cover rounded-lg'
+                                    onClick={() =>
+                                        handlePreviousImageClick(preview)
+                                    }
+                                    style={{ cursor: 'pointer' }}
+                                />
                             </div>
                         ))}
                     </div>

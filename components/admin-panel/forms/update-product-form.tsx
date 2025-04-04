@@ -6,13 +6,13 @@ import CustomSelect from '@/components/ui/custom-select/custom-select'
 import CustomTextarea from '@/components/ui/custom-textarea/custom-textarea'
 import CustomButton from '@/components/ui/buttons/custom-button'
 import {
-    AddProductFormProps,
-    AddProductInput,
     MeasurementUnitEnum,
+    UpdateProductInput,
 } from '@/view/admin-panel/products/products.types'
 import CustomMultiSelect from '@/components/ui/admin/links/custom-multi-select/custom-multi-select'
 import { useState } from 'react'
 import ImagesUploader from '@/components/ui/admin/images-uploader/images-uploader'
+import { testProducts } from '@/app/admin/products/page'
 
 const categories = [
     {
@@ -46,19 +46,25 @@ const categories = [
         link: 'category-6',
     },
 ]
-const testProducts = [
-    { id: '1', name: 'Product 1', articleNumber: 'ART001' },
-    { id: '2', name: 'Product 2', articleNumber: 'ART002' },
+
+const mockedProductImage = [
     {
-        id: '3',
-        name: 'Productdfbbbbbbbbbbbbbbbbbbb x fbdxvb sfhdssdfsdfgsdfg fgdsfgsdfgsdfg 3',
-        articleNumber: 'ART003',
+        _id: '1',
+        url: 'http://localhost:3001/uploads/images/product/images-1741877358688-972873134.webp',
+        originalName: 'image1.webp',
     },
-    { id: '4', name: 'Product 4', articleNumber: 'ART004' },
-    { id: '5', name: 'Product 5', articleNumber: 'ART005' },
+    {
+        _id: '2',
+        url: 'http://localhost:3001/uploads/images/product/images-1741877358690-961400164.webp',
+        originalName: 'image2.webp',
+    },
 ]
 
-export default function AddProductForm({ products }: AddProductFormProps) {
+interface UpdateProductFormProps {
+    product: UpdateProductInput
+}
+
+export default function UpdateProductForm({ product }: UpdateProductFormProps) {
     const {
         register,
         handleSubmit,
@@ -67,34 +73,69 @@ export default function AddProductForm({ products }: AddProductFormProps) {
         control,
         trigger,
         formState: { errors },
-    } = useForm<AddProductInput>({
+    } = useForm<UpdateProductInput>({
         defaultValues: {
-            isInStock: true,
-            isPopular: false,
-            categoryIds: [],
-            relatedProducts: [],
-            images: [],
+            ...product,
+            categoryIds: product.categoryIds || [],
+            relatedProducts: product.relatedProducts || [],
+            images: product.images || [],
         },
     })
 
-    console.log('products', products)
+    console.log('Default categoryIds:', product.categoryIds)
+
+    const [imageError, setImageError] = useState<string | null>(null)
+
+    // to do
+    // const initialPreviews = product?.imageIds?.map((img) => ({
+    //     id: img._id.toString(),
+    //     url: img.url,
+    //     originalName: img.originalName,
+    // }))
+    const initialPreviews = mockedProductImage.map(
+        (img) => img.url,
+
+        // {
+        // id: img._id.toString(),
+        // url: img.url,
+        // originalName: img.originalName,
+        // }
+    )
+
+    // to do fetch Categories and RelatedProducts
+    // const [categories, setCategories] = useState([])
+    // const [relatedProducts, setRelatedProducts] = useState([])
+
+    // useEffect(() => {
+    //     const fetchCategories = async () => {
+    //         const response = await fetch('/api/categories')
+    //         const data = await response.json()
+    //         setCategories(data)
+    //     }
+
+    //     const fetchRelatedProducts = async () => {
+    //         const response = await fetch('/api/products/related-products')
+    //         const data = await response.json()
+    //         setRelatedProducts(data)
+    //     }
+
+    //     fetchCategories()
+    //     fetchRelatedProducts()
+    // }, [])
+
+    const onSubmit: SubmitHandler<UpdateProductInput> = async (data) => {
+        try {
+            console.log('Product updated successfully!', data)
+        } catch (error) {
+            console.error('Error updating product:', error)
+        }
+    }
 
     // for category select
     const categoryOptions = categories.map((e) => ({
         value: e.id,
         label: e.name,
     }))
-
-    const onSubmit: SubmitHandler<AddProductInput> = (data) => {
-        if (!data.images || data.images.length === 0) {
-            setImageError('Please upload at least one image')
-            return
-        }
-
-        setImageError(null)
-
-        console.log('FormData in submit', data)
-    }
 
     // related products
     const productsOptions = testProducts.map((e) => ({
@@ -103,17 +144,12 @@ export default function AddProductForm({ products }: AddProductFormProps) {
     }))
 
     // images
-    const [imageError, setImageError] = useState<string | null>(null)
-
     const handleImagesChange = (newImages: File[]) => {
         setValue('images', newImages)
     }
 
     return (
-        <form
-            onSubmit={handleSubmit(onSubmit)}
-            // className='bg-white p-6 rounded-lg shadow-lg w-full'
-        >
+        <form onSubmit={handleSubmit(onSubmit)}>
             <CustomInput
                 label='Name'
                 required
@@ -238,13 +274,6 @@ export default function AddProductForm({ products }: AddProductFormProps) {
                     )}
                 />
             </div>
-            {/* <div>
-                <label>Related products</label>
-                <RelatedProductsSelect
-                    value={relatedProducts}
-                    onChange={handleRelatedProductsChange}
-                />
-            </div> */}
             <div className='mb-3'>
                 <CustomMultiSelect
                     label='Related products'
@@ -284,6 +313,7 @@ export default function AddProductForm({ products }: AddProductFormProps) {
                 error={errors.images?.message}
                 imageError={imageError}
                 setImageError={setImageError}
+                initialImageUrls={initialPreviews}
             />
             <p className='text-sm text-gray-500 mt-1 mb-1'>* Required fields</p>
             <CustomButton
@@ -291,7 +321,7 @@ export default function AddProductForm({ products }: AddProductFormProps) {
                 centerText
                 className='col-span-1 md:col-span-2 bg-customGray-700 text-white py-3 rounded-lg w-full text-center font-medium hover:bg-customGray-700/90 transition mt-1'
             >
-                Create new product
+                Update product
             </CustomButton>
         </form>
     )

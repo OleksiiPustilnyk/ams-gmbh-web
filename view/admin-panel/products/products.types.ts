@@ -1,13 +1,27 @@
 // to do: rewrite Product
+
+import { TerraceConfig } from '../terrace-config/terrace-config.types'
+
 export interface Product {
     id: string
     name: string
     articleNumber: string
-    price: string
+    price: number
+    discountPrice?: number
+    isInStock?: boolean
+    measurementUnit: MeasurementUnitEnum
+    categoryIds: string[]
+    length?: string
+    paint?: string
+    description?: string
+    additionalInfo?: string
+    isPopular?: boolean
+    relatedProducts?: string[]
+    imageIds: string[]
 }
 
 export interface ProductTableProps {
-    products: Product[]
+    products: Product[] | TerraceConfig[]
     updateLinkHref: string
     onDeleteProduct: (productId: string) => void
 }
@@ -35,6 +49,11 @@ export interface AddProductInput {
     isPopular?: boolean
     relatedProducts?: string[]
     images: File[]
+}
+
+export interface UpdateProductInput extends Omit<AddProductInput, 'images'> {
+    id: string
+    images?: File[]
 }
 
 export enum MeasurementUnitEnum {

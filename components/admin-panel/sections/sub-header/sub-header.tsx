@@ -16,8 +16,9 @@ export default function SubHeader({
 }: SubHeaderProps) {
     return (
         <section
-            className='flex items-center gap-2 mb-6 justify-between
-            '
+            className={`flex items-center gap-2 mb-6 ${
+                onSearch && placeholder ? 'justify-between' : 'justify-end'
+            }`}
         >
             {onSearch && placeholder && (
                 <ItemSearch onSearch={onSearch} placeholder={placeholder} />
