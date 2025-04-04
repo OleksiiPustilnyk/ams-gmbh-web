@@ -1,16 +1,8 @@
 'use client'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
-import CustomInput from '@/components/ui/custom-input/custom-input'
 import CustomButton from '@/components/ui/buttons/custom-button'
-import { PASSWORD_REGEX } from '@/constants/admin/constants'
-import { useState } from 'react'
-import { EyeIcon } from '@/components/ui/icons/icon-admin-eye'
-import { EyeOffIcon } from '@/components/ui/icons/icon-admin-eye-off'
-import {
-    ChangeUserPassInput,
-    UpdateUserInput,
-} from '@/view/admin-panel/user/user.types'
+import { ChangeUserPassInput } from '@/view/admin-panel/user/user.types'
 import PasswordInput from '@/components/ui/admin/password-input/password-input'
 
 export default function ChangeUserPassForm() {

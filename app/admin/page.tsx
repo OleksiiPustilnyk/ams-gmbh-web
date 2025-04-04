@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
 export default function AdminPage() {
-    // to do
+    // my to do
     // const token = cookies().get('admin_token')?.value
 
     // to delete

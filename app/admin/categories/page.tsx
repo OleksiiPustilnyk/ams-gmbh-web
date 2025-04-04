@@ -1,5 +1,3 @@
-import AdminBlogsView from '@/view/admin-panel/blogs'
-import { Blog } from '@/view/admin-panel/blogs/blogs.types'
 import AdminCategoriesView from '@/view/admin-panel/categories'
 import { Category } from '@/view/admin-panel/categories/categories.types'
 

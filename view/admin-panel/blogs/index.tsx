@@ -1,5 +1,4 @@
 'use client'
-import ProductTable from '@/components/admin-panel/sections/product-table/product-table'
 import SubHeader from '@/components/admin-panel/sections/sub-header/sub-header'
 import { useState } from 'react'
 import { AdminBlogsViewProps } from './blogs.types'

@@ -6,6 +6,7 @@ import CustomButton from '@/components/ui/buttons/custom-button'
 
 import { AddUserInput } from '@/view/admin-panel/user/user.types'
 import PasswordInput from '@/components/ui/admin/password-input/password-input'
+import { EMAIL_REGEX } from '@/constants/admin/constants'
 
 export default function AddUserForm() {
     const {
@@ -42,7 +43,7 @@ export default function AddUserForm() {
                 {...register('email', {
                     required: 'Email is required',
                     pattern: {
-                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        value: EMAIL_REGEX,
                         message: 'Invalid email',
                     },
                 })}

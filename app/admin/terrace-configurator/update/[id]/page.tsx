@@ -1,5 +1,4 @@
-import UpdateProductView from '@/view/admin-panel/products/update-product'
-import { testProducts, testTerraceConfig } from '../../page'
+import { testTerraceConfig } from '../../page'
 import UpdateTerraceConfigView from '@/view/admin-panel/terrace-config/update-terrace-config'
 
 interface UpdateTerraceConfigPageProps {

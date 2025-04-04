@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import CustomInput from '@/components/ui/custom-input/custom-input'
 import CustomButton from '@/components/ui/buttons/custom-button'
 import PasswordInput from '@/components/ui/admin/password-input/password-input'
+import { EMAIL_REGEX } from '@/constants/admin/constants'
 
 type LoginFormValues = {
     email: string
@@ -33,7 +34,7 @@ export default function LoginForm() {
                 {...register('email', {
                     required: 'Email is required',
                     pattern: {
-                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        value: EMAIL_REGEX,
                         message: 'Invalid email',
                     },
                 })}

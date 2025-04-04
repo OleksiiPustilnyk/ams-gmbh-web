@@ -2,7 +2,6 @@ import AdminProductsView from '@/view/admin-panel/products'
 import {
     MeasurementUnitEnum,
     Product,
-    UpdateProductInput,
 } from '@/view/admin-panel/products/products.types'
 
 // my to delete

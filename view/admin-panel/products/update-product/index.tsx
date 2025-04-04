@@ -1,7 +1,5 @@
 'use client'
 
-import { productsMock } from '@/app/admin/products/page'
-import AddProductForm from '@/components/admin-panel/forms/add-product-form'
 import UpdateProductForm from '@/components/admin-panel/forms/update-product-form'
 import { Product } from '../products.types'
 

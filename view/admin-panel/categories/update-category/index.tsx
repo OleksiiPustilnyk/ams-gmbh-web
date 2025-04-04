@@ -1,6 +1,5 @@
 'use client'
 
-import UpdateBlogForm from '@/components/admin-panel/forms/update-blog-form'
 import { Category } from '../categories.types'
 import UpdateCategoryForm from '@/components/admin-panel/forms/update-category-form'
 

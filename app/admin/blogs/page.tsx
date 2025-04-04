@@ -1,6 +1,5 @@
 import AdminBlogsView from '@/view/admin-panel/blogs'
 import { Blog } from '@/view/admin-panel/blogs/blogs.types'
-import AdminProductsView from '@/view/admin-panel/products'
 
 // my to delete
 export const testBlogs: Blog[] = [

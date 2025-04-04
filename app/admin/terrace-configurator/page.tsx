@@ -1,9 +1,4 @@
-import AdminProductsView from '@/view/admin-panel/products'
-import {
-    MeasurementUnitEnum,
-    Product,
-    UpdateProductInput,
-} from '@/view/admin-panel/products/products.types'
+import { MeasurementUnitEnum } from '@/view/admin-panel/products/products.types'
 import AdminTerraceConfigView from '@/view/admin-panel/terrace-config'
 import { TerraceConfig } from '@/view/admin-panel/terrace-config/terrace-config.types'
 

@@ -238,13 +238,6 @@ export default function AddProductForm({ products }: AddProductFormProps) {
                     )}
                 />
             </div>
-            {/* <div>
-                <label>Related products</label>
-                <RelatedProductsSelect
-                    value={relatedProducts}
-                    onChange={handleRelatedProductsChange}
-                />
-            </div> */}
             <div className='mb-3'>
                 <CustomMultiSelect
                     label='Related products'
