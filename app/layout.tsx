@@ -1,7 +1,5 @@
-import Header from '@/components/header/header'
 import type { Metadata } from 'next'
 import './globals.css'
-import Footer from '@/components/footer/footer'
 
 export const metadata: Metadata = {
     title: 'AMS GmbH – Aluminium Profile',
@@ -15,13 +13,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body>
-                <div className='flex flex-col min-h-screen'>
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
-                </div>
-            </body>
+            <body>{children}</body>
         </html>
     )
 }
