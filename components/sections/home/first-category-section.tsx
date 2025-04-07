@@ -12,7 +12,7 @@ export default function FirstCategorySection() {
 
                 <div className='bg-customGray-100 border p-6 flex items-center justify-between'>
                     <div className='w-2/3 pr-6'>
-                        <p className='text-gray-500 text-sm'>
+                        <p className='text-customGray-500 text-sm'>
                             Zertifizierungen und Qualität: Nachweise unseres
                             Engagements für Exzellenz im deutschen
                             Aluminiumhandel
@@ -21,14 +21,14 @@ export default function FirstCategorySection() {
 
                     <div className='w-1/3 flex justify-end items-center gap-4'>
                         <Image
-                            src='/images/img-iso.png'
+                            src='/images/certificats/img-iso.png'
                             alt='ISO Zertifizierung'
                             width={88}
                             height={88}
                             className='object-contain'
                         />
                         <Image
-                            src='/images/img-ce.png'
+                            src='/images/certificats/img-ce.png'
                             alt='CE Zertifizierung'
                             width={88}
                             height={88}

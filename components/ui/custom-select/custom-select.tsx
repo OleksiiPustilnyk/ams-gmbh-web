@@ -55,7 +55,7 @@ export default function CustomSelect({
                 className={`w-full px-3 py-2 border rounded-lg text-customGray-700 text-base text-left flex items-center justify-between 
                     ${
                         disabled
-                            ? 'bg-customGray-50 border-customGray-300 text-gray-500 cursor-not-allowed'
+                            ? 'bg-customGray-50 border-customGray-300 text-customGray-500 cursor-not-allowed'
                             : error
                               ? 'border-red-500 focus:ring-red-500'
                               : 'bg-white border-customGray-300 focus:border-transparent focus:ring-1 focus:ring-customYellow-500'
@@ -84,7 +84,7 @@ export default function CustomSelect({
                                     onChange(opt.value)
                                     setIsOpen(false)
                                 }}
-                                className={`px-3 py-2 cursor-pointer text-customGray-700 text-sm hover:bg-gray-100 
+                                className={`px-3 py-2 cursor-pointer text-customGray-700 text-sm hover:bg-customGray-100 
                                     ${value === opt.value ? 'bg-customYellow-100 font-medium' : ''}
                                     ${isFirst ? 'rounded-t-lg' : isLast ? 'rounded-b-lg' : ''}`}
                             >

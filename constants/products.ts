@@ -1,4 +1,6 @@
-export const products = [
+import { Product } from '@/interfaces/product.interface'
+
+export const products: Product[] = [
     {
         title: 'Aluminum rafters for patio roofing or patio roofing',
         imageUrl: '/images/product-section/img-product-alum.png',
@@ -10,10 +12,6 @@ export const products = [
         inStock: true,
         roofType: 'vsg',
         descriptionTabs: [
-            // {
-            //     type: 'heading',
-            //     content: 'Описание продукта',
-            // },
             {
                 type: 'text',
                 content:
@@ -26,7 +24,7 @@ export const products = [
             },
             {
                 type: 'text',
-                content: 'ADie Vorteile von U-Profilen mit Naben in Aluminium:',
+                content: 'Die Vorteile von U-Profilen mit Naben in Aluminium:',
             },
             {
                 type: 'list',
@@ -39,11 +37,9 @@ export const products = [
                 type: 'image',
                 src: '/images/product-section/product-layout.png',
             },
-
             {
                 type: 'text',
-                content:
-                    'AlAluminium ist das führende Material für Fassaden. Es war eines der ersten Metalle, das man zur Verwendung als Baustoff entdeckte und es hat sich bis heute als einer der besten bewährt. Das liegt nicht nur an seinen hervorragenden Eigenschaften, sondern auch an der großen Bandbreite seiner Verwendungsmöglichkeiten: Aluminium kann in Form von Profilen, Toren und Türen genutzt werden – sowohl im Inneren als auch außerhalb von Gebäuden.uminium ist das führende Material für Fassaden...',
+                content: 'Aluminium ist das führende Material für Fassaden...',
             },
         ],
         specification: [
@@ -91,6 +87,6 @@ export const products = [
         category: 'alu-zaun',
         slug: '4',
         inStock: true,
-        roofType: 'polycarbonat ',
+        roofType: 'polycarbonat',
     },
 ]

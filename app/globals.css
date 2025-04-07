@@ -6,6 +6,7 @@ body {
     color: #171717;
     background: #ffffff;
     @apply font-sans;
+    overflow-x: hidden;
 }
 
 /* .keen-slider__slide {

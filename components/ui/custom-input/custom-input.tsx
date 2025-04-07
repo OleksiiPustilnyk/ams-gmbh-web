@@ -44,7 +44,7 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none transition
                         ${
                             disabled
-                                ? 'bg-customGray-50 border-customGray-300 text-gray-500 cursor-not-allowed'
+                                ? 'bg-customGray-50 border-customGray-300 text-customGray-500 cursor-not-allowed'
                                 : error
                                   ? 'border-red-500 focus:ring-red-500'
                                   : 'border-customGray-300 text-customGray-700 hover:border-customYellow-500 focus:ring-2 focus:ring-customGray-300 focus:border-transparent'

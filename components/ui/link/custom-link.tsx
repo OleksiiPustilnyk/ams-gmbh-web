@@ -1,23 +1,26 @@
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { ReactNode, MouseEventHandler } from 'react'
 
 interface CustomLinkProps {
-    href: string
+    href?: string
     children: ReactNode
     className?: string
     textSize?: string
+    onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
 export default function CustomLink({
-    href,
+    href = '#',
     children,
     className = '',
     textSize = 'text-base',
+    onClick,
 }: CustomLinkProps) {
     return (
         <Link
             href={href}
-            className={`group flex w-max items-center ${textSize} font-normal leading-6 text-gray-900 transition-colors 
+            onClick={onClick}
+            className={`group flex w-max items-center ${textSize} font-normal leading-6 text-customGray-700 transition-colors 
                 hover:text-customYellow-700 active:text-customYellow-900 ${className}`}
         >
             {children}

@@ -66,16 +66,22 @@ export const thirdCategoryList = [
 
 export const pageCategories: CategoryArticle[] = [
     {
-        title: 'Alu Zaun',
-        imageUrl: '/images/categories/img-zaun.png',
-        link: '/alu-zaun',
-        slug: 'alu-zaun',
-    },
-    {
         title: 'Aluminium Profile',
         imageUrl: '/images/categories/img-profile.png',
         link: '/aluminium-profile',
         slug: 'aluminium-profile',
+    },
+    {
+        title: 'Alu Carport',
+        imageUrl: '/images/categories/img-alu-carport.png',
+        link: '/alu-carport',
+        slug: 'alu-carport',
+    },
+    {
+        title: 'Alu Zaun',
+        imageUrl: '/images/categories/img-zaun.png',
+        link: '/alu-zaun',
+        slug: 'alu-zaun',
     },
     {
         title: 'Dichtungen',
@@ -100,5 +106,17 @@ export const pageCategories: CategoryArticle[] = [
         imageUrl: '/images/categories/img-zube.png',
         link: '/zubehor',
         slug: 'zubehor',
+    },
+    {
+        title: 'Zaunprofile',
+        imageUrl: '/images/categories/img-zaunprofile.png',
+        link: '/zaunprofile',
+        slug: 'zaunprofile',
+    },
+    {
+        title: 'Assemble The Terrace',
+        imageUrl: '/images/categories/img-assemble-the-terrace.png',
+        link: '/assemble-the-terrace',
+        slug: 'assemble-the-terrace',
     },
 ]

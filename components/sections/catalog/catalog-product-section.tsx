@@ -20,13 +20,13 @@ export default function CatalogProductSection() {
                     Sicht
                 </CustomButton>
             </div>
-            <div className='mt-6 md:mt-0 md:ml-10 md:w-[450px] lg:w-[375px] max-w-full'>
+            <div className='relative mt-6 md:mt-0 md:ml-10 md:w-[450px] lg:w-[375px] w-full aspect-[375/350]'>
                 <Image
                     src='/images/image-catalog.png'
                     alt='Produktkatalog'
-                    width={375}
-                    height={350}
-                    // className='w-auto h-auto'
+                    fill
+                    className='object-contain'
+                    sizes='(max-width: 768px) 100vw, 375px'
                 />
             </div>
         </section>

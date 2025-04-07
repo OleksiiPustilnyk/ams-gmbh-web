@@ -14,10 +14,12 @@ export default function NotFoundView() {
             <h1 className='text-3xl font-semibold text-customGray-700 mt-14'>
                 The page you were looking for was not found.
             </h1>
-            <p className='text-gray-500 text-md mt-2'>
+            <p className='text-customGray-500 text-md mt-2'>
                 Check the URL or use the menu to navigate.
             </p>
-            <p className='text-gray-500 text-md mt-2 mb-8'>Please try again.</p>
+            <p className='text-customGray-500 text-md mt-2 mb-8'>
+                Please try again.
+            </p>
 
             <CustomButton href='/'>Home</CustomButton>
         </div>

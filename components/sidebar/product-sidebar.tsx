@@ -49,7 +49,6 @@ export default function ProductSidebar({
 
     const [isMobileOpen, setIsMobileOpen] = useState(false)
 
-    // 🔥 Отключаем скролл при открытом фильтре
     useEffect(() => {
         if (isMobileOpen) {
             document.body.classList.add('overflow-hidden')
@@ -85,7 +84,7 @@ export default function ProductSidebar({
 
             {isMobileOpen && (
                 <div className='fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-start'>
-                    <div className='w-4/5 bg-white h-full overflow-y-auto relative top-16'>
+                    <div className='w-4/5 md:w-1/2 bg-white h-full overflow-y-auto relative top-16'>
                         <div className='sticky top-0 left-0 right-0 p-6 bg-white z-10'>
                             <div className='flex justify-between items-center'>
                                 <h3 className='text-customGray-700 font-semibold text-lg'>

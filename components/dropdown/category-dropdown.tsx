@@ -24,22 +24,22 @@ const categories: Category[] = [
     {
         name: 'Aluminium Profile',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/aluminium-profile',
+        link: '/categories/aluminium-profile',
     },
     {
         name: 'Alu Carport',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/alu-carport',
+        link: '/categories/alu-carport',
     },
     {
         name: 'Alu Zaun',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/alu-zaun',
+        link: '/categories/alu-zaun',
     },
     {
         name: 'Dichtungen',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/dichtungen',
+        link: '/categories/dichtungen',
     },
     {
         name: 'Überdachungen',
@@ -47,28 +47,28 @@ const categories: Category[] = [
         subcategories: [
             {
                 name: 'Laminated glass',
-                link: '/category/uberdachungen/laminated-glass',
+                link: '/categories/uberdachungen/laminated-glass',
             },
             {
                 name: 'Polycarbonat',
-                link: '/category/uberdachungen/polycarbonat',
+                link: '/categories/uberdachungen/polycarbonat',
             },
         ],
     },
     {
         name: 'Zubehör',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/zubehor',
+        link: '/categories/zubehor',
     },
     {
         name: 'Zaunprofile',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/zaunprofile',
+        link: '/categories/zaunprofile',
     },
     {
         name: 'Assemble the terrace',
         imageUrl: '/images/product-section/img-dropdown-alum-profile.png',
-        link: '/category/assemble-the-terrace',
+        link: '/categories/assemble-the-terrace',
     },
 ]
 
@@ -125,6 +125,7 @@ export default function DropdownMenu() {
                                         ) : (
                                             <Link
                                                 href={category.link!}
+                                                onClick={() => setIsOpen(false)}
                                                 className='w-full flex items-center justify-between px-4 py-3 text-left rounded-[4px] hover:bg-customGray-100'
                                             >
                                                 <span className='flex items-center gap-2'>
@@ -163,7 +164,7 @@ export default function DropdownMenu() {
                                     (cat) => cat.name === openCategory,
                                 )?.subcategories && (
                                     <ul
-                                        className={`w-full mt-4 text-gray-700 text-left transition-opacity duration-500 max-h-40 overflow-y-auto ${
+                                        className={`w-full mt-4 text-customGray-700 text-left transition-opacity duration-500 max-h-40 overflow-y-auto ${
                                             openCategory
                                                 ? 'opacity-100'
                                                 : 'opacity-0'
@@ -178,7 +179,10 @@ export default function DropdownMenu() {
                                                 <li key={sub.name}>
                                                     <Link
                                                         href={sub.link}
-                                                        className='flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                        onClick={() =>
+                                                            setIsOpen(false)
+                                                        }
+                                                        className='flex items-center gap-2 px-4 py-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                     >
                                                         <ArrowIcon className='w-3 h-3' />
                                                         {sub.name}
@@ -193,30 +197,49 @@ export default function DropdownMenu() {
                         <ul>
                             {categories.map((category) => (
                                 <li key={category.name}>
-                                    <button
-                                        onClick={() =>
-                                            handleCategoryClick(category)
-                                        }
-                                        className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100 ${
-                                            openCategory === category.name
-                                                ? 'bg-customGray-100'
-                                                : ''
-                                        }`}
-                                    >
-                                        <span className='flex items-center gap-2'>
-                                            <ArrowIcon className='w-3 h-3' />
-                                            {category.name}
-                                        </span>
-                                    </button>
+                                    {category.subcategories ? (
+                                        <button
+                                            onClick={() =>
+                                                handleCategoryClick(category)
+                                            }
+                                            className={`w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100 ${
+                                                openCategory === category.name
+                                                    ? 'bg-customGray-100'
+                                                    : ''
+                                            }`}
+                                        >
+                                            <span className='flex items-center gap-2'>
+                                                <ArrowIcon className='w-3 h-3' />
+                                                {category.name}
+                                            </span>
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={category.link!}
+                                            onClick={() => setIsOpen(false)}
+                                            className='w-full flex items-center justify-between py-3 text-left rounded-[4px] hover:bg-customGray-100'
+                                        >
+                                            <span className='flex items-center gap-2'>
+                                                <ArrowIcon className='w-3 h-3' />
+                                                {category.name}
+                                            </span>
+                                        </Link>
+                                    )}
+
                                     {openCategory === category.name &&
                                         category.subcategories && (
-                                            <ul className='ml-6 mt-2 text-gray-700 text-left border-l border-gray-300 pl-4'>
+                                            <ul className='ml-6 mt-2 text-customGray-700 text-left border-l border-customGray-300 pl-4'>
                                                 {category.subcategories.map(
                                                     (sub) => (
                                                         <li key={sub.name}>
                                                             <Link
                                                                 href={sub.link}
-                                                                className='py-2 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer'
+                                                                onClick={() =>
+                                                                    setIsOpen(
+                                                                        false,
+                                                                    )
+                                                                }
+                                                                className='py-2 flex items-center gap-2 hover:bg-customGray-100 rounded-lg cursor-pointer'
                                                             >
                                                                 <ArrowIcon className='w-3 h-3' />
                                                                 {sub.name}

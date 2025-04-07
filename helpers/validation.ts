@@ -15,3 +15,11 @@ export const handlePhoneInput = (
     }
     event.target.value = value
 }
+
+export const emailValidation = {
+    required: 'E-Mail ist erforderlich',
+    pattern: {
+        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+        message: 'Ungültige E-Mail-Adresse',
+    },
+}

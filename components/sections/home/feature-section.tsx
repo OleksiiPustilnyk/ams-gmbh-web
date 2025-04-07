@@ -1,8 +1,16 @@
+'use client'
+
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import CustomButton from '@/components/ui/buttons/custom-button'
 import { CheckIcon } from '@/components/ui/icons/icon-check'
-import Image from 'next/image'
 
 export default function FeatureSection() {
+    const router = useRouter()
+
+    const handleNavigate = () => {
+        router.push('/configurator')
+    }
     return (
         <section className='w-full bg-customGray-100 pt-12'>
             <div className='w-full'>
@@ -14,7 +22,7 @@ export default function FeatureSection() {
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8'>
                     <div className='px-4 lg:px-0 lg:ml-[110px] lg:mr-8'>
-                        <p className='text-gray-700 text-base mb-8'>
+                        <p className='text-customGray-700 text-base mb-8'>
                             Machen Sie Ihre Terrasse wetterfest und genießen Sie
                             maximalen Komfort mit unseren modernen
                             Aluminium-Terrassenüberdachungen. Wählen Sie
@@ -32,7 +40,7 @@ export default function FeatureSection() {
                                         Langlebig & Wartungsfrei
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-sm ml-9'>
+                                <p className='text-customGray-600 text-sm ml-9'>
                                     Rostfreies Aluminium garantiert Stabilität
                                     und eine lange Lebensdauer
                                 </p>
@@ -46,7 +54,7 @@ export default function FeatureSection() {
                                         Wetter- & UV-Schutz
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-sm ml-9'>
+                                <p className='text-customGray-600 text-sm ml-9'>
                                     Polycarbonat schützt vor Regen und Hitze,
                                     Glas sorgt für eine edle Optik mit maximalem
                                     Lichteinfall
@@ -54,7 +62,10 @@ export default function FeatureSection() {
                             </li>
                         </ul>
 
-                        <CustomButton className='mb-8 lg:mb-0'>
+                        <CustomButton
+                            className='mb-8 lg:mb-0'
+                            onClick={handleNavigate}
+                        >
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>
@@ -92,7 +103,7 @@ export default function FeatureSection() {
                                         Modernes & Zeitloses Design
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-sm ml-9'>
+                                <p className='text-customGray-600 text-sm ml-9'>
                                     Passt sich harmonisch an jede Architektur an
                                 </p>
                             </li>
@@ -105,7 +116,7 @@ export default function FeatureSection() {
                                         Individuelle Anpassung
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-sm ml-9'>
+                                <p className='text-customGray-600 text-sm ml-9'>
                                     Verschiedene Größen, Farben und Materialien
                                     nach Ihren Wünschen
                                 </p>
@@ -119,18 +130,21 @@ export default function FeatureSection() {
                                         Einfache & Schnelle Montage
                                     </strong>
                                 </div>
-                                <p className='text-gray-600 text-sm ml-9'>
+                                <p className='text-customGray-600 text-sm ml-9'>
                                     Für sofortige Nutzung und mehr Wohnqualität
                                 </p>
                             </li>
                         </ul>
 
-                        <p className='text-gray-700 text-base mb-6'>
+                        <p className='text-customGray-700 text-base mb-6'>
                             Erweitern Sie Ihren Wohnraum nach draußen –
                             stilvoll, wettergeschützt und komfortabel!
                         </p>
 
-                        <CustomButton className='mb-8 lg:mb-0'>
+                        <CustomButton
+                            className='mb-8 lg:mb-0'
+                            onClick={handleNavigate}
+                        >
                             Konstruieren Sie Terrassendach
                         </CustomButton>
                     </div>

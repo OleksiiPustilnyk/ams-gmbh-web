@@ -8,6 +8,7 @@ import ProductDescriptionRenderer from './product-description-render-section'
 import ProductSpecificationRenderer from './product-specification-render-section'
 import ProductAdditionalInfoRenderer from './product-additional-info-render'
 import { CheckCircleIcon } from '@/components/ui/icons/icon-check-circle'
+import { useCartStore } from '@/stores/use-cart-store'
 
 interface ProductPageSectionProps {
     product: Product
@@ -23,6 +24,14 @@ const productImages = [
 export default function ProductPageSection({
     product,
 }: ProductPageSectionProps) {
+    const addItem = useCartStore((s) => s.addItem)
+
+    const handleAddToCart = () => {
+        addItem({
+            ...product,
+            link: `/categories/${product.category}/${product.slug}`,
+        })
+    }
     return (
         <section className='container mx-auto mt-8 px-4 md:px-6 lg:px-0'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-8'>
@@ -87,7 +96,9 @@ export default function ProductPageSection({
                             </span>
                         </div>
                         <div>
-                            <CustomButton>Add to cart</CustomButton>
+                            <CustomButton onClick={handleAddToCart}>
+                                Add to cart
+                            </CustomButton>
                         </div>
                     </div>
                 </div>
