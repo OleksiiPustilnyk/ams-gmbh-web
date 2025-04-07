@@ -1,14 +1,12 @@
+import { testProducts } from '@/interfaces/test-product'
 import UpdateProductView from '@/view/admin-panel/products/update-product'
-import { testProducts } from '../../page'
 
-interface UpdateProductPageProps {
-    params: { id: string }
-}
+// interface UpdateProductPageProps {
+//     params: { id: string }
+// }
 
-export default async function UpdateProductPage({
-    params,
-}: UpdateProductPageProps) {
-    const { id } = params
+export default async function UpdateProductPage() {
+    // const { id } = params
     // to do fetch
     // const product = await fetchProductById(id)
     const product = testProducts[0]

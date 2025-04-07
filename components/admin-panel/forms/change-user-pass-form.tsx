@@ -14,7 +14,7 @@ export default function ChangeUserPassForm() {
     } = useForm<ChangeUserPassInput>()
 
     const onSubmit: SubmitHandler<ChangeUserPassInput> = (data) => {
-        const { confirmPassword, ...dataToSend } = data
+        const { ...dataToSend } = data
 
         console.log('Update User data:', dataToSend)
     }
@@ -45,7 +45,7 @@ export default function ChangeUserPassForm() {
                 error={errors.password}
                 fieldName='password'
                 validation={{
-                    validate: (value) =>
+                    validate: (value: string) =>
                         value === oldPassword
                             ? 'New password should not match with old one'
                             : true,
@@ -58,7 +58,7 @@ export default function ChangeUserPassForm() {
                 error={errors.confirmPassword}
                 fieldName='confirmPassword'
                 validation={{
-                    validate: (value) =>
+                    validate: (value: string) =>
                         value === password || 'Passwords do not match',
                 }}
             />

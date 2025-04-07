@@ -12,7 +12,7 @@ import {
 import CustomMultiSelect from '@/components/ui/admin/links/custom-multi-select/custom-multi-select'
 import { useState } from 'react'
 import ImagesUploader from '@/components/ui/admin/images-uploader/images-uploader'
-import { testProducts } from '@/app/admin/products/page'
+import { testProducts } from '@/interfaces/test-product'
 
 const categories = [
     {

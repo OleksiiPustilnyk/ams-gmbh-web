@@ -1,9 +1,9 @@
 'use client'
 
-import { productsMock } from '@/app/admin/products/page'
 import AddProductForm from '@/components/admin-panel/forms/add-product-form'
+import { testProducts } from '@/interfaces/test-product'
 
-const products = productsMock
+const products = testProducts
 
 export default function CreateProductView() {
     return (
